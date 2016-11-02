@@ -1,3 +1,5 @@
+package com.erbis.java.courses.ira.Lesson2;
+
 public class MyFirstHW {
 	public static void main(String[] args) {
 		System.out.println("Hello,world!");
