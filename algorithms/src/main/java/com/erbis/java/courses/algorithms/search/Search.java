@@ -2,6 +2,8 @@ package com.erbis.java.courses.algorithms.search;
 
 public class Search {
 	
+	public static int RESULT_ELEMENT_NOT_FOUND = -1;
+	
 	public static int search(byte[] array, byte value) {
 		throw new UnsupportedOperationException();
 	}
