@@ -33,7 +33,10 @@ public class MySecondHW {
         System.out.println("long is " + someLong);
         System.out.println("float is " + someFloat);
         System.out.println("double is " + someDouble);
+        System.out.println("--------------------------------------------------");
 
+        System.out.println("Sums are: ");
+        System.out.println("================================");
         int result1 = someBite + someShort;
         System.out.println("bite + short = " + result1);
 
@@ -54,11 +57,13 @@ public class MySecondHW {
 
         double result7 = someDouble + someFloat;
         System.out.println("double + float = " + result7);
-
+        System.out.println("================================");
     }
 
     public void getAllSubtractions() {
 
+        System.out.println("Subtractions are: ");
+        System.out.println("================================");
         int result1 = someBite - someShort;
         System.out.println("bite - short = " + result1);
 
@@ -79,11 +84,13 @@ public class MySecondHW {
 
         double result7 = someDouble - someFloat;
         System.out.println("double - float = " + result7);
-
+        System.out.println("================================");
     }
 
     public void getAllMultiplications() {
 
+        System.out.println("Multiplications are: ");
+        System.out.println("================================");
         int result1 = someBite * someShort;
         System.out.println("bite * short = " + result1);
 
@@ -104,10 +111,13 @@ public class MySecondHW {
 
         double result7 = someDouble * someFloat;
         System.out.println("double * float = " + result7);
+        System.out.println("================================");
     }
 
     public void getAllDivisions() {
 
+        System.out.println("Divisions are: ");
+        System.out.println("================================");
         int result1 = someBite / someShort;
         System.out.println("bite / short = " + result1);
 
@@ -128,10 +138,13 @@ public class MySecondHW {
 
         double result7 = someFloat / someDouble;
         System.out.println("float / double = " + result7);
+        System.out.println("================================");
     }
 
     public void getAllUndefinedOperations() {
 
+        System.out.println("Undefined operations are: ");
+        System.out.println("================================");
         int result1 = someBite % someShort;
         System.out.println("bite % short = " + result1);
 
@@ -152,5 +165,6 @@ public class MySecondHW {
 
         double result7 = someDouble % someFloat;
         System.out.println("double % float = " + result7);
+        System.out.println("================================");
     }
 }
