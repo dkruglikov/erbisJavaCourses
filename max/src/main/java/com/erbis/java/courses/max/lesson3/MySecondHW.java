@@ -24,6 +24,16 @@ public class MySecondHW {
     }
 
     public void getAllSum() {
+
+        System.out.println("byte is " + someBite);
+        System.out.println("short is " + someShort);
+        System.out.println("int is " + someInt);
+        System.out.println("boolean is " + someBoolean);
+        System.out.println("char is " + someChar);
+        System.out.println("long is " + someLong);
+        System.out.println("float is " + someFloat);
+        System.out.println("double is " + someDouble);
+
         int result1 = someBite + someShort;
         System.out.println("bite + short = " + result1);
 
@@ -31,7 +41,7 @@ public class MySecondHW {
         System.out.println("int + short = " + result2);
 
         int result3 = someChar + someShort;
-        System.out.println("int + char = " + result3);
+        System.out.println("short + char = " + result3);
 
         long result4 = someLong + someInt;
         System.out.println("int + long = " + result4);
@@ -55,16 +65,16 @@ public class MySecondHW {
         int result2 = someInt - someShort;
         System.out.println("int - short = " + result2);
 
-        int result3 = someChar - someShort;
+        int result3 = someInt - someChar;
         System.out.println("int - char = " + result3);
 
-        long result4 = someLong - someInt;
+        long result4 = someInt - someLong;
         System.out.println("int - long = " + result4);
 
-        float result5 = someFloat - someInt;
+        float result5 = someInt - someFloat;
         System.out.println("int - float = " + result5);
 
-        double result6 = someDouble - someInt;
+        double result6 = someInt - someDouble;
         System.out.println("int - double = " + result6);
 
         double result7 = someDouble - someFloat;
@@ -81,7 +91,7 @@ public class MySecondHW {
         System.out.println("int * short = " + result2);
 
         int result3 = someChar * someShort;
-        System.out.println("int * char = " + result3);
+        System.out.println("short * char = " + result3);
 
         long result4 = someLong * someInt;
         System.out.println("int * long = " + result4);
@@ -104,20 +114,20 @@ public class MySecondHW {
         int result2 = someInt / someShort;
         System.out.println("int / short = " + result2);
 
-        int result3 = someChar / someShort;
-        System.out.println("int / char = " + result3);
+        int result3 = someShort / someChar;
+        System.out.println("short / char = " + result3);
 
-        long result4 = someLong / someInt;
+        long result4 = someInt / someLong;
         System.out.println("int / long = " + result4);
 
         float result5 = someFloat / someInt;
-        System.out.println("int / float = " + result5);
+        System.out.println("float / int = " + result5);
 
         double result6 = someDouble / someInt;
-        System.out.println("int / double = " + result6);
+        System.out.println("double / int = " + result6);
 
-        double result7 = someDouble / someFloat;
-        System.out.println("double / float = " + result7);
+        double result7 = someFloat / someDouble;
+        System.out.println("float / double = " + result7);
     }
 
     public void getAllUndefinedOperations() {
@@ -128,20 +138,19 @@ public class MySecondHW {
         int result2 = someInt % someShort;
         System.out.println("int % short = " + result2);
 
-        int result3 = someChar % someShort;
+        int result3 = someShort % someChar;
         System.out.println("int % char = " + result3);
 
         long result4 = someLong % someInt;
-        System.out.println("int % long = " + result4);
+        System.out.println("long % int = " + result4);
 
         float result5 = someFloat % someInt;
-        System.out.println("int % float = " + result5);
+        System.out.println("float % int = " + result5);
 
         double result6 = someDouble % someInt;
-        System.out.println("int % double = " + result6);
+        System.out.println("double % int = " + result6);
 
         double result7 = someDouble % someFloat;
         System.out.println("double % float = " + result7);
     }
-
 }
