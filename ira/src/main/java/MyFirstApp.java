@@ -2,9 +2,12 @@
 
 public class MyFirstApp {
 	public static void main(String[] args) {
-		System.out.println("Hello,world!");
-		for (int i=0; i<args.length; i++){
-		System.out.println(args[i]);	
-		}
-	}
+		byte a=0b101;
+		System.out.println(a);
+		char b='f';
+		System.out.println(b);
+		double c=12.7;
+		System.out.println(c);
+		
+				}
 }
