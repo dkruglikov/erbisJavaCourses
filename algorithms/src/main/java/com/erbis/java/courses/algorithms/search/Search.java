@@ -2,7 +2,10 @@ package com.erbis.java.courses.algorithms.search;
 
 public class Search {
 	
-	public static int RESULT_ELEMENT_NOT_FOUND = -1;
+	public static final int RESULT_ELEMENT_NOT_FOUND = -1;
+	
+	private Search() {
+	}
 	
 	public static int search(byte[] array, byte value) {
 		throw new UnsupportedOperationException();
@@ -24,7 +27,11 @@ public class Search {
 		throw new UnsupportedOperationException();
 	}
 	
-	public static int search(float[] array, double value) {
+	public static int search(float[] array, float value) {
+		throw new UnsupportedOperationException();
+	}
+	
+	public static int search(double[] array, double value) {
 		throw new UnsupportedOperationException();
 	}
 	
