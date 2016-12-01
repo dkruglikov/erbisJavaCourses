@@ -60,7 +60,8 @@ public class MyThirdHW {
         int loopNumber = 1;
         while(loopNumber < 8000){
             if (loopNumber%16==0){
-                break;
+                loopNumber = loopNumber*2;
+                continue;
             }
             else {
                 System.out.println(loopNumber);
