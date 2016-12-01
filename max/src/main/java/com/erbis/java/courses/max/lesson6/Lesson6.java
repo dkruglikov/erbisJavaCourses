@@ -35,6 +35,7 @@ public class Lesson6 {
             System.out.print(i);
             System.out.print(" = ");
             System.out.println(someV1[i]);
+            System.out.println("");
         }
     }
 }
