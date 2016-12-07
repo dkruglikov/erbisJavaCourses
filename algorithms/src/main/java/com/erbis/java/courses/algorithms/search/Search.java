@@ -7,6 +7,7 @@ public class Search {
 	private Search() {
 	}
 	
+	// каждый метод делает return <value>;.
 	public static int search(byte[] array, byte value) {
 		throw new UnsupportedOperationException();
 	}
