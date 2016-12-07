@@ -47,12 +47,12 @@ public class MyFourthWHW {
 
 		// Task 2
 		int j = 1;
-		while (j < 8000) {
-			j *= 2;
+		while (j < 8000) {				
 			if (j % 16 == 0) {
 				continue;
 			}
 			System.out.println(j);
+			j *= 2;
 		}
 
 	}
