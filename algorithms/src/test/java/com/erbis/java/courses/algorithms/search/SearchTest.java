@@ -525,7 +525,7 @@ public class SearchTest {
 	@Test
 	public void testMaxShortsTwo() {
 		short[] testArray = {0, -1};
-		Assert.assertEquals(-1, Search.max(testArray));
+		Assert.assertEquals(0, Search.max(testArray));
 	}
 	
 	@Test
@@ -537,7 +537,7 @@ public class SearchTest {
 	@Test
 	public void testMaxShortsThree() {
 		short[] testArray = {Short.MAX_VALUE, -1, 0};
-		Assert.assertEquals(-1, Search.max(testArray));
+		Assert.assertEquals(Short.MAX_VALUE, Search.max(testArray));
 	}
 	
 	@Test
@@ -555,7 +555,7 @@ public class SearchTest {
 	@Test
 	public void testMaxIntsTwo() {
 		int[] testArray = {0, Integer.MAX_VALUE};
-		Assert.assertEquals(0, Search.max(testArray));
+		Assert.assertEquals(Integer.MAX_VALUE, Search.max(testArray));
 	}
 	
 	@Test
@@ -567,7 +567,7 @@ public class SearchTest {
 	@Test
 	public void testMaxIntsThree() {
 		int[] testArray = {Integer.MAX_VALUE, -1, Integer.MIN_VALUE};
-		Assert.assertEquals(Integer.MIN_VALUE, Search.max(testArray));
+		Assert.assertEquals(Integer.MAX_VALUE, Search.max(testArray));
 	}
 	
 	@Test
@@ -585,7 +585,7 @@ public class SearchTest {
 	@Test
 	public void testMaxLongsTwo() {
 		long[] testArray = {-1, Long.MIN_VALUE};
-		Assert.assertEquals(Long.MIN_VALUE, Search.max(testArray));
+		Assert.assertEquals(-1, Search.max(testArray));
 	}
 	
 	@Test
@@ -597,7 +597,7 @@ public class SearchTest {
 	@Test
 	public void testMaxLongsThree() {
 		long[] testArray = {-1, -1, Long.MIN_VALUE};
-		Assert.assertEquals(Long.MIN_VALUE, Search.max(testArray));
+		Assert.assertEquals(-1, Search.max(testArray));
 	}
 	
 	@Test
