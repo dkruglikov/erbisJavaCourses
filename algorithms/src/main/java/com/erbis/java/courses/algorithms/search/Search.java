@@ -8,94 +8,106 @@ public class Search {
         }
 
     public static int search(byte[] array, byte value) {
-        int index;
-        for (index = 0; index < array.length; index++) {
+        int number = 0;
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == value) {
-                return index;
+                number = index;
+                break;
+            }
+            if (array[array.length - 1]!=value) {
+                number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
-        return index;
+        return number;
     }
 
     public static int search(short[] array, short value) {
-        int index;
-        for (index = 0; index < array.length; index++) {
+        int number = 0;
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == value) {
-                return index;
+                number = index;
+                break;
+            }
+            if (array[array.length - 1]!=value) {
+                number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
-        return index;
+        return number;
     }
 
     public static int search(int[] array, int value) {
-        int index;
-        for (index = 0; index < array.length; index++) {
+        int number = 0;
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == value) {
-                return index;
+                number = index;
+                break;
             }
-            if ((array.length == (index-1))&&(array[index] != value)) {
-                return RESULT_ELEMENT_NOT_FOUND;
+            if (array[array.length - 1]!=value) {
+                number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
-        return index;
+        return number;
     }
 
     public static int search(long[] array, long value) {
-        int index;
-        for (index = 0; index < array.length; index++) {
+        int number = 0;
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == value) {
-                return index;
+                number = index;
+                break;
             }
-            if ((array.length == (index-1))&&(array[index] != value)) {
-                return RESULT_ELEMENT_NOT_FOUND;
+            if (array[array.length - 1]!=value) {
+                number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
-        return index;
+        return number;
     }
 
     public static int search(char[] array, char value) {
-        int index;
-        for (index = 0; index < array.length; index++) {
+        int number = 0;
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == value) {
-                return index;
+                number = index;
+                break;
             }
-            if ((array.length == (index-1))&&(array[index] != value)) {
-                return RESULT_ELEMENT_NOT_FOUND;
+            if (array[array.length - 1]!=value) {
+                number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
-        return index;
+        return number;
     }
 
     public static int search(float[] array, float value) {
-        int index;
-        for (index = 0; index < array.length; index++) {
+        int number = 0;
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == value) {
-                return index;
+                number = index;
+                break;
             }
-            if ((array.length == (index-1))&&(array[index] != value)) {
-                return RESULT_ELEMENT_NOT_FOUND;
+            if (array[array.length - 1]!=value) {
+                number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
-        return index;
+        return number;
     }
 
     public static int search(double[] array, double value) {
-        int index;
-        for (index = 0; index < array.length; index++) {
+        int number = 0;
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == value) {
-                return index;
+                number = index;
+                break;
             }
-            if ((array.length == (index-1))&&(array[index] != value)) {
-                return RESULT_ELEMENT_NOT_FOUND;
+            if (array[array.length - 1]!=value) {
+                number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
-        return index;
+        return number;
     }
 
     public static byte min(byte[] array) {
-        byte minValue = 0;
+        byte minValue = array[0];
         for (int index = 0; index < array.length; index++) {
-            minValue = array[index];
             if (array[index] < minValue) {
                 minValue = array[index];
             }
@@ -104,7 +116,7 @@ public class Search {
     }
 
     public static short min(short[] array) {
-        short minValue = 0;
+        short minValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] < minValue) {
                 minValue = array[index];
@@ -114,7 +126,7 @@ public class Search {
     }
 
     public static int min(int[] array) {
-        int minValue = 0;
+        int minValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] < minValue) {
                 minValue = array[index];
@@ -124,7 +136,7 @@ public class Search {
     }
 
     public static long min(long[] array) {
-        long minValue = 0;
+        long minValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] < minValue) {
                 minValue = array[index];
@@ -134,7 +146,7 @@ public class Search {
     }
 
     public static char min(char[] array) {
-        char minValue = 0;
+        char minValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] < minValue) {
                 minValue = array[index];
@@ -144,7 +156,7 @@ public class Search {
     }
 
     public static float min(float[] array) {
-        float minValue = 0;
+        float minValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] < minValue) {
                 minValue = array[index];
@@ -154,7 +166,7 @@ public class Search {
     }
 
     public static double min(double[] array) {
-        double minValue = 0;
+        double minValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] < minValue) {
                 minValue = array[index];
@@ -164,7 +176,7 @@ public class Search {
     }
 
     public static byte max(byte[] array) {
-        byte maxValue = 0;
+        byte maxValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] > maxValue) {
                 maxValue = array[index];
@@ -174,7 +186,7 @@ public class Search {
     }
 
     public static short max(short[] array) {
-        short maxValue = 0;
+        short maxValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] > maxValue) {
                 maxValue = array[index];
@@ -184,7 +196,7 @@ public class Search {
     }
 
     public static int max(int[] array) {
-        int maxValue = 0;
+        int maxValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] > maxValue) {
                 maxValue = array[index];
@@ -194,7 +206,7 @@ public class Search {
     }
 
     public static long max(long[] array) {
-        long maxValue = 0;
+        long maxValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] > maxValue) {
                 maxValue = array[index];
@@ -204,7 +216,7 @@ public class Search {
     }
 
     public static char max(char[] array) {
-        char maxValue = 0;
+        char maxValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] > maxValue) {
                 maxValue = array[index];
@@ -214,7 +226,7 @@ public class Search {
     }
 
     public static float max(float[] array) {
-        float maxValue = 0;
+        float maxValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] > maxValue) {
                 maxValue = array[index];
@@ -224,7 +236,7 @@ public class Search {
     }
 
     public static double max(double[] array) {
-        double maxValue = 0;
+        double maxValue = array[0];
         for (int index = 0; index < array.length; index++) {
             if (array[index] > maxValue) {
                 maxValue = array[index];
@@ -244,7 +256,7 @@ public class Search {
     public static double avg(short[] array) {
         double sum = 0;
         for (int index = 0; index < array.length; index++) {
-            sum= sum + array[index];
+            sum = sum + array[index];
         }
         return sum/(array.length);
     }
@@ -274,7 +286,7 @@ public class Search {
     }
 
     public static double avg(float[] array) {
-        double sum = 0;
+        double sum = 0F;
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
