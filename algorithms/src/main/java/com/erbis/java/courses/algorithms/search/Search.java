@@ -231,7 +231,7 @@ public class Search {
 	}
 
 	public static double avg(int[] arrAvg) {
-		long summ = 0;
+		double summ = 0;
 		double avgByte = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
@@ -261,7 +261,7 @@ public class Search {
 	}
 
 	public static double avg(float[] arrAvg) {
-		long summ = 0;
+		double summ = 0;
 		double avgByte = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
@@ -271,7 +271,7 @@ public class Search {
 	}
 
 	public static double avg(double[] arrAvg) {
-		long summ = 0;
+		double summ = 0;
 		double avgByte = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];

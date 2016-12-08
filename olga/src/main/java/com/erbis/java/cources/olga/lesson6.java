@@ -30,6 +30,9 @@ public class lesson6 {
 			System.out.println(arr3[i]);
 		}
 		System.out.println();
+		
 	}
+	
+	
 
 }

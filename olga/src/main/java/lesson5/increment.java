@@ -1,5 +1,7 @@
 package lesson5;
 
+import com.erbis.java.cources.olga.HW5;
+
 public class increment {
 	public static void main(String[] args) {
 		byte b = 127;
@@ -69,6 +71,7 @@ public class increment {
 			System.out.print("Step ");
 			System.out.println(l);
 			System.out.println(p);
+			
 		}
 	}
 
