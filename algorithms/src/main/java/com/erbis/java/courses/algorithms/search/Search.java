@@ -212,31 +212,31 @@ public class Search {
 		return array[iMax];
 	}
 
-//	public static double avg(byte[] array) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public static double avg(short[] array) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public static double avg(int[] array) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public static double avg(long[] array) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public static double avg(char[] array) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public static double avg(float[] array) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public static double avg(double[] array) {
-//		throw new UnsupportedOperationException();
-//	}
+	public static double avg(byte[] array) {
+		throw new UnsupportedOperationException();
+	}
+
+	public static double avg(short[] array) {
+		throw new UnsupportedOperationException();
+	}
+
+	public static double avg(int[] array) {
+		throw new UnsupportedOperationException();
+	}
+
+	public static double avg(long[] array) {
+		throw new UnsupportedOperationException();
+	}
+
+	public static double avg(char[] array) {
+		throw new UnsupportedOperationException();
+	}
+
+	public static double avg(float[] array) {
+		throw new UnsupportedOperationException();
+	}
+
+	public static double avg(double[] array) {
+		throw new UnsupportedOperationException();
+	}
 }
