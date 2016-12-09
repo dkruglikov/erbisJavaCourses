@@ -2,7 +2,7 @@ package com.erbis.java.courses.algorithms.search;
 
 import java.util.NoSuchElementException;
 
-public class Search {
+public final class Search {
 	public static final int RESULT_ELEMENT_NOT_FOUND = -1;
 
 	private Search() {
