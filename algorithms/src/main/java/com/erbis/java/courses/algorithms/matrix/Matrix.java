@@ -1,6 +1,6 @@
 package com.erbis.java.courses.algorithms.matrix;
 
-public class Matrix {
+public final class Matrix {
 	
 	private Matrix() {
 	}

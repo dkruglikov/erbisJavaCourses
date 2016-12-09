@@ -1,6 +1,6 @@
 package com.erbis.java.courses.algorithms.search;
 
-public class Search {
+public final class Search {
 	
 	public static final int RESULT_ELEMENT_NOT_FOUND = -1;
 	

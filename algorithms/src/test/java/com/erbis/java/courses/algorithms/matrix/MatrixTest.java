@@ -21,7 +21,7 @@ public class MatrixTest {
 		Matrix.create(array, width, height);
 	}
 	
-	@Test(expected = NegativeArraySizeException.class)
+	@Test
 	public void testCreate0() {
 		double[] array = {5, -8.8, 10, 12};
 		int width = 0;
@@ -29,11 +29,75 @@ public class MatrixTest {
 		Assert.assertArrayEquals(new double[0][0], Matrix.create(array, width, height));
 	}
 	
-	@Test(expected = NegativeArraySizeException.class)
+	@Test
 	public void testCreate0Width() {
 		double[] array = {5, -8.8, 10, 12};
 		int width = 0;
+		int height = 4;
+		Assert.assertArrayEquals(new double[0][4], Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate0Height() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 2;
 		int height = 0;
-		Assert.assertArrayEquals(new double[0][0], Matrix.create(array, width, height));
+		Assert.assertArrayEquals(new double[2][0], Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate1To1() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 1;
+		int height = 1;
+		Assert.assertArrayEquals(new double[][]{{5}}, Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate1HeightLess() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 2;
+		int height = 1;
+		Assert.assertArrayEquals(new double[][]{{5, -8.8}}, Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate1HeightSame() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 4;
+		int height = 1;
+		Assert.assertArrayEquals(new double[][]{{5, -8.8, 10, 12}}, Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate1HeightMore() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 6;
+		int height = 1;
+		Assert.assertArrayEquals(new double[][]{{5, -8.8, 10, 12, 0, 0}}, Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate1WidthLess() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 1;
+		int height = 3;
+		Assert.assertArrayEquals(new double[][]{{5}, {-8.8}, {10}}, Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate1WidthSame() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 1;
+		int height = 4;
+		Assert.assertArrayEquals(new double[][]{{5}, {-8.8}, {10}, {12}}, Matrix.create(array, width, height));
+	}
+	
+	@Test
+	public void testCreate1WidthMore() {
+		double[] array = {5, -8.8, 10, 12};
+		int width = 1;
+		int height = 5;
+		Assert.assertArrayEquals(new double[][]{{5}, {-8.8}, {10}, {12}, {0}}, Matrix.create(array, width, height));
 	}
 }
