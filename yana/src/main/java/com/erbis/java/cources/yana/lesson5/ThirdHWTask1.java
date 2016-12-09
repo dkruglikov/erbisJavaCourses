@@ -34,6 +34,8 @@ public class ThirdHWTask1 {
 			case 9:
 				System.out.println("Nine");
 				break;
+			default:
+				break;
 			}
 		}
 	}
