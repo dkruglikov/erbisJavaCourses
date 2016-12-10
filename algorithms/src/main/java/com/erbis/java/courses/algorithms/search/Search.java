@@ -2,7 +2,7 @@ package com.erbis.java.courses.algorithms.search;
 
 import java.util.NoSuchElementException;
 
-public class Search {
+public final class Search {
 	public static final int RESULT_ELEMENT_NOT_FOUND = -1;
 
 	private Search() {
@@ -14,7 +14,7 @@ public class Search {
 				return i;
 			}
 		}
-		throw new NoSuchElementException();
+		return -1;
 	}
 
 	public static int search(short[] array, short value) {
@@ -23,7 +23,7 @@ public class Search {
 				return i;
 			}
 		}
-		throw new NoSuchElementException();
+		return -1;
 	}
 
 	public static int search(int[] array, int value) {
@@ -32,7 +32,7 @@ public class Search {
 				return i;
 			}
 		}
-		throw new NoSuchElementException();
+		return -1;
 	}
 
 	public static int search(long[] array, long value) {
@@ -41,7 +41,7 @@ public class Search {
 				return i;
 			}
 		}
-		throw new NoSuchElementException();
+		return -1;
 	}
 
 	public static int search(char[] array, char value) {
@@ -50,7 +50,7 @@ public class Search {
 				return i;
 			}
 		}
-		throw new NoSuchElementException();
+		return -1;
 	}
 
 	public static int search(float[] array, float value) {
@@ -59,7 +59,7 @@ public class Search {
 				return i;
 			}
 		}
-		throw new NoSuchElementException();
+		return -1;
 	}
 
 	public static int search(double[] array, double value) {
@@ -68,7 +68,7 @@ public class Search {
 				return i;
 			}
 		}
-		throw new NoSuchElementException();
+		return -1;
 	}
 
 	public static byte min(byte[] array) {
@@ -213,30 +213,72 @@ public class Search {
 	}
 
 	public static double avg(byte[] array) {
-		throw new UnsupportedOperationException();
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		avg = sum/array.length;
+		return avg;
 	}
 
 	public static double avg(short[] array) {
-		throw new UnsupportedOperationException();
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		avg = sum/array.length;
+		return avg;
 	}
 
 	public static double avg(int[] array) {
-		throw new UnsupportedOperationException();
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		avg = sum/array.length;
+		return avg;
 	}
 
 	public static double avg(long[] array) {
-		throw new UnsupportedOperationException();
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		avg = sum/array.length;
+		return avg;
 	}
 
 	public static double avg(char[] array) {
-		throw new UnsupportedOperationException();
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum = sum + array[i];
+		}
+		avg = sum/array.length;
+		return avg;
 	}
 
 	public static double avg(float[] array) {
-		throw new UnsupportedOperationException();
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		avg = sum/array.length;
+		return avg;
 	}
 
 	public static double avg(double[] array) {
-		throw new UnsupportedOperationException();
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		avg = sum/array.length;
+		return avg;
 	}
 }
