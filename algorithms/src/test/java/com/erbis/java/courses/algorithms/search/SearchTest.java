@@ -6,6 +6,7 @@ import org.junit.Test;
 public class SearchTest {
 	
 	private static final double DOUBLE_ASSERT_DELTA = 1e-5;
+	
 	@Test
 	public void testSearchBytesOnlyOk() {
 		byte[] testArray = {Byte.MAX_VALUE};
