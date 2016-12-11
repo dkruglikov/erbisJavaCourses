@@ -27,7 +27,7 @@ public class StringUtilTest {
 	
 	@Test
 	public void testGetCharCountOnly() {
-		Assert.assertEquals(0, StringUtil.getCharCount("R"));
+		Assert.assertEquals(1, StringUtil.getCharCount("R"));
 	}
 	
 	@Test
