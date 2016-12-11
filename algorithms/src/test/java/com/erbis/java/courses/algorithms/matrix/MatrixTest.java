@@ -116,7 +116,7 @@ public class MatrixTest {
 		double[] array = {5, -8.8, 10, 12, -0.25, 1.2};
 		int width = 3;
 		int height = 3;
-		Assert.assertArrayEquals(new double[][]{{5, -8.8, 10}, {10, 12, -0.25}, {1.2, 0, 0}}, Matrix.create(array, width, height));
+		Assert.assertArrayEquals(new double[][]{{5, -8.8, 10}, {12, -0.25, 1.2}, {0, 0, 0}}, Matrix.create(array, width, height));
 	}
 	
 	@Test
@@ -216,24 +216,24 @@ public class MatrixTest {
 	@Test
 	public void testMax1Height() {
 		double[][] matrix = {{-1.25, 13.1}};
-		Assert.assertEquals(13.1, Matrix.mainDiagonalSum(matrix), DOUBLE_ASSERT_DELTA);
+		Assert.assertEquals(13.1, Matrix.max(matrix), DOUBLE_ASSERT_DELTA);
 	}
 	
 	@Test
 	public void testMaxSquare() {
 		double[][] matrix = {{-1.25, 3.1, 0.1}, {2.1, 3, -2.1}, {-0.1, 0.9, -0.25}};
-		Assert.assertEquals(3.1, Matrix.mainDiagonalSum(matrix), DOUBLE_ASSERT_DELTA);
+		Assert.assertEquals(3.1, Matrix.max(matrix), DOUBLE_ASSERT_DELTA);
 	}
 	
 	@Test
 	public void testMaxWide() {
 		double[][] matrix = {{-1.25, 3.1, 0.1, 12}, {2.1, 3.4, -2.1, 5}, {-0.1, -0.25}};
-		Assert.assertEquals(3.4, Matrix.mainDiagonalSum(matrix), DOUBLE_ASSERT_DELTA);
+		Assert.assertEquals(12, Matrix.max(matrix), DOUBLE_ASSERT_DELTA);
 	}
 	
 	@Test
 	public void testMaxTall() {
 		double[][] matrix = {{-1.25, 3.1, 0.1, 12}, {2.1, 3, -2.1, 5}, {-0.1, -0.25}, {3}, {1, 2, 3, 4, 5, 6}, {-0.5, 5, 8}};
-		Assert.assertEquals(8, Matrix.mainDiagonalSum(matrix), DOUBLE_ASSERT_DELTA);
+		Assert.assertEquals(12, Matrix.max(matrix), DOUBLE_ASSERT_DELTA);
 	}
 }
