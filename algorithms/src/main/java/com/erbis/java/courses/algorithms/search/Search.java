@@ -1,7 +1,7 @@
 package com.erbis.java.courses.algorithms.search;
 
 public final class Search {
-	
+
 	public static final int RESULT_ELEMENT_NOT_FOUND = -1;
 
 	private Search() {
@@ -211,73 +211,59 @@ public final class Search {
 	}
 
 	public static double avg(byte[] arrAvg) {
-		long summ = 0;
-		double avgByte = 0;
+		double summ = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
 		}
-		avgByte = summ / arrAvg.length;
-		return avgByte;
+		return summ / arrAvg.length;
 	}
 
 	public static double avg(short[] arrAvg) {
-		long summ = 0;
-		double avgByte = 0;
+		double summ = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
 		}
-		avgByte = summ / arrAvg.length;
-		return avgByte;
+		return summ / arrAvg.length;
 	}
 
 	public static double avg(int[] arrAvg) {
 		double summ = 0;
-		double avgByte = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
 		}
-		avgByte = summ / arrAvg.length;
-		return avgByte;
+		return summ / arrAvg.length;
 	}
 
 	public static double avg(long[] arrAvg) {
-		long summ = 0;
-		double avgByte = 0;
+		double summ = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
 		}
-		avgByte = summ / arrAvg.length;
-		return avgByte;
+		return summ / arrAvg.length;
 	}
 
 	public static double avg(char[] arrAvg) {
-		long summ = 0;
-		double avgByte = 0;
+		double summ = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
 		}
-		avgByte = summ / arrAvg.length;
-		return avgByte;
+		return summ / arrAvg.length;
 	}
 
 	public static double avg(float[] arrAvg) {
 		double summ = 0;
-		double avgByte = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
 		}
-		avgByte = summ / arrAvg.length;
-		return avgByte;
+		return summ / arrAvg.length;
 	}
 
 	public static double avg(double[] arrAvg) {
 		double summ = 0;
-		double avgByte = 0;
 		for (int i = 0; i < arrAvg.length; i++) {
 			summ += arrAvg[i];
 		}
-		avgByte = summ / arrAvg.length;
-		return avgByte;
+		return summ / arrAvg.length;
 	}
 
 }
