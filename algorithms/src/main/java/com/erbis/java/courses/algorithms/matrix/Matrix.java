@@ -47,10 +47,22 @@ public final class Matrix {
 	}
 
 	// it works only for rectangular matrixes
+	// public static double mainDiagonalSum(double[][] matrix) {
+	// double sumD = 0;
+	// for (int i = 0; i < matrix.length && i < matrix[i].length; i++) {
+	// sumD += matrix[i][i];
+	// }
+	// return sumD;
+	// }
+
 	public static double mainDiagonalSum(double[][] matrix) {
 		double sumD = 0;
-		for (int i = 0; i < matrix.length && i < matrix[i].length; i++) {
-			sumD += matrix[i][i];
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (i == j) {
+					sumD += matrix[i][j];
+				}
+			}
 		}
 		return sumD;
 	}
@@ -76,7 +88,7 @@ public final class Matrix {
 	}
 
 	public static double max(double[][] matrix) {
-		double max = Double.MIN_VALUE;
+		double max = -Double.MAX_VALUE;
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				if (max < matrix[i][j]) {
