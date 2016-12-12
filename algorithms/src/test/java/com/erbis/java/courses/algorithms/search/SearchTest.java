@@ -5,7 +5,8 @@ import org.junit.Test;
 
 public class SearchTest {
 	
-	private static final double DOUBLE_ASSERT_DELTA = 1e-8;
+	private static final double DOUBLE_ASSERT_DELTA = 1e-5;
+	
 	@Test
 	public void testSearchBytesOnlyOk() {
 		byte[] testArray = {Byte.MAX_VALUE};
@@ -657,7 +658,7 @@ public class SearchTest {
 	@Test
 	public void testAvgBytesFour() {
 		byte[] testArray = {8, 0, -6, -4};
-		Assert.assertEquals(-0.25, Search.avg(testArray), DOUBLE_ASSERT_DELTA);
+		Assert.assertEquals(-0.5, Search.avg(testArray), DOUBLE_ASSERT_DELTA);
 	}
 	
 	@Test
@@ -812,7 +813,7 @@ public class SearchTest {
 	
 	@Test
 	public void testAvgLongsThree() {
-		long[] testArray = {Long.MAX_VALUE, 100, Long.MIN_VALUE};
+		long[] testArray = {Integer.MAX_VALUE, 100, Integer.MIN_VALUE};
 		Assert.assertEquals(33, Search.avg(testArray), DOUBLE_ASSERT_DELTA);
 	}
 	
@@ -927,6 +928,6 @@ public class SearchTest {
 	@Test
 	public void testAvgDoublesFour() {
 		double[] testArray = {256.8, 128.1128, -512.512, 640.288};
-		Assert.assertEquals(512.6888, Search.avg(testArray), DOUBLE_ASSERT_DELTA);
+		Assert.assertEquals(128.1722, Search.avg(testArray), DOUBLE_ASSERT_DELTA);
 	}
 }
