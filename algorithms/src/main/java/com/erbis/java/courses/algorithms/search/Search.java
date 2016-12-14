@@ -77,7 +77,7 @@ public final class Search {
 			}
 		}
 		return min;
-		
+
 	}
 
 	public static short min(short[] array) {
@@ -216,7 +216,7 @@ public final class Search {
 		for (int i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		avg = sum/array.length;
+		avg = sum / array.length;
 		return avg;
 	}
 
@@ -226,7 +226,7 @@ public final class Search {
 		for (int i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		avg = sum/array.length;
+		avg = sum / array.length;
 		return avg;
 	}
 
@@ -236,7 +236,7 @@ public final class Search {
 		for (int i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		avg = sum/array.length;
+		avg = sum / array.length;
 		return avg;
 	}
 
@@ -246,7 +246,7 @@ public final class Search {
 		for (int i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		avg = sum/array.length;
+		avg = sum / array.length;
 		return avg;
 	}
 
@@ -256,7 +256,7 @@ public final class Search {
 		for (int i = 0; i < array.length; i++) {
 			sum = sum + array[i];
 		}
-		avg = sum/array.length;
+		avg = sum / array.length;
 		return avg;
 	}
 
@@ -266,7 +266,7 @@ public final class Search {
 		for (int i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		avg = sum/array.length;
+		avg = sum / array.length;
 		return avg;
 	}
 
@@ -276,7 +276,7 @@ public final class Search {
 		for (int i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		avg = sum/array.length;
+		avg = sum / array.length;
 		return avg;
 	}
 }

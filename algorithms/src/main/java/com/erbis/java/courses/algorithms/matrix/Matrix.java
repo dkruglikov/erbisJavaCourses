@@ -91,7 +91,15 @@ public final class Matrix {
 	}
 
 	public static double min(double[][] matrix) {
-		return 0;
+		double min = matrix[0][0];
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (matrix[i][j] < min) {
+					min = matrix[i][j];
+				}
+			}
+		}
+		return min;
 	}
 
 	public static double[] maxRow(double[][] matrix) {
