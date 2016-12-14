@@ -6,7 +6,17 @@ public final class Matrix {
 	}
 	
 	public static double[][] create(double[] array, int width, int height) {
-		return null;
+		double[][] matrix = new double [height][width];
+		int k = 0;
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				if (k < array.length) {
+					matrix[i][j] = array[k];
+					k++;
+				}
+			}
+		}
+		return matrix;
 	}
 	
 	public static double sum(double[][] matrix) {
