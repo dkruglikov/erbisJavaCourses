@@ -79,8 +79,15 @@ public final class Matrix {
 	}
 
 	public static double max(double[][] matrix) {
-
-		return 0;
+		double max = matrix[0][0];
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (matrix[i][j] > max) {
+					max = matrix[i][j];
+				}
+			}
+		}
+		return max;
 	}
 
 	public static double min(double[][] matrix) {

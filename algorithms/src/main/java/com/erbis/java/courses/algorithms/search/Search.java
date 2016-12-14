@@ -70,144 +70,144 @@ public final class Search {
 	}
 
 	public static byte min(byte[] array) {
-		int iMin = 0;
+		byte min = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] < array[iMin]) {
-				iMin = i;
+			if (array[i] < min) {
+				min = array[i];
 			}
 		}
-		return array[iMin];
+		return min;
 		
 	}
 
 	public static short min(short[] array) {
-		int iMin = 0;
+		short min = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] < array[iMin]) {
-				iMin = i;
+			if (array[i] < min) {
+				min = array[i];
 			}
 		}
-		return array[iMin];
+		return min;
 	}
 
 	public static int min(int[] array) {
-		int iMin = 0;
+		int min = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] < array[iMin]) {
-				iMin = i;
+			if (array[i] < min) {
+				min = array[i];
 			}
 		}
-		return array[iMin];
+		return min;
 	}
 
 	public static long min(long[] array) {
-		int iMin = 0;
+		long min = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] < array[iMin]) {
-				iMin = i;
+			if (array[i] < min) {
+				min = array[i];
 			}
 		}
-		return array[iMin];
+		return min;
 	}
 
 	public static char min(char[] array) {
-		int iMin = 0;
+		char min = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] < array[iMin]) {
-				iMin = i;
+			if (array[i] < min) {
+				min = array[i];
 			}
 		}
-		return array[iMin];
+		return min;
 	}
 
 	public static float min(float[] array) {
-		int iMin = 0;
+		float min = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] < array[iMin]) {
-				iMin = i;
+			if (array[i] < min) {
+				min = array[i];
 			}
 		}
-		return array[iMin];
+		return min;
 	}
 
 	public static double min(double[] array) {
-		int iMin = 0;
+		double min = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] < array[iMin]) {
-				iMin = i;
+			if (array[i] < min) {
+				min = array[i];
 			}
 		}
-		return array[iMin];
+		return min;
 	}
 
 	public static byte max(byte[] array) {
-		int iMax = 0;
+		byte max = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] > array[iMax]) {
-				iMax = i;
+			if (array[i] > max) {
+				max = array[i];
 			}
 		}
-		return array[iMax];
+		return max;
 	}
 
 	public static short max(short[] array) {
-		int iMax = 0;
+		short max = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] > array[iMax]) {
-				iMax = i;
+			if (array[i] > max) {
+				max = array[i];
 			}
 		}
-		return array[iMax];
+		return max;
 	}
 
 	public static int max(int[] array) {
-		int iMax = 0;
+		int max = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] > array[iMax]) {
-				iMax = i;
+			if (array[i] > max) {
+				max = array[i];
 			}
 		}
-		return array[iMax];
+		return max;
 	}
 
 	public static long max(long[] array) {
-		int iMax = 0;
+		long max = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] > array[iMax]) {
-				iMax = i;
+			if (array[i] > max) {
+				max = array[i];
 			}
 		}
-		return array[iMax];
+		return max;
 	}
 
 	public static char max(char[] array) {
-		int iMax = 0;
+		char max = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] > array[iMax]) {
-				iMax = i;
+			if (array[i] > max) {
+				max = array[i];
 			}
 		}
-		return array[iMax];
+		return max;
 	}
 
 	public static float max(float[] array) {
-		int iMax = 0;
+		float max = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] > array[iMax]) {
-				iMax = i;
+			if (array[i] > max) {
+				max = array[i];
 			}
 		}
-		return array[iMax];
+		return max;
 	}
 
 	public static double max(double[] array) {
-		int iMax = 0;
+		double max = array[0];
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] > array[iMax]) {
-				iMax = i;
+			if (array[i] > max) {
+				max = array[i];
 			}
 		}
-		return array[iMax];
+		return max;
 	}
 
 	public static double avg(byte[] array) {
