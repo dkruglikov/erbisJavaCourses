@@ -6,18 +6,39 @@ public final class StringUtil {
 	}
 	
 	public static char getMostRepeatableChar(String s) {
-		return 0;
+		int[] counts = new int[65636];
+		for (int i = 0; i < s.length(); i++) {
+			counts[s.charAt(i)]++;
+		}
+		int index = -1;
+		int max = 0;
+		for (int i = 0; i < counts.length; i++) {
+			if (max <= counts[i]) {
+				max = counts[i];
+				index = i;
+			}
+		}
+		return (char) index;
 	}
 	
 	public static int getCharCount(String s) {
-		return 0;
+		return s.length();
 	}
 	
 	public static String getLongestWord(String s) {
-		return null;
+		String[] words = s.split(" ");
+		String longestWord = "";
+		for (int i = 0; i < words.length; i++) {
+			if (longestWord.length() < words[i].length()) {
+				longestWord = words[i];
+			}
+		}
+		
+		return longestWord;
 	}
 	
 	public static char getLastChar(String s) {
-		return 0;
+		char lastChar = s.charAt(s.length()-1);
+		return lastChar;
 	}
 }
