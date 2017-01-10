@@ -1,4 +1,4 @@
-package lesson8;
+package com.erbis.java.cources.yana.lesson8;
 
 public class Main {
 	public static void main() {

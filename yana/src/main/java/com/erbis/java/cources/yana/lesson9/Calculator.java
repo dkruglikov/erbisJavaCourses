@@ -1,4 +1,4 @@
-package lesson9;
+package com.erbis.java.cources.yana.lesson9;
 
 public class Calculator {
 	private String lastOperation;

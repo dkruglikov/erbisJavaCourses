@@ -1,4 +1,4 @@
-package pupilWithCat;
+package com.erbis.java.cources.yana.pupilWithCat;
 
 public class Pupil {
 	private Cat cat = new Cat();

@@ -1,4 +1,4 @@
-package lesson10;
+package com.erbis.java.cources.yana.lesson10;
 
 public class Person {
 	private int age;

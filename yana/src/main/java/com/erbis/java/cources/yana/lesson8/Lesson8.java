@@ -1,4 +1,4 @@
-package lesson8;
+package com.erbis.java.cources.yana.lesson8;
 
 public class Lesson8 {
 	public String name = "Lesson";

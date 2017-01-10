@@ -1,4 +1,4 @@
-package pupilWithCat;
+package com.erbis.java.cources.yana.pupilWithCat;
 
 public class Toy {
 	private String typeOfToy = "Ball";
