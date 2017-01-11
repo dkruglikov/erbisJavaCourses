@@ -1,6 +1,6 @@
-package com.erbis.java.cources.olga;
+package com.erbis.java.cources.olga.lesson8;
 
-public class Calculator {
+public class HW1_Calculator {
 	public static void main(String[] args) {
 		String input = "";
 		System.out.println("Please, enter the comand, like '5-3-1' or '5*4*9'");

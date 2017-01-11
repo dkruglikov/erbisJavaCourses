@@ -1,4 +1,4 @@
-package lesson5;
+package com.erbis.java.cources.olga.lesson5;
 
 public class MyFourthWHW {
 

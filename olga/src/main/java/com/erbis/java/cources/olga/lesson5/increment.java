@@ -1,6 +1,6 @@
-package lesson5;
+package com.erbis.java.cources.olga.lesson5;
 
-import com.erbis.java.cources.olga.HW5;
+import com.erbis.java.cources.olga.lesson6.HW5;
 
 public class increment {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.erbis.java.cources.olga;
+package com.erbis.java.cources.olga.lesson6;
 
 public class lesson6 {
 

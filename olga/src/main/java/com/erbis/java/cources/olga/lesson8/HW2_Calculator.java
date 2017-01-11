@@ -1,6 +1,6 @@
-package com.erbis.java.cources.olga;
+package com.erbis.java.cources.olga.lesson8;
 
-public class HW_Calculator {
+public class HW2_Calculator {
 
 	public static void main(String[] args) {
 		String input = "";
