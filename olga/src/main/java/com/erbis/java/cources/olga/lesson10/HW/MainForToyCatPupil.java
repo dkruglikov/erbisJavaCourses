@@ -16,9 +16,6 @@ public class MainForToyCatPupil {
 		Pupil p = new Pupil(11, "Olga", "Dnipro");
 		p.setOwnCats(new Cat[] {c, c2});
 		
-//		t.printInfoToy();
-//		t2.printInfoToy();
-//		c.printInfoCat();
 		p.printInfoPupil();
 	}
 

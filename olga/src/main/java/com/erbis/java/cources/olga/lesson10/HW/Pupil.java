@@ -17,31 +17,11 @@ public class Pupil {
 	}
 
 	public void printInfoPupil() {
-		// Pupil
-		System.out.print("Pupil " + name + ", ");
-		System.out.print(age + " years old, ");
-		System.out.println("was born in " + birthPlace);
-
+		System.out.println("Pupil " + name + ", " + age + " years old, " + "was born in " + birthPlace + ". ");
 		for (int i = 0; i < ownCats.length; i++) {
-			// Cat
-			System.out.println(name + " has a cat " + ownCats[i].getName());
-			System.out.println("It is " + ownCats[i].getAge() + " years old");
-			String breed = ownCats[i].getBreed();
-			if (breed != null) {
-				System.out.println("And it is " + breed);
-			} else {
-				System.out.println("And it is not purebred");
-			}
-
-			// Toy
-			Toy ownToy = ownCats[i].getOwnToy();
-			if (ownToy != null) {
-				System.out.println("The cat has a toy whis size " + ownToy.getSizeSm() + " sm, and " + ownToy.getColour() + "colour, made in " + ownToy.getMadeIn());
-			} else {
-				System.out.println("Cat has now toy");
-			}
+			System.out.print(name + " has a cat ");
+			ownCats[i].printInfoCat();
 		}
-
 	}
 
 }
