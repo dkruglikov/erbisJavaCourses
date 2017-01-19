@@ -1,10 +1,10 @@
 package com.erbis.java.courses.algorithms.matrix;
 
 public final class Matrix {
-	
+
 	private Matrix() {
 	}
-	
+
 	public static double[][] create(double[] array, int width, int height) {
 		return null;
 	}
