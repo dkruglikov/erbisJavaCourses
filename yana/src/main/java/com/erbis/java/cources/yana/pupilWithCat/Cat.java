@@ -1,7 +1,7 @@
 package com.erbis.java.cources.yana.pupilWithCat;
 
 public class Cat {
-	private Toy toy = new Toy("Ball", "small", "yellow");
+	private Toy toy;
 	private String name;
 	private int age;
 	private String colour;
@@ -50,7 +50,12 @@ public class Cat {
 		System.out.println("Age: " + getAge());
 		System.out.println("Colour: " + colour);
 		System.out.println(" ");
-		toy.printInfo();
+		if (toy != null) {
+			toy.printInfo();
+		} else {
+			System.out.println(getName() + " has no any toy.");
+			System.out.println("________________________");
+		}
+		
 	}
-
 }
