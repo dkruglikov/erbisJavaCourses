@@ -1,9 +1,15 @@
 package com.erbis.java.cources.yana.pupilWithCat;
 
 public class Toy {
-	private String typeOfToy = "Ball";
-	private String size = "Small";
-	private String colour = "Green";
+	private String typeOfToy;
+	private String size;
+	private String colour;
+	
+	public Toy (String typeOfToy, String size, String colour) {
+		this.typeOfToy = typeOfToy;
+		this.size = size;
+		this.colour = colour;
+	}
 
 	public String getName() {
 		return typeOfToy;

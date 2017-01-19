@@ -1,10 +1,16 @@
 package com.erbis.java.cources.yana.pupilWithCat;
 
 public class Cat {
-	private Toy toy = new Toy();
-	private String name = "Murzik";
-	private int age = 2;
-	private String colour = "Black";
+	private Toy toy = new Toy("Ball", "small", "yellow");
+	private String name;
+	private int age;
+	private String colour;
+	
+	public Cat(String name, int age, String colour) {
+		this.name = name;
+		this.age = age;
+		this.colour = colour;
+	}
 
 	public Toy getToy() {
 		return toy;

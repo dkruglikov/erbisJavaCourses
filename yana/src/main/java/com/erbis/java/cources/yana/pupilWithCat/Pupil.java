@@ -1,9 +1,14 @@
 package com.erbis.java.cources.yana.pupilWithCat;
 
 public class Pupil {
-	private Cat cat = new Cat();
-	private String name = "Vasya";
-	private int age = 9;
+	private Cat cat = new Cat("Myrzik", 3, "black");
+	private String name;
+	private int age;
+
+	public Pupil(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
 
 	public Cat getCat() {
 		return cat;
@@ -28,7 +33,7 @@ public class Pupil {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 	public void printInfo() {
 		System.out.println("Pupil Info:");
 		System.out.println("Name : " + getName());
