@@ -6,7 +6,11 @@ public final class StringUtil {
 	}
 	
 	public static char getMostRepeatableChar(String s) {
-		return 0;
+		char mostRepeatable = 'a';
+		for (int i=0; i<s.length(); i++) {
+
+		}
+		return mostRepeatable;
 	}
 	
 	public static int getCharCount(String s) {
