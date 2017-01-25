@@ -2,6 +2,7 @@ package com.erbis.java.courses.algorithms.sort;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.Random;
 
@@ -30,7 +31,9 @@ public class SorterTest {
 	public void testRandomArray() {
 		Random random = new Random();
 		int[] array = random.ints(RND_ARRAY_SIZE).toArray();
+		System.out.println(Arrays.toString(array));
 		sorter.sort(array);
+		System.out.println(Arrays.toString(array));
 		Assert.assertTrue(isSorted(array));
 	}
 	
