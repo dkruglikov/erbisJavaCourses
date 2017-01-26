@@ -2,7 +2,7 @@ package com.erbis.java.courses.algorithms.sort;
 
 public class InsertionSorter {
 	
-	public void sort(int[] arrsy) {
+	public SortStat sort(int[] arrsy) {
 		throw new UnsupportedOperationException();
 	}
 	
