@@ -2,19 +2,26 @@ package com.erbis.java.courses.algorithms.sort;
 
 public class SelectionSorter extends InsertionSorter {
 	@Override
-	public void sort(int[] array) {
+	public SortStat sort(int[] array) {
+		SortStat stat = new SortStat();
+		stat.setSize(array.length);
+		long timeBefore = System.currentTimeMillis();
 		for (int i = 0; i < array.length; i++) {
-			int indexMin=i;
-			int min = array[i];
+			int indexMin = i;
+//			int min = array[i];
 			for (int j = i; j < array.length; j++) {
-				if (min > array[j]) {
-					min = array[j];
+				if (compare(array, j, indexMin, stat) < 0) {
 					indexMin = j;
 				}
+//				stat.setComparisons(stat.getComparisons() + 1);
+//				if (min > array[j]) {
+//					min = array[j];
+//					indexMin = j;
+//				}
 			}
-			int t = array[i];
-			array[i] = array[indexMin];
-			array[indexMin] = t;
+			swap(array, i, indexMin, stat);
 		}
+		stat.setTime(System.currentTimeMillis() - timeBefore);
+		return stat;
 	}
 }

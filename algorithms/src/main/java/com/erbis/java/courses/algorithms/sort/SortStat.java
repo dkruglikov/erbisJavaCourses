@@ -1,7 +1,7 @@
 package com.erbis.java.courses.algorithms.sort;
 
 public class SortStat {
-	
+
 	private int size;
 	private int comparisons;
 	private int swaps;
@@ -37,5 +37,9 @@ public class SortStat {
 
 	public void setTime(long time) {
 		this.time = time;
+	}
+
+	public String toString() {
+		return "Size=" + size + ", \nComparisons=" + comparisons + ", \nSwaps=" + swaps + ", \nTime=" + time;
 	}
 }

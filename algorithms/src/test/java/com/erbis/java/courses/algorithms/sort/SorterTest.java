@@ -14,7 +14,7 @@ public class SorterTest {
 	
 	private static final String RESOURCE_NAME = "/testClass.properties";
 	private static final String PROP_NAME_CLASS  = "class";
-	private static final int RND_ARRAY_SIZE = 50;
+	private static final int RND_ARRAY_SIZE = 50000;
 	private static InsertionSorter sorter;
 	
 	@BeforeClass
@@ -32,9 +32,10 @@ public class SorterTest {
 		Random random = new Random();
 		int[] array = random.ints(RND_ARRAY_SIZE).toArray();
 		System.out.println(Arrays.toString(array));
-		sorter.sort(array);
+		SortStat sortstat = sorter.sort(array);
 		System.out.println(Arrays.toString(array));
 		Assert.assertTrue(isSorted(array));
+		System.out.println(sortstat.toString());
 	}
 	
 	private boolean isSorted(int[] array) {

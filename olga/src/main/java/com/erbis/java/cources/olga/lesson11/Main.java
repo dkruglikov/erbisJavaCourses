@@ -1,13 +1,14 @@
 package com.erbis.java.cources.olga.lesson11;
 
 import com.erbis.java.cources.olga.lesson11.player.Player;
+import com.erbis.java.cources.olga.lesson11.player.PlayerFactory;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Player player0 = new Player();
-		Player playerNew = new Player();
-		Player playerTest = new Player();
+		Player player0 = PlayerFactory.createPlayer();
+		Player playerNew = PlayerFactory.createPlayer();
+		Player playerTest = PlayerFactory.createPlayer();
 		
 		player0.play("Hello");
 		playerTest.play("NY");

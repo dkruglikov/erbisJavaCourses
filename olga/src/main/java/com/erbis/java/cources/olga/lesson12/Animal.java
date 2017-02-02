@@ -1,18 +1,30 @@
 package com.erbis.java.cources.olga.lesson12;
 
-public class Animal {
-	private int age = 5;
-	private double weight = 10;
+abstract public class Animal {
+	private int age;
+	private double weight;
+	protected String testField="animal";
 	
-	public String sound(){
-		return "";
+	
+	public Animal(int age, double weight) {
+		this();
+		this.age = age;
+		this.weight = weight;
+		System.out.println("Animal::new(int, double)");
 	}
+
+	private Animal() {
+		System.out.println("Animal::new");
+	}
+	
+	abstract public String sound();
 	
 	public void move(double distance){
 		System.out.println("Moving " + distance + " meters.");
 	}
 
-	public String getInfo(){
+	@Override
+	public String toString(){
 		return "Age:" + age + "\n" + "Weight:" + weight;
 	}
 
@@ -23,5 +35,4 @@ public class Animal {
 	protected double getWeight() {
 		return weight;
 	}
-	
 }

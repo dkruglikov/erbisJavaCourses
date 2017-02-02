@@ -5,7 +5,7 @@ public class Player {
 	private static int MAX_SERIAL_NUMBER;
 	private int serialNumber;
 	
-	public Player() {
+	Player() {
 		serialNumber = MAX_SERIAL_NUMBER++;
 	}
 
@@ -23,4 +23,5 @@ public class Player {
 		System.out.println(getSerialNumber());
 		System.out.println("+++" +songName + "+++");
 	}
+	
 }
