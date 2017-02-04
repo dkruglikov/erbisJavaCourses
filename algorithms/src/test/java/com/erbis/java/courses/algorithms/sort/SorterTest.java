@@ -14,7 +14,10 @@ public class SorterTest {
 	private static final String RESOURCE_NAME = "/testClass.properties";
 	private static final String PROP_NAME_CLASS  = "class";
 	private static final int RND_ARRAY_SIZE = 50;
-	private static InsertionSorter sorter;
+	private static final int RND_ARRAY_VALUE_MIN = -32;
+	private static final int RND_ARRAY_VALUE_MAX = 32;
+	private static final int[] EMPTY_ARRAY = {};
+	private static Sorter sorter;
 	
 	@BeforeClass
 	public static void setUp() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -23,13 +26,32 @@ public class SorterTest {
 			properties.load(propertiesStream);
 		}
 		String className = properties.getProperty(PROP_NAME_CLASS);
-		sorter = (InsertionSorter) Class.forName(className).newInstance();
+		sorter = (Sorter) Class.forName(className).newInstance();
+	}
+	
+	@Test
+	public void testEmptyArray() {
+		int[] array = EMPTY_ARRAY;
+		sorter.sort(array);
+		Assert.assertTrue(isSorted(array));
+	}
+	
+	@Test
+	public void testOneElementArray() {
+		int[] array = new Random().ints(1, RND_ARRAY_VALUE_MIN, RND_ARRAY_VALUE_MAX).toArray();;
+		sorter.sort(array);
+		Assert.assertTrue(isSorted(array));
+	}
+	
+	public void testTwoElementsArray() {
+		int[] array = new Random().ints(2, RND_ARRAY_VALUE_MIN, RND_ARRAY_VALUE_MAX).toArray();;
+		sorter.sort(array);
+		Assert.assertTrue(isSorted(array));
 	}
 	
 	@Test
 	public void testRandomArray() {
-		Random random = new Random();
-		int[] array = random.ints(RND_ARRAY_SIZE).toArray();
+		int[] array = new Random().ints(RND_ARRAY_SIZE, RND_ARRAY_VALUE_MIN, RND_ARRAY_VALUE_MAX).toArray();
 		sorter.sort(array);
 		Assert.assertTrue(isSorted(array));
 	}
