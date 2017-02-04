@@ -66,6 +66,7 @@
     <!-- </module> -->
 
     <module name="TreeWalker">
+		<property name="tabWidth" value="4"/>
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See http://checkstyle.sf.net/config_javadoc.html -->
