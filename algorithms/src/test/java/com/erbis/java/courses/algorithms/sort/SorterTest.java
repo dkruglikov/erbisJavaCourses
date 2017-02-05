@@ -55,7 +55,6 @@ public class SorterTest {
 		int[] array = new Random().ints(RND_ARRAY_SIZE, RND_ARRAY_VALUE_MIN, RND_ARRAY_VALUE_MAX).toArray();
 		sorter.sort(array);
 		Assert.assertTrue(isSorted(array));
-		System.out.println(sortstat.toString());
 	}
 	
 	private boolean isSorted(int[] array) {

@@ -21,12 +21,11 @@ public class Bird extends Animal {
 	public void fly(double distance){
 		System.out.println("Moving " + distance + " meters.");
 	}
-	
+
 		
 	@Override
 	public String sound() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Hello!";
 	}
 
 	@Override
