@@ -19,16 +19,16 @@ public class SortStat {
 		return comparisons;
 	}
 
-	public void setComparisons(int comparisons) {
-		this.comparisons = comparisons;
+	public void increaseComparisons() {
+		comparisons++;
 	}
 
 	public int getSwaps() {
 		return swaps;
 	}
 
-	public void setSwaps(int swaps) {
-		this.swaps = swaps;
+	public void increaseSwaps() {
+		swaps++;
 	}
 
 	public long getTime() {
