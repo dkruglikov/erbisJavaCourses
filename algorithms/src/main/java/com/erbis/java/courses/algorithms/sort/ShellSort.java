@@ -14,9 +14,11 @@ public class ShellSort extends Sorter {
                     }
                 }
             }
+            if (gap == 1) {
+                InsertionSorter sort = new InsertionSorter();
+                sort.sort(sortedArray);
+            }
         }
-        InsertionSorter sort = new InsertionSorter();
-        sort.sort(sortedArray);
         for (int i = 0; i < array.length; i++) {
             System.out.println(sortedArray[i]);
         }

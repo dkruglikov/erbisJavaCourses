@@ -5,7 +5,7 @@ public final class Search {
     public static final int RESULT_ELEMENT_NOT_FOUND = -1;
 
     public Search() {
-        }
+    }
 
     public static int search(byte[] array, byte value) {
         int number = 0;
@@ -14,7 +14,7 @@ public final class Search {
                 number = index;
                 break;
             }
-            if (array[array.length - 1]!=value) {
+            if (array[array.length - 1] != value) {
                 number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
@@ -28,7 +28,7 @@ public final class Search {
                 number = index;
                 break;
             }
-            if (array[array.length - 1]!=value) {
+            if (array[array.length - 1] != value) {
                 number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
@@ -42,7 +42,7 @@ public final class Search {
                 number = index;
                 break;
             }
-            if (array[array.length - 1]!=value) {
+            if (array[array.length - 1] != value) {
                 number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
@@ -56,7 +56,7 @@ public final class Search {
                 number = index;
                 break;
             }
-            if (array[array.length - 1]!=value) {
+            if (array[array.length - 1] != value) {
                 number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
@@ -70,7 +70,7 @@ public final class Search {
                 number = index;
                 break;
             }
-            if (array[array.length - 1]!=value) {
+            if (array[array.length - 1] != value) {
                 number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
@@ -84,7 +84,7 @@ public final class Search {
                 number = index;
                 break;
             }
-            if (array[array.length - 1]!=value) {
+            if (array[array.length - 1] != value) {
                 number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
@@ -98,7 +98,7 @@ public final class Search {
                 number = index;
                 break;
             }
-            if (array[array.length - 1]!=value) {
+            if (array[array.length - 1] != value) {
                 number = RESULT_ELEMENT_NOT_FOUND;
             }
         }
@@ -250,7 +250,7 @@ public final class Search {
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
-        return sum/(array.length);
+        return sum / (array.length);
     }
 
     public static double avg(short[] array) {
@@ -258,7 +258,7 @@ public final class Search {
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
-        return sum/(array.length);
+        return sum / (array.length);
     }
 
     public static double avg(int[] array) {
@@ -266,7 +266,7 @@ public final class Search {
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
-        return sum/(array.length);
+        return sum / (array.length);
     }
 
     public static double avg(long[] array) {
@@ -274,7 +274,7 @@ public final class Search {
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
-        return sum/(array.length);
+        return sum / (array.length);
     }
 
     public static double avg(char[] array) {
@@ -282,7 +282,7 @@ public final class Search {
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
-        return sum/(array.length);
+        return sum / (array.length);
     }
 
     public static double avg(float[] array) {
@@ -290,7 +290,7 @@ public final class Search {
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
-        return sum/(array.length);
+        return sum / (array.length);
     }
 
     public static double avg(double[] array) {
@@ -298,6 +298,6 @@ public final class Search {
         for (int index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
-        return sum/(array.length);
+        return sum / (array.length);
     }
 }
