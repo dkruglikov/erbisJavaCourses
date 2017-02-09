@@ -1,7 +1,7 @@
 package com.erbis.java.courses.algorithms.sort;
 
 public abstract class Sorter {
-	
+
 	public SortStat sort(int[] array) {
 		SortStat sortStat = new SortStat();
 		sortStat.setSize(array.length);
@@ -10,21 +10,21 @@ public abstract class Sorter {
 		sortStat.setTime(System.currentTimeMillis() - startTime);
 		return sortStat;
 	}
-	
+
 	protected abstract void sort(int[] array, SortStat sortStat);
-	
+
 	protected int compare(int[] array, int i0, int i1, SortStat sortStat) {
 		sortStat.increaseComparisons();
 		return Integer.compare(array[i0], array[i1]);
 	}
-	
+
 	protected void swap(int[] array, int i0, int i1, SortStat sortStat) {
 		sortStat.increaseSwaps();
 		int temp = array[i0];
 		array[i0] = array[i1];
 		array[i1] = temp;
 	}
-	
+
 	protected void move(int[] array, int fromIndex, int toIndex,
 			SortStat sortStat) {
 		sortStat.increaseSwaps();

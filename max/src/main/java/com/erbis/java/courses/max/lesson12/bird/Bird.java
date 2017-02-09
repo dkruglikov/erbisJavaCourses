@@ -7,8 +7,10 @@ public class Bird extends Animal {
     private boolean flying = true;
     private double wingsWidth = 1.5;
 
-    public Bird(){
-        System.out.println("Bird::new");
+    public Bird(double age, double weight, boolean flying, double wingsWidth) {
+        super(age, weight);
+        this.flying = flying;
+        this.wingsWidth = wingsWidth;
     }
 
     public void fly(double distance) {
@@ -32,5 +34,9 @@ public class Bird extends Animal {
     public void printTestField() {
         System.out.println(testField); // this.testField
         System.out.println(super.testField);
+    }
+
+    public String sounds() {
+        return "Chirik-Chirik";
     }
 }

@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+
 public class SorterTest {
 	
 	private static final String RESOURCE_NAME = "/testClass.properties";
