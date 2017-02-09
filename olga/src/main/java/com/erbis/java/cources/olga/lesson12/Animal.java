@@ -1,6 +1,6 @@
 package com.erbis.java.cources.olga.lesson12;
 
-abstract public class Animal {
+public abstract class Animal {
 	private int age;
 	private double weight;
 	protected String testField="animal";
@@ -17,9 +17,9 @@ abstract public class Animal {
 		System.out.println("Animal::new");
 	}
 	
-	abstract public String sound();
+	public abstract String sound();
 	
-	public void move(double distance){
+	protected void move(double distance){
 		System.out.println("Moving " + distance + " meters.");
 	}
 
