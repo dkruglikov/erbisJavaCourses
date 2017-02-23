@@ -38,7 +38,7 @@ public final class StringUtil {
 	}
 	
 	public static char getLastChar(String s) {
-		char lastChar = s.charAt(s.length()-1);
+		char lastChar = s.charAt(s.length() - 1);
 		return lastChar;
 	}
 }

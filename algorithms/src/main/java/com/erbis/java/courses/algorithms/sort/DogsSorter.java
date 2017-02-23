@@ -7,8 +7,8 @@ public class DogsSorter {
 	private Sorter sorter = new BubbleSort();
 	
 	public int[] sortAges(Dog[] dogs) {
-		int[] ages = new int [dogs.length];
-		for (int i = 0; i < dogs.length; i++){
+		int[] ages = new int[dogs.length];
+		for (int i = 0; i < dogs.length; i++) {
 			ages[i] = dogs[i].getAge();
 		}
 		sorter.sort(ages);
@@ -16,8 +16,8 @@ public class DogsSorter {
 	}
 
 	public int[] sortWeights(Dog[] dogs) {
-		int[] weights = new int [dogs.length];
-		for (int i = 0; i < dogs.length; i++){
+		int[] weights = new int[dogs.length];
+		for (int i = 0; i < dogs.length; i++) {
 			weights[i] = dogs[i].getWeight();
 		}
 		sorter.sort(weights);

@@ -1,7 +1,8 @@
 package com.erbis.java.courses.algorithms.sort;
 
 public class Main {
-	public static void main (String[] args) {
+
+	public static void main(String[] args) {
 		Dog[] dogs = new Dog[] {
 				new Dog(3, 9),
 				new Dog(1, 1),

@@ -6,23 +6,33 @@ public class Bird extends Animal {
 	private boolean flying = true;
 	private double wingsWidth = 12.5;
 	protected String testField  = "Bird";
+	private boolean isFlying;
+	private String sound;
 	
-	public Bird(){
-		System.out.println("Bird :: new");
+//	public Bird() {
+//		System.out.println("Bird :: new");
+//		super (15, 9.9);
+//	}
+	
+	public Bird(int age, double weight, boolean isFlying, double wingsWidth, String sound) {
+		super(age, weight);
+		this.isFlying = isFlying;
+		this.wingsWidth = wingsWidth;
+		this.sound = sound;
 	}
 	
-	public void printTestField(){ // this.testField
+	public void printTestField() { // this.testField
 		System.out.println(testField);
 		System.out.println(super.testField);
 	}
 	
-	public void fly (double distance) {
+	public void fly(double distance) {
 		System.out.println("Flying " + distance + " meters.");
 	}
 	
 	@Override
 	public void move(double distance) {
-		System.out.println("Flying to " + distance);
+		fly(distance);
 	}
 
 	public void move(String location) {
@@ -34,5 +44,8 @@ public class Bird extends Animal {
 		return super.toString() + "\n" + "Flying: " + flying + "\n" + "Wings weight: " + wingsWidth;
 	}
 	
-
+	@Override
+	public String sound() {
+		return sound;
+	}
 }
