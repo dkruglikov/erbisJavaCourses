@@ -4,7 +4,7 @@ public final class Search {
 
     public static final int RESULT_ELEMENT_NOT_FOUND = -1;
 
-    public Search() {
+    private Search() {
     }
 
     public static int search(byte[] array, byte value) {

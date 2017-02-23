@@ -1,26 +1,24 @@
 package com.erbis.java.courses.algorithms.sort;
 
-public class ShellSort extends Sorter {
+public class ShellSort extends InsertionSorter {
 
     @Override
-    public void sort(int[] array, SortStat sortStat) {
-        int[] sortedArray = array;
-        for (int gap = (array.length) / 2; gap > 0; gap /= 2) {
+    protected void sort(int[] array, SortStat sortStat) {
+        for (int gap = (array.length) / 2; gap > 1; gap /= 2) {
             for (int index = 0; index < (array.length - gap); index++) {
                 if ((compare(array, index, (index + gap), sortStat)) > 0) {
                     swap(array, index, (index + gap), sortStat);
-                    while (((index - gap) > 0) && ((compare(array, index, (index - gap), sortStat)) > 0)) {
+                    while (((index - gap) > 0)
+                            && ((compare(array, index, (index - gap), sortStat))
+                            > 0)) {
                         swap(array, index, (index - gap), sortStat);
                     }
                 }
             }
-            if (gap == 1) {
-                InsertionSorter sort = new InsertionSorter();
-                sort.sort(sortedArray);
-            }
         }
+        super.sort(array, sortStat);
         for (int i = 0; i < array.length; i++) {
-            System.out.println(sortedArray[i]);
+            System.out.println(array[i]);
         }
     }
 }

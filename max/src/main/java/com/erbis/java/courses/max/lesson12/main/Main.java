@@ -1,16 +1,17 @@
 package com.erbis.java.courses.max.lesson12.main;
 
 import com.erbis.java.courses.max.lesson12.Animal;
-import com.erbis.java.courses.max.lesson12.Sound;
 import com.erbis.java.courses.max.lesson12.bird.Bird;
 import com.erbis.java.courses.max.lesson12.fish.Fish;
+import com.erbis.java.courses.max.lesson12.fish.Shark;
 
 public class Main {
     public static void main(String[] argv) {
 //        testOverride();
 //        testConstructors();
 //        testSounds();
-        testPolymorph();
+//        testPolymorph();
+        testFinalShark();
     }
 
     private static void testOverride() {
@@ -52,7 +53,7 @@ public class Main {
         Animal animal0 = new Bird(15, 15, true, 15);
         System.out.println(animal0);
         System.out.println("_________________");
-        Animal animal1 = new Fish(5, 88);
+        Animal animal1 = new Fish(15, 15);
         System.out.println(animal1);
         System.out.println(animal0.sounds());
         System.out.println(animal1.sounds());
@@ -65,5 +66,10 @@ public class Main {
         } else {
             System.out.println("animal is not a fish");
         }
+    }
+
+    private final static void testFinalShark() {
+        Shark shark = new Shark(55, 990, "Vanessa");
+        System.out.println(shark);
     }
 }
