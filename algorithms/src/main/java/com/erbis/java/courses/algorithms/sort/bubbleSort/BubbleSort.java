@@ -4,9 +4,9 @@ import com.erbis.java.courses.algorithms.sort.InsertionSorter;
 import com.erbis.java.courses.algorithms.sort.SortStat;
 
 public class BubbleSort extends InsertionSorter {
-	private SortStat sortStat = new SortStat();
+//	private SortStat sortStat = new SortStat();
 	@Override
-	public void sort(int[] array) {
+	public void sort(int[] array, SortStat sortStat) {
 		int i0 = 0;
 		int i1 = 0;
 		for (int j = array.length - 1; j > 0; j--){
