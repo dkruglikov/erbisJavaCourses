@@ -6,14 +6,10 @@ public final class Main {
     }
 
     public static void main(String[] args) {
-        ShellSort shellSort = new ShellSort();
-        System.out.println(shellSort);
+//        ShellSort shellSort = new ShellSort();
+//        System.out.println(shellSort);
         System.out.println("\n");
-
-        Fish fish = new Fish(5);
-        int var0 = initialize(fish.name);
-        int var1 = initialize(fish.age);
-        int var2 = initialize(fish.weight);
+        testFish();
     }
 
     public static int initialize(String message) {
@@ -24,5 +20,10 @@ public final class Main {
     public static int initialize(int message) {
         System.out.println(message);
         return 0;
+    }
+
+    private static void testFish() {
+        Fish fish = new Fish(1);
+        System.out.println(fish);
     }
 }
