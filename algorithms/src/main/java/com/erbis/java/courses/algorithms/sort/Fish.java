@@ -2,7 +2,7 @@ package com.erbis.java.courses.algorithms.sort;
 
 public class Fish {
     private String name;
-    private int age = 2;
+    private final int age = 2;
     private int weight;
 
     public Fish(int weight2) {

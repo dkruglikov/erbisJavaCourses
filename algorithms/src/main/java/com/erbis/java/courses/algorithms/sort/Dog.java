@@ -12,4 +12,12 @@ public class Dog {
     public int getWeight() {
         return weight;
     }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 }
