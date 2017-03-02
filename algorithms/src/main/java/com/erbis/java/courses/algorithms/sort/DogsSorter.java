@@ -1,10 +1,10 @@
 package com.erbis.java.courses.algorithms.sort;
 
-import com.erbis.java.courses.algorithms.sort.bubbleSort.BubbleSort;
+import com.erbis.java.courses.algorithms.sort.bubbleSort.BubbleSorter;
 
 public class DogsSorter {
 	
-	private Sorter sorter = new BubbleSort();
+	private Sorter sorter = new BubbleSorter();
 	
 	public int[] sortAges(Dog[] dogs) {
 		int[] ages = new int[dogs.length];

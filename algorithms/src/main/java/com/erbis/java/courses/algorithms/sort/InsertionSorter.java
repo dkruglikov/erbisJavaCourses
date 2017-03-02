@@ -1,6 +1,6 @@
 package com.erbis.java.courses.algorithms.sort;
 
-public class InsertionSorter extends Sorter {
+public final class InsertionSorter extends Sorter {
 
 	@Override
 	protected void sort(int[] array, SortStat sortStat) {

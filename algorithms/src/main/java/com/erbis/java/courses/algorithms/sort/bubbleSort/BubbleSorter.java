@@ -1,9 +1,9 @@
 package com.erbis.java.courses.algorithms.sort.bubbleSort;
 
-import com.erbis.java.courses.algorithms.sort.InsertionSorter;
 import com.erbis.java.courses.algorithms.sort.SortStat;
+import com.erbis.java.courses.algorithms.sort.Sorter;
 
-public class BubbleSort extends InsertionSorter {
+public final class BubbleSorter extends Sorter {
 //	private SortStat sortStat = new SortStat();
 	@Override
 	public void sort(int[] array, SortStat sortStat) {
