@@ -1,6 +1,6 @@
 package com.erbis.java.courses.algorithms.sort;
 
-public class SortStat {
+public final class SortStat {
 	
 	private int size;
 	private int comparisons;

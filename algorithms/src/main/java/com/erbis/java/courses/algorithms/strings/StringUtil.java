@@ -2,11 +2,13 @@ package com.erbis.java.courses.algorithms.strings;
 
 public final class StringUtil {
 	
+	private static final int C_65636 = 65636;
+
 	private StringUtil() {
 	}
 	
 	public static char getMostRepeatableChar(String s) {
-		int[] counts = new int[65636];
+		int[] counts = new int[C_65636];
 		for (int i = 0; i < s.length(); i++) {
 			counts[s.charAt(i)]++;
 		}
