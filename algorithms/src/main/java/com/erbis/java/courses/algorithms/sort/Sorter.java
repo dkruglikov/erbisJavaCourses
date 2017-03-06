@@ -3,8 +3,7 @@ package com.erbis.java.courses.algorithms.sort;
 public abstract class Sorter {
 
     public SortStat sort(int[] array) {
-        SortStat sortStat = new SortStat();
-        sortStat.setSize(array.length);
+        SortStat sortStat = new SortStat(array.length);
         long startTime = System.currentTimeMillis();
         sort(array, sortStat);
         sortStat.setTime(System.currentTimeMillis() - startTime);
@@ -18,7 +17,7 @@ public abstract class Sorter {
         }
         ShellSort sort = new ShellSort();
         sort(arrayToSort);
-        SortStat stats = new SortStat();
+        SortStat stats = new SortStat(dogs.length);
         return stats;
     }
 
@@ -29,7 +28,7 @@ public abstract class Sorter {
         }
         ShellSort sort = new ShellSort();
         sort(arrayToSort);
-        SortStat stats = new SortStat();
+        SortStat stats = new SortStat(dogs.length);
         return stats;
     }
 

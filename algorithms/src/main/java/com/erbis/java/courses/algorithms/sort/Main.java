@@ -1,5 +1,6 @@
 package com.erbis.java.courses.algorithms.sort;
 
+//CHECKSTYLE: OFF
 public final class Main {
 
     private Main() {
