@@ -1,7 +1,5 @@
 package com.erbis.java.courses.algorithms.sort;
 
-import com.erbis.java.courses.algorithms.sort.bubbleSort.BubbleSorter;
-
 public class DogsSorter {
 	
 	private Sorter sorter = new BubbleSorter();

@@ -1,7 +1,4 @@
-package com.erbis.java.courses.algorithms.sort.bubbleSort;
-
-import com.erbis.java.courses.algorithms.sort.SortStat;
-import com.erbis.java.courses.algorithms.sort.Sorter;
+package com.erbis.java.courses.algorithms.sort;
 
 public final class BubbleSorter extends Sorter {
 //	private SortStat sortStat = new SortStat();
