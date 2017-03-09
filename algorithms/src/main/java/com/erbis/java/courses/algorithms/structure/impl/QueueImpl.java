@@ -5,15 +5,10 @@ import com.erbis.java.courses.algorithms.structure.Queue;
 public class QueueImpl implements Queue {
 
     private QueueElement head;
+    private int size = 0;
 
     @Override
     public int size() {
-        int size = 0;
-        QueueElement carret = head;
-        if (carret != null) {
-            size++;
-            carret.getNext();
-        }
         return size;
     }
 
@@ -31,11 +26,19 @@ public class QueueImpl implements Queue {
             QueueElement last = getLast();
             last.setNext(tail);
         }
+        size++;
     }
 
     @Override
     public String poll() {
-        return null;
+        if (head == null) {
+            return null;
+        } else {
+            String firstElement = head.getValue();
+            head = head.getNext();
+            size--;
+            return firstElement;
+        }
     }
 
     private QueueElement getLast() {

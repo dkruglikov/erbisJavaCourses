@@ -11,8 +11,11 @@ public final class QueueMetrics {
 	
 	public static void main(String[] args) {
 		measureAdd(new ArrayQueue());
+		measureAdd(new QueueImpl());
 		measureRemove(new ArrayQueue());
+		//measureRemove(new QueueImpl());
 		measureAll(new ArrayQueue());
+		measureAll(new QueueImpl());
 	}
 	
 	private static void measureAdd(Queue queue) {
