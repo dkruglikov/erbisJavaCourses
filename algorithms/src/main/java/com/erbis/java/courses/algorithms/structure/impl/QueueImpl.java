@@ -2,42 +2,47 @@ package com.erbis.java.courses.algorithms.structure.impl;
 
 import com.erbis.java.courses.algorithms.structure.Queue;
 
-import java.util.Collection;
+public class QueueImpl implements Queue {
 
-public class QueueImpl extends QueueElement implements Queue {
-
-    private int queueSize;
-    private String queue;
+    private QueueElement head;
 
     @Override
     public int size() {
-        return queueSize;
+        int size = 0;
+        QueueElement carret = head;
+        if (carret != null) {
+            size++;
+            carret.getNext();
+        }
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        if (queueSize == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return head == null;
     }
 
     @Override
     public void add(String element) {
-        setHeadElement(element);
-        setPreviousElement(element);
-        setElement(element);
-        element = getNextElement(element);
-        queueSize++;
+        QueueElement tail = new QueueElement(element);
+        if (head == null) {
+            head = tail;
+        } else {
+            QueueElement last = getLast();
+            last.setNext(tail);
+        }
     }
 
     @Override
     public String poll() {
-        String headElement = getHeadElement();
-        setPreviousElement(headElement);
-        queueSize--;
-        setPreviousElement(getElement());
-        return headElement;
+        return null;
+    }
+
+    private QueueElement getLast() {
+        QueueElement carret = head;
+        while (carret.getNext() != null) {
+            carret = carret.getNext();
+        }
+        return carret;
     }
 }

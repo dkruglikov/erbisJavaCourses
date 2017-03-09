@@ -1,44 +1,23 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
-public class QueueElement {
+class QueueElement {
 
-    private String headElement;
-    private String previousElement;
-    private String element;
-    private String nextElement;
+    private final String value;
+    private QueueElement next;
 
-    void setPreviousElement(String element) {
-        if (!(previousElement==null)&&!(previousElement==headElement)) {
-            this.previousElement = element;
-        }
+    QueueElement(String value) {
+        this.value = value;
     }
 
-    String getPreviousElement() {
-        return previousElement;
+    String getValue() {
+        return value;
     }
 
-    void setHeadElement(String element) {
-        if (headElement==null)
-        this.headElement = element;
+    void setNext(QueueElement next) {
+        this.next = next;
     }
 
-    String getHeadElement() {
-        return headElement;
-    }
-
-    void setElement(String element) {
-        this.element = element;
-    }
-
-    String getElement() {
-        return element;
-    }
-
-    void setNextElement(String element) {
-        this.nextElement = element;
-    }
-
-    String getNextElement(String element) {
-        return nextElement;
+    QueueElement getNext() {
+        return next;
     }
 }
