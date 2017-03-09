@@ -26,8 +26,9 @@ public interface Queue {
 	void add(String element);
 	
 	/**
-	 * Returns head of queue and removes element from it.
-	 * @return head of queue
+	 * Returns head of queue and removes element from it or <code>null</code>
+	 * if queue empty.
+	 * @return head of queue or <code>null</code> if queue empty
 	 */
 	String poll();
 }
