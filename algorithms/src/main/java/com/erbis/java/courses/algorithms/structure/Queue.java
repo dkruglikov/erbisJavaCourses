@@ -1,7 +1,7 @@
 package com.erbis.java.courses.algorithms.structure;
 
 /**
- * LIFO queue conract.
+ * LIFO queue contract.
  * @author dkruglikov
  */
 public interface Queue {

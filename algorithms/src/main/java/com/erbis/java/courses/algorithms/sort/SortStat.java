@@ -2,7 +2,7 @@ package com.erbis.java.courses.algorithms.sort;
 
 public final class SortStat {
 	
-	private int size;
+	private final int size;
 	private int comparisons;
 	private int swaps;
 	private long time;
@@ -10,10 +10,14 @@ public final class SortStat {
 	public int getSize() {
 		return size;
 	}
-
-	public void setSize(int size) {
+	
+	public SortStat(int size) {
 		this.size = size;
 	}
+	
+//	public void setSize(int size) {
+//		this.size = size;
+//	}
 
 	public int getComparisons() {
 		return comparisons;
