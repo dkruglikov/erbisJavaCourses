@@ -13,7 +13,7 @@ public final class QueueMetrics {
 		measureAdd(new ArrayQueue());
 		measureAdd(new QueueImpl());
 		measureRemove(new ArrayQueue());
-		//measureRemove(new QueueImpl());
+		measureRemove(new QueueImpl());
 		measureAll(new ArrayQueue());
 		measureAll(new QueueImpl());
 	}
