@@ -6,6 +6,7 @@ public class QueueImpl implements Queue {
 
     private QueueElement head;
     private int size;
+    private QueueElement tail;
 
     @Override
     public int size() {
@@ -28,9 +29,9 @@ public class QueueImpl implements Queue {
         if (head == null) {
             head = tail;
         } else {
-            QueueElement last = getLast();
-            last.setNext(tail);
+            this.tail.setNext(tail);
         }
+        this.tail = tail;
     }
 
     @Override
@@ -44,12 +45,23 @@ public class QueueImpl implements Queue {
         }
     }
 
-    private QueueElement getLast() {
+//    private QueueElement getLast() {
+//        QueueElement carret = head;
+//        while (carret.getNext() != null) {
+//            carret = carret.getNext();
+//        }
+//        return carret;
+//    }
+    
+    private boolean conteins(String element) {
         QueueElement carret = head;
-        while (carret.getNext() != null) {
-            carret = carret.getNext();
+        while (carret != null) {
+            if (element.equals(carret.getValue())){
+                return true;
+            }
+            carret = carret.getNext();  
         }
-        return carret;
+        return false;
     }
 
 }

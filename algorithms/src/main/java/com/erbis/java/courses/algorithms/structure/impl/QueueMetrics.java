@@ -16,7 +16,14 @@ public final class QueueMetrics {
 		measureRemove(new QueueImpl());
 		measureAll(new ArrayQueue());
 		measureAll(new QueueImpl());
+		
+//		Queue queue1 = new QueueImpl(); 
+//		queue1.add("123");
+//		queue1.add("456");
+//		System.out.println(queue1.size());
+//		System.out.println(queue1.size());
 	}
+	
 	
 	private static void measureAdd(Queue queue) {
 		System.out.println("Measuring adding elements...");
