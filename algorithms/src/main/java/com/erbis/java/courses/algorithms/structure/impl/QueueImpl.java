@@ -5,6 +5,7 @@ import com.erbis.java.courses.algorithms.structure.Queue;
 public class QueueImpl implements Queue {
 
     private QueueElement head;
+    private QueueElement tail;
     private int size = 0;
 
     @Override
@@ -23,9 +24,9 @@ public class QueueImpl implements Queue {
         if (head == null) {
             head = tail;
         } else {
-            QueueElement last = getLast();
-            last.setNext(tail);
+            this.tail.setNext(tail);
         }
+        this.tail = tail;
         size++;
     }
 
@@ -41,11 +42,14 @@ public class QueueImpl implements Queue {
         }
     }
 
-    private QueueElement getLast() {
+    public boolean contains(String element) {
         QueueElement carret = head;
-        while (carret.getNext() != null) {
+        while (carret != null) {
+            if (carret.getValue().equals(element)) {
+                return true;
+            }
             carret = carret.getNext();
         }
-        return carret;
+        return false;
     }
 }
