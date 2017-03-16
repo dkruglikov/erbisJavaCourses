@@ -7,12 +7,12 @@ public final class SortStat {
 	private int swaps;
 	private long time;
 
-	public int getSize() {
-		return size;
-	}
-	
 	public SortStat(int size) {
 		this.size = size;
+	}
+
+	public int getSize() {
+		return size;
 	}
 	
 //	public void setSize(int size) {
