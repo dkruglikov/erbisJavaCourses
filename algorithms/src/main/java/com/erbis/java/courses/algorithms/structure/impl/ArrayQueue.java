@@ -1,5 +1,7 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
+import java.util.Objects;
+
 import com.erbis.java.courses.algorithms.structure.Queue;
 
 /**
@@ -32,6 +34,11 @@ public class ArrayQueue implements Queue {
 	}
 
 	@Override
+	public void addAll(Queue queue) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
 	public String poll() {
 		if (isEmpty()) {
 			return null;
@@ -44,5 +51,15 @@ public class ArrayQueue implements Queue {
 			elements[i - 1] = oldElements[i];
 		}
 		return element;
+	}
+	
+	@Override
+	public boolean contains(String element) {
+		for (String el : elements) {
+			if (Objects.equals(el, element)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
