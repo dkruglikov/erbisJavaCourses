@@ -176,7 +176,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize0To1() {
+	public void testAddAllOrder0To1() {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queue.addAll(queueToAdd);
@@ -185,7 +185,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize0To2() {
+	public void testAddAllOrder0To2() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -196,7 +196,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize1To0() {
+	public void testAddAllOrder1To0() {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queue.addAll(queueToAdd);
@@ -205,7 +205,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize1To1() {
+	public void testAddAllOrder1To1() {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
@@ -216,7 +216,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize1To2() {
+	public void testAddAllOrder1To2() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -229,7 +229,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize2To0() {
+	public void testAddAllOrder2To0() {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queueToAdd.add("Bar0");
@@ -240,7 +240,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize2To1() {
+	public void testAddAllOrder2To1() {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
@@ -254,7 +254,7 @@ public class QueueImplTest {
 	
 	
 	@Test
-	public void testAddAllSize2To2() {
+	public void testAddAllOrder2To2() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -269,7 +269,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize2To2Same() {
+	public void testAddAllOrder2To2Same() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
