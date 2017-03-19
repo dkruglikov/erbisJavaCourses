@@ -26,9 +26,23 @@ public interface Queue {
 	void add(String element);
 	
 	/**
+	 * Adds all elements from specified queue to this queue.
+	 * @param queue queue to add
+	 */
+	void addAll(Queue queue);
+	
+	/**
 	 * Returns head of queue and removes element from it or <code>null</code>
 	 * if queue empty.
 	 * @return head of queue or <code>null</code> if queue empty
 	 */
 	String poll();
+	
+	/**
+	 * Checks if queue contains specified element.
+	 * @param element element
+	 * @return  <code>true</code> if queue contains element
+	 * and <code>false</code> otherwise
+	 */
+	boolean contains(String element);
 }
