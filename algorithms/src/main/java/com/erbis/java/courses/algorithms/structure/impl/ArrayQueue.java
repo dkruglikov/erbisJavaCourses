@@ -1,8 +1,7 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
-import java.util.Objects;
-
 import com.erbis.java.courses.algorithms.structure.Queue;
+import java.util.Objects;
 
 /**
  * Queue array-based implementation.
@@ -10,7 +9,7 @@ import com.erbis.java.courses.algorithms.structure.Queue;
  */
 public class ArrayQueue implements Queue {
 	
-	private String[] elements = {};
+	private Object[] elements = {};
 
 	@Override
 	public int size() {
@@ -23,8 +22,8 @@ public class ArrayQueue implements Queue {
 	}
 
 	@Override
-	public void add(String element) {
-		String[] oldElements = elements;
+	public void add(Object element) {
+		Object[] oldElements = elements;
 		elements = new String[oldElements.length + 1];
 		//System.arraycopy(oldElements, 0, elements, 0, oldElements.length);
 		for (int i = 0; i < oldElements.length; i++) {
@@ -39,13 +38,13 @@ public class ArrayQueue implements Queue {
 	}
 
 	@Override
-	public String poll() {
+	public Object poll() {
 		if (isEmpty()) {
 			return null;
 		}
-		String element = elements[0];
-		String[] oldElements = elements;
-		elements = new String[oldElements.length - 1];
+		Object element = elements[0];
+		Object[] oldElements = elements;
+		elements = new Object[oldElements.length - 1];
 		//System.arraycopy(oldElements, 1, elements, 0, elements.length);
 		for (int i = 1; i < oldElements.length; i++) {
 			elements[i - 1] = oldElements[i];
@@ -54,8 +53,8 @@ public class ArrayQueue implements Queue {
 	}
 	
 	@Override
-	public boolean contains(String element) {
-		for (String el : elements) {
+	public boolean contains(Object element) {
+		for (Object el : elements) {
 			if (Objects.equals(el, element)) {
 				return true;
 			}
