@@ -23,7 +23,7 @@ public interface Queue {
 	 * Adds element to the end of queue.
 	 * @param element element to add
 	 */
-	void add(String element);
+	void add(Object element);
 	
 	/**
 	 * Adds all elements from specified queue to this queue.
@@ -36,7 +36,7 @@ public interface Queue {
 	 * if queue empty.
 	 * @return head of queue or <code>null</code> if queue empty
 	 */
-	String poll();
+	Object poll();
 	
 	/**
 	 * Checks if queue contains specified element.
@@ -44,5 +44,5 @@ public interface Queue {
 	 * @return  <code>true</code> if queue contains element
 	 * and <code>false</code> otherwise
 	 */
-	boolean contains(String element);
+	boolean contains(Object element);
 }
