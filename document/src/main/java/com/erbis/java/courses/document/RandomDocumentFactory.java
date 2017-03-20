@@ -17,6 +17,7 @@ public class RandomDocumentFactory {
 		short pageCount = (short) random.nextInt(Short.MAX_VALUE + 1);
 		long creationTimestamp = System.currentTimeMillis();
 		String type = TYPES[random.nextInt(TYPES.length)];
-		throw new UnsupportedOperationException();
+		Document document = new Document(title, author, type, pageCount, creationTimestamp);
+		return document;
 	}
 }
