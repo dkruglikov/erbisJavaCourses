@@ -15,6 +15,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 		for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
 			queue.add(factory.create());
 		}
+		new ConsoleDocumentPrinter().print(queue);
 	}
 
 	@Override
