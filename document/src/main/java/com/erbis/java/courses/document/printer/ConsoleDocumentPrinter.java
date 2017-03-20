@@ -5,10 +5,18 @@ import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
+/**
+ * Console document printer implementation.
+ * @author dkruglikov
+ */
 public class ConsoleDocumentPrinter implements DocumentPrinter {
 	
 	private static final byte COUNT_DOCUMENTS = 8;
 	
+	/**
+	 * Demo main method.
+	 * @param args command line arguments
+	 */
 	public static void main(String[] args) {
 		RandomDocumentFactory factory = new RandomDocumentFactory();
 		Queue queue = new QueueImpl();
