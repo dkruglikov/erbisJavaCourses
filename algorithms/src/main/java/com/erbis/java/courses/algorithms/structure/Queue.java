@@ -1,7 +1,7 @@
 package com.erbis.java.courses.algorithms.structure;
 
 /**
- * LIFO queue conract.
+ * LIFO queue contract.
  * @author dkruglikov
  */
 public interface Queue {
@@ -23,11 +23,26 @@ public interface Queue {
 	 * Adds element to the end of queue.
 	 * @param element element to add
 	 */
-	void add(String element);
+	void add(Object element);
 	
 	/**
-	 * Returns head of queue and removes element from it.
-	 * @return head of queue
+	 * Adds all elements from specified queue to this queue.
+	 * @param queue queue to add
 	 */
-	String poll();
+	void addAll(Queue queue);
+	
+	/**
+	 * Returns head of queue and removes element from it or <code>null</code>
+	 * if queue empty.
+	 * @return head of queue or <code>null</code> if queue empty
+	 */
+	Object poll();
+	
+	/**
+	 * Checks if queue contains specified element.
+	 * @param element element
+	 * @return  <code>true</code> if queue contains element
+	 * and <code>false</code> otherwise
+	 */
+	boolean contains(Object element);
 }
