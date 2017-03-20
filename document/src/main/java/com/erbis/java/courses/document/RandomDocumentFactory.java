@@ -2,6 +2,11 @@ package com.erbis.java.courses.document;
 
 import java.util.Random;
 
+/**
+ * Document factory that creates random <code>{@link Document}</code> using predefined set of parameters
+ * (like title, author etc.)
+ * @author dkruglikov
+ */
 public class RandomDocumentFactory {
 	
 	private static final String[] TITLES = {"Algebra", "Algorithms", "Arithmetics", "Astrology", "Astronomy",
@@ -11,6 +16,10 @@ public class RandomDocumentFactory {
 	private static final String[] TYPES = {"Mathematics", "Others", "Philosophy", "Sport"};
 	private final Random random = new Random();
 	
+	/**
+	 * Creates new random document.
+	 * @return document
+	 */
 	public Document create() {
 		String title = TITLES[random.nextInt(TITLES.length)];
 		String author = AUTHORS[random.nextInt(AUTHORS.length)];
