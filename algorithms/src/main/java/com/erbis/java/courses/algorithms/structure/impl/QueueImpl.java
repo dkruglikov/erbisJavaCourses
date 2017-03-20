@@ -31,6 +31,10 @@ public class QueueImpl implements Queue {
     }
 
     @Override
+    public void addAll(Queue queue) {
+    }
+
+    @Override
     public String poll() {
         if (head == null) {
             return null;
