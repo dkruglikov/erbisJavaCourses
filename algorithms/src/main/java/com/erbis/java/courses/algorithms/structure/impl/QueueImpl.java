@@ -64,4 +64,16 @@ public class QueueImpl implements Queue {
         return false;
     }
 
+    @Override
+    public void addAll(Queue queue) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public boolean contains(String element) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
 }
