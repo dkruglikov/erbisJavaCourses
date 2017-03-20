@@ -1,10 +1,9 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
+import com.erbis.java.courses.algorithms.structure.Queue;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.erbis.java.courses.algorithms.structure.Queue;
 
 public class QueueImplTest {
 	
