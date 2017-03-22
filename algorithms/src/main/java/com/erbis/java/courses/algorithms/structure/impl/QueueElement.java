@@ -3,13 +3,13 @@ package com.erbis.java.courses.algorithms.structure.impl;
 class QueueElement {
 	
 	private QueueElement next;
-	private final String value;
+	private final Object value;
 	
-	QueueElement(String value) {
+	QueueElement(Object value) {
 		this.value = value;
 	}
 	
-	public String getValue() {
+	public Object getValue() {
 		return value;
 	}
 	

@@ -10,11 +10,11 @@ public class QueueImpl implements Queue {
 
     @Override
     public int size() {
-        QueueElement carret = head;
-        while (carret != null) {
-            size++;
-            carret = carret.getNext();
-        }
+//        QueueElement carret = head;
+//        while (carret != null) {
+//            size++;
+//            carret = carret.getNext();
+//        }
         return size;
     }
 
@@ -24,39 +24,34 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public void add(String element) {
+    public void add(Object element) {
         QueueElement tail = new QueueElement(element);
         if (head == null) {
             head = tail;
         } else {
             this.tail.setNext(tail);
         }
+        size++;
         this.tail = tail;
     }
 
     @Override
-    public String poll() {
+    public Object poll() {
         if (head != null) {
-            String result = head.getValue();
+            Object result = head.getValue();
             head = head.getNext();
+            size--;
             return result;
         } else {
             return null;
         }
     }
-
-//    private QueueElement getLast() {
-//        QueueElement carret = head;
-//        while (carret.getNext() != null) {
-//            carret = carret.getNext();
-//        }
-//        return carret;
-//    }
     
-    private boolean conteins(String element) {
+    @Override
+    public boolean contains(Object element) {
         QueueElement carret = head;
         while (carret != null) {
-            if (element.equals(carret.getValue())){
+            if (element.equals(carret.getValue())) {
                 return true;
             }
             carret = carret.getNext();  
@@ -66,14 +61,14 @@ public class QueueImpl implements Queue {
 
     @Override
     public void addAll(Queue queue) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public boolean contains(String element) {
-        // TODO Auto-generated method stub
-        return false;
+        QueueImpl queueImpl = (QueueImpl) queue;
+        if (tail != null) {
+            tail.setNext(queueImpl.head);
+            size += queue.size();
+        } else {
+            head = queueImpl.head;
+            size = queue.size();
+        }   
     }
 
 }
