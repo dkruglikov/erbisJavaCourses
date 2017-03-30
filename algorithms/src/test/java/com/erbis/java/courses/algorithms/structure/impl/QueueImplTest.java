@@ -283,6 +283,25 @@ public class QueueImplTest {
 	}
 	
 	@Test
+	public void testAddAllToEmpty1StabilitySize() {
+		Queue queueToAdd = new QueueImpl();
+		queueToAdd.add("Foo0");
+		queue.addAll(queueToAdd);
+		queueToAdd.add("Baz0");
+		Assert.assertEquals(1, queue.size());
+	}
+	
+	@Test
+	public void testAddAllToEmpty2StabilitySize() {
+		Queue queueToAdd = new QueueImpl();
+		queueToAdd.add("Foo0");
+		queueToAdd.add("Bar0");
+		queue.addAll(queueToAdd);
+		queueToAdd.add("Baz0");
+		Assert.assertEquals(2, queue.size());
+	}
+	
+	@Test
 	public void testAddAllStabilitySize() {
 		queue.add("Foo");
 		queue.add("Bar");
@@ -295,7 +314,29 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllStabilityOrder() {
+	public void testAddAllToEmpty1StabilityOrder() {
+		Queue queueToAdd = new QueueImpl();
+		queueToAdd.add("Foo0");
+		queue.addAll(queueToAdd);
+		queueToAdd.add("Baz0");
+		Assert.assertEquals("Foo0", queue.poll());
+		Assert.assertNull(queue.poll());
+	}
+	
+	@Test
+	public void testAddAllToEmpty2StabilityOrder() {
+		Queue queueToAdd = new QueueImpl();
+		queueToAdd.add("Foo0");
+		queueToAdd.add("Bar0");
+		queue.addAll(queueToAdd);
+		queueToAdd.add("Baz0");
+		Assert.assertEquals("Foo0", queue.poll());
+		Assert.assertEquals("Bar0", queue.poll());
+		Assert.assertNull(queue.poll());
+	}
+	
+	@Test
+	public void testAddAllStabilityOrderAdd() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -303,6 +344,23 @@ public class QueueImplTest {
 		queueToAdd.add("Bar0");
 		queue.addAll(queueToAdd);
 		queueToAdd.add("Baz0");
+		Assert.assertEquals("Foo", queue.poll());
+		Assert.assertEquals("Bar", queue.poll());
+		Assert.assertEquals("Foo0", queue.poll());
+		Assert.assertEquals("Bar0", queue.poll());
+		Assert.assertNull(queue.poll());
+	}
+	
+	@Test
+	public void testAddAllStabilityOrderPoll() {
+		queue.add("Foo");
+		queue.add("Bar");
+		Queue queueToAdd = new QueueImpl();
+		queueToAdd.add("Foo0");
+		queueToAdd.add("Bar0");
+		queue.addAll(queueToAdd);
+		queueToAdd.poll();
+		queueToAdd.poll();
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Bar", queue.poll());
 		Assert.assertEquals("Foo0", queue.poll());
