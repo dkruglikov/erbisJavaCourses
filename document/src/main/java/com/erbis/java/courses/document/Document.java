@@ -1,5 +1,7 @@
 package com.erbis.java.courses.document;
 
+import java.util.Objects;
+
 /**
  * Document domain object class.
  */
@@ -40,6 +42,22 @@ public class Document {
 		this.type = type;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() == obj.getClass()) {
+			Document other = (Document) obj;
+			return Objects.equals(title, other.title) && Objects.equals(author, other.author)
+					&& pageCount == other.pageCount;
+		}
+		return false;
+	}
+	
 	/**
 	 * Returns document title.
 	 * @return title
