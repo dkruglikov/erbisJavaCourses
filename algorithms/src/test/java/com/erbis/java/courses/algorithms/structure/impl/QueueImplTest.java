@@ -456,7 +456,7 @@ public class QueueImplTest {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.add("Baz");
-		Assert.assertTrue(queue.contains("Boo"));
+		Assert.assertFalse(queue.contains("Boo"));
 	}
 	
 	@Test
@@ -472,6 +472,6 @@ public class QueueImplTest {
 		queue.add("Foo");
 		queue.add("Foo");
 		queue.add("Foo");
-		Assert.assertTrue(queue.contains("Boo"));
+		Assert.assertFalse(queue.contains("Boo"));
 	}
 }
