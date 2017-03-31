@@ -1,6 +1,6 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
-class QueueElement {
+public class QueueElement {
 	
 	private QueueElement next;
 	private final Object value;
@@ -13,7 +13,7 @@ class QueueElement {
 		return value;
 	}
 	
-	QueueElement getNext() {
+	public QueueElement getNext() {
 		return next;
 	}
 	

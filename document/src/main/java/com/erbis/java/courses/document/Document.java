@@ -1,5 +1,7 @@
 package com.erbis.java.courses.document;
 
+import java.util.Objects;
+
 /**
  * Document domain object class.
  */
@@ -36,8 +38,23 @@ public class Document {
 	 * @see #Document(java.lang.String, java.lang.String, short, long)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
-		this(title, author, pageCount, creationTimestamp);
+		this(title, author, pageCount, creationTimestamp); //call constructor with parameters
 		this.type = type;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+	    if (this == obj) {
+	        return true;
+	    }
+	    if (obj == null) {
+	        return false;
+	    }
+	    if (obj instanceof Document) {
+	        Document other = (Document) obj;
+	        return Objects.equals(author, other.author);
+	    }
+	    return false;
 	}
 
 	/**

@@ -7,14 +7,14 @@ public class QueueImpl implements Queue {
     private QueueElement head;
     private int size;
     private QueueElement tail;
+    
+
+    public QueueElement getHead() {
+        return head;
+    }
 
     @Override
     public int size() {
-//        QueueElement carret = head;
-//        while (carret != null) {
-//            size++;
-//            carret = carret.getNext();
-//        }
         return size;
     }
 
@@ -62,13 +62,10 @@ public class QueueImpl implements Queue {
     @Override
     public void addAll(Queue queue) {
         QueueImpl queueImpl = (QueueImpl) queue;
-        if (tail != null) {
-            tail.setNext(queueImpl.head);
-            size += queue.size();
-        } else {
-            head = queueImpl.head;
-            size = queue.size();
+        QueueElement carret = queueImpl.head;
+        while (carret != null) {
+            add(carret.getValue());
+            carret = carret.getNext();   
         }   
     }
-
 }

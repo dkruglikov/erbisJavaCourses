@@ -1,6 +1,7 @@
 package com.erbis.java.courses.document.printer;
 
 import com.erbis.java.courses.algorithms.structure.Queue;
+import com.erbis.java.courses.algorithms.structure.impl.QueueElement;
 import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.RandomDocumentFactory;
@@ -18,6 +19,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
+	    testContains();
 		RandomDocumentFactory factory = new RandomDocumentFactory();
 		Queue queue = new QueueImpl();
 		for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
@@ -25,10 +27,33 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 		}
 		new ConsoleDocumentPrinter().print(queue);
 	}
+	// CHECKSTYLE:OFF
+	private static void testContains() {
+	    Queue q = new QueueImpl(); 
+	    Document doc = new Document("Jack", null, (short) 30, 0);
+	    q.add(doc);
+	    Document testDoc = new Document("Jack", null, (short) 30, 0);
+	    
+//	    if (q.contains(testDoc)) {
+//	        System.out.println("Contains");
+//	    } else {
+//	        System.out.println("Not contains");
+//	    }
+	    
+	    String x = q.contains(testDoc) ? "Contains" : "Not contains";
+	    System.out.println(q.contains("Jack") ? "Contains" : "Not contains");
+	}
+	
+	//CHECKSTYLE:ON
 
 	@Override
 	public void print(Queue queue) {
-		throw new UnsupportedOperationException("Not supported yet.");
+	    QueueImpl queueImpl = (QueueImpl) queue;
+	    QueueElement carret = queueImpl.getHead();
+	    while (carret != null) {
+	        print((Document) carret.getValue());
+	        carret = carret.getNext();
+	    }
 	}
 
 	private void print(Document document) {
