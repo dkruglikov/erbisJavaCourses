@@ -42,6 +42,7 @@ public class Document {
 		this.type = type;
 	}
 	
+	//CHECKSTYLE:OFF
 	@Override
 	public boolean equals(Object obj) {
 	    if (this == obj) {
@@ -52,10 +53,18 @@ public class Document {
 	    }
 	    if (obj instanceof Document) {
 	        Document other = (Document) obj;
-	        return Objects.equals(author, other.author);
+	        
+	        if (Objects.equals(author, other.author) 
+	                & Objects.equals(title, other.title) 
+	                & Objects.equals(pageCount, other.pageCount)) {
+	            return true;
+	        } else {
+	            return false;
+	        }
 	    }
 	    return false;
 	}
+	//CHECKSTYLE:ON
 
 	/**
 	 * Returns document title.

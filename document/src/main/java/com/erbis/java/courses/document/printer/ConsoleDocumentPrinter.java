@@ -1,7 +1,6 @@
 package com.erbis.java.courses.document.printer;
 
 import com.erbis.java.courses.algorithms.structure.Queue;
-import com.erbis.java.courses.algorithms.structure.impl.QueueElement;
 import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.RandomDocumentFactory;
@@ -40,7 +39,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 //	        System.out.println("Not contains");
 //	    }
 	    
-	    String x = q.contains(testDoc) ? "Contains" : "Not contains";
+//	    String x = q.contains(testDoc) ? "Contains" : "Not contains";
 	    System.out.println(q.contains("Jack") ? "Contains" : "Not contains");
 	}
 	
@@ -48,11 +47,14 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 
 	@Override
 	public void print(Queue queue) {
-	    QueueImpl queueImpl = (QueueImpl) queue;
-	    QueueElement carret = queueImpl.getHead();
-	    while (carret != null) {
-	        print((Document) carret.getValue());
-	        carret = carret.getNext();
+//	    QueueImpl queueImpl = (QueueImpl) queue;
+//	    QueueElement carret = queueImpl.getHead();
+//	    while (carret != null) {
+//	        print((Document) carret.getValue());
+//	        carret = carret.getNext();
+//	    }
+	    while (queue.size() > 0) {
+	        print((Document) queue.poll());
 	    }
 	}
 

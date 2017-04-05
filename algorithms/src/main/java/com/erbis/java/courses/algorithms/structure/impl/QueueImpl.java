@@ -61,11 +61,14 @@ public class QueueImpl implements Queue {
 
     @Override
     public void addAll(Queue queue) {
-        QueueImpl queueImpl = (QueueImpl) queue;
-        QueueElement carret = queueImpl.head;
-        while (carret != null) {
-            add(carret.getValue());
-            carret = carret.getNext();   
-        }   
+//        QueueImpl queueImpl = (QueueImpl) queue;
+//        QueueElement carret = queueImpl.head;
+//        while (carret != null) {
+//            add(carret.getValue());
+//            carret = carret.getNext();   
+//        }   
+        while (queue.size() > 0) {
+            add(queue.poll());
+        }
     }
 }
