@@ -45,6 +45,7 @@ public class Document {
 	//CHECKSTYLE:OFF
 	@Override
 	public boolean equals(Object obj) {
+	//CHECKSTYLE:ON
 	    if (this == obj) {
 	        return true;
 	    }
@@ -64,7 +65,6 @@ public class Document {
 	    }
 	    return false;
 	}
-	//CHECKSTYLE:ON
 
 	/**
 	 * Returns document title.
