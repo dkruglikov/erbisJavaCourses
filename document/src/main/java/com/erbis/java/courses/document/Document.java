@@ -1,10 +1,12 @@
 package com.erbis.java.courses.document;
 
+import javax.print.Doc;
+
 /**
  * Document domain object class.
  */
 public class Document {
-	
+
 	private final String title;
 	private final String author;
 	private final short pageCount;
@@ -38,6 +40,20 @@ public class Document {
 	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
 		this(title, author, pageCount, creationTimestamp);
 		this.type = type;
+	}
+
+	@Override
+	public boolean equals (Object object) {
+		if(this == object) {
+			return true;
+		}
+		if (this == null) {
+			return false;
+		}
+		Document other = (Document) object;
+		return (author.equals((other.author))
+				& title.equals((other.title))
+				& pageCount==other.pageCount);
 	}
 
 	/**

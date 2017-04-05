@@ -19,7 +19,7 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public void add(String element) {
+    public void add(Object element) {
         QueueElement tail = new QueueElement(element);
         if (head == null) {
             head = tail;
@@ -32,21 +32,29 @@ public class QueueImpl implements Queue {
 
     @Override
     public void addAll(Queue queue) {
+        QueueImpl queue1 = (QueueImpl) queue;
+        QueueElement carret;
+        carret = queue1.head;
+        while ((carret != null)) {
+            add(carret.getValue());
+            queue1.poll();
+            carret = carret.getNext();
+        }
     }
 
     @Override
-    public String poll() {
+    public Object poll() {
         if (head == null) {
             return null;
         } else {
-            String firstElement = head.getValue();
+            Object firstElement = head.getValue();
             head = head.getNext();
             size--;
             return firstElement;
         }
     }
 
-    public boolean contains(String element) {
+    public boolean contains(Object element) {
         QueueElement carret = head;
         while (carret != null) {
             if (carret.getValue().equals(element)) {

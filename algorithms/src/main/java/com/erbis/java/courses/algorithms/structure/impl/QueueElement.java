@@ -2,14 +2,14 @@ package com.erbis.java.courses.algorithms.structure.impl;
 
 class QueueElement {
 
-    private final String value;
+    private final Object value;
     private QueueElement next;
 
-    QueueElement(String value) {
+    QueueElement(Object value) {
         this.value = value;
     }
 
-    String getValue() {
+    Object getValue() {
         return value;
     }
 
