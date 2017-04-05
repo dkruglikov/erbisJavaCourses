@@ -6,34 +6,81 @@ import com.erbis.java.courses.algorithms.structure.Queue;
  * Basic queue implementation.
  */
 public class QueueImpl implements Queue {
+	private QueueElement head;
 
 	@Override
 	public int size() {
-		throw new UnsupportedOperationException();
+		if (head == null) {
+			return 0;
+		} else {
+			int counter = 1;
+			QueueElement cerret = head;
+			while (cerret.getNext() != null) {
+				counter++;
+				cerret = cerret.getNext();
+			}
+			return counter;
+		}
 	}
 
 	@Override
 	public boolean isEmpty() {
-		throw new UnsupportedOperationException();
+		// if (head == null) {
+		// return true;
+		// } else {
+		// return false;
+		// }
+		return head == null;
 	}
 
 	@Override
 	public void add(Object element) {
-		throw new UnsupportedOperationException();
+		if (head == null) {
+			head = new QueueElement(element);
+		} else {
+			QueueElement cerret = head;
+			while (cerret.getNext() != null) {
+				cerret = cerret.getNext();
+			}
+			QueueElement newElement = new QueueElement(element);
+			cerret.setNext(newElement);
+		}
 	}
 
 	@Override
 	public void addAll(Queue queue) {
-		throw new UnsupportedOperationException();
+		Object object = queue.poll();
+		while (object != null) {
+			// this.
+			add(object);
+			object = queue.poll();
+		}
 	}
 
 	@Override
 	public Object poll() {
-		throw new UnsupportedOperationException();
+		if (head == null) {
+			return null;
+		} else {
+			Object result = head.getElement();
+			head = head.getNext();
+			return result;
+		}
 	}
 
 	@Override
 	public boolean contains(Object element) {
-		throw new UnsupportedOperationException();
+		if (head == null) {
+			return false;
+		} else {
+			QueueElement cerret = head;
+			do {
+				if (cerret.getElement().equals(element)) {
+					return true;
+				}
+				cerret = cerret.getNext();
+			} while (cerret != null);
+			return false;
+		}
 	}
 }

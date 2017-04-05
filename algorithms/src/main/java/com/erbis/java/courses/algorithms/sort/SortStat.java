@@ -7,6 +7,9 @@ public class SortStat {
 	private int swaps;
 	private long time;
 
+	public SortStat() {
+	}
+
 	public SortStat(int size) {
 		this.size = size;
 	}

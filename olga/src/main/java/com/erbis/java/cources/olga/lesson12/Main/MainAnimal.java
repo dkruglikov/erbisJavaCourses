@@ -3,13 +3,15 @@ package com.erbis.java.cources.olga.lesson12.Main;
 import com.erbis.java.cources.olga.lesson12.Animal;
 import com.erbis.java.cources.olga.lesson12.bird.Bird;
 import com.erbis.java.cources.olga.lesson12.fish.Fish;
+import com.erbis.java.cources.olga.lesson12.fish.Shark;
 
 public class MainAnimal {
 
 	public static void main(String[] args) {
 //		testOverride();
 //		testConstructors();
-		testPolymorph();
+//		testPolymorph();
+		testFinal();
 	}
 
 	private static void testOverride() {
@@ -63,5 +65,15 @@ public class MainAnimal {
 //		Object o1 = animal1;
 //		String s1 = (String) o1;
 //		String s1 = (String) ((Object)animal1); 
+	}
+	
+	private static void testFinal() {
+		Shark shark = new Shark(4,5,"Vanessa"); 
+		System.out.println(shark);//println visivaet u objekta toString
+//		System.out.println(shark.toString());//takaja ge strochka
+		int x;
+//		System.out.println(x);
+		x=10;
+		x=0;
 	}
 }

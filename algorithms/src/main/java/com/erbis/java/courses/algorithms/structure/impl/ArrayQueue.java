@@ -5,10 +5,11 @@ import java.util.Objects;
 
 /**
  * Queue array-based implementation.
+ * 
  * @author dkruglikov
  */
 public class ArrayQueue implements Queue {
-	
+
 	private Object[] elements = {};
 
 	@Override
@@ -25,7 +26,7 @@ public class ArrayQueue implements Queue {
 	public void add(Object element) {
 		Object[] oldElements = elements;
 		elements = new String[oldElements.length + 1];
-		//System.arraycopy(oldElements, 0, elements, 0, oldElements.length);
+		// System.arraycopy(oldElements, 0, elements, 0, oldElements.length);
 		for (int i = 0; i < oldElements.length; i++) {
 			elements[i] = oldElements[i];
 		}
@@ -45,13 +46,13 @@ public class ArrayQueue implements Queue {
 		Object element = elements[0];
 		Object[] oldElements = elements;
 		elements = new Object[oldElements.length - 1];
-		//System.arraycopy(oldElements, 1, elements, 0, elements.length);
+		// System.arraycopy(oldElements, 1, elements, 0, elements.length);
 		for (int i = 1; i < oldElements.length; i++) {
 			elements[i - 1] = oldElements[i];
 		}
 		return element;
 	}
-	
+
 	@Override
 	public boolean contains(Object element) {
 		for (Object el : elements) {

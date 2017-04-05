@@ -5,10 +5,10 @@ import com.erbis.java.courses.algorithms.structure.Queue;
 public final class QueueMetrics {
 
 	private static final short OPERATION_COUNT = 4096;
-	
+
 	private QueueMetrics() {
 	}
-	
+
 	public static void main(String[] args) {
 		measureAdd(new ArrayQueue());
 		measureAdd(new QueueImpl());
@@ -17,7 +17,7 @@ public final class QueueMetrics {
 		measureAll(new ArrayQueue());
 		measureAll(new QueueImpl());
 	}
-	
+
 	private static void measureAdd(Queue queue) {
 		System.out.println("Measuring adding elements...");
 		long start = System.currentTimeMillis();
@@ -30,7 +30,7 @@ public final class QueueMetrics {
 		System.out.print(finish - start);
 		System.out.println(" ms");
 	}
-	
+
 	private static void measureRemove(Queue queue) {
 		for (int i = 0; i < OPERATION_COUNT; i++) {
 			queue.add(String.valueOf(i));
@@ -46,7 +46,7 @@ public final class QueueMetrics {
 		System.out.print(finish - start);
 		System.out.println(" ms");
 	}
-	
+
 	private static void measureAll(Queue queue) {
 		System.out.println("Measuring everything...");
 		long start = System.currentTimeMillis();

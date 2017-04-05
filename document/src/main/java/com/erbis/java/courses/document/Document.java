@@ -1,10 +1,12 @@
 package com.erbis.java.courses.document;
 
+import java.util.Objects;
+
 /**
  * Document domain object class.
  */
 public class Document {
-	
+
 	private final String title;
 	private final String author;
 	private final short pageCount;
@@ -13,11 +15,17 @@ public class Document {
 
 	/**
 	 * Creates document with specified parameters.
-	 * @param title title
-	 * @param author author
-	 * @param pageCount page count
-	 * @param creationTimestamp creation timestamp in milliseconds
-	 * @see #Document(java.lang.String, java.lang.String, short, long, java.lang.String)
+	 * 
+	 * @param title
+	 *            title
+	 * @param author
+	 *            author
+	 * @param pageCount
+	 *            page count
+	 * @param creationTimestamp
+	 *            creation timestamp in milliseconds
+	 * @see #Document(java.lang.String, java.lang.String, short, long,
+	 *      java.lang.String)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
 		this.title = title;
@@ -28,11 +36,17 @@ public class Document {
 
 	/**
 	 * Creates document with specified parameters.
-	 * @param title title
-	 * @param author author
-	 * @param pageCount page count
-	 * @param creationTimestamp creation timestamp in milliseconds
-	 * @param type type
+	 * 
+	 * @param title
+	 *            title
+	 * @param author
+	 *            author
+	 * @param pageCount
+	 *            page count
+	 * @param creationTimestamp
+	 *            creation timestamp in milliseconds
+	 * @param type
+	 *            type
 	 * @see #Document(java.lang.String, java.lang.String, short, long)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
@@ -40,8 +54,27 @@ public class Document {
 		this.type = type;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (obj instanceof Document) {
+			Document other = (Document) obj;
+			return Objects.equals(author, other.author) && Objects.equals(title, other.title)
+					&& Objects.equals(pageCount, other.pageCount)
+					&& Objects.equals(creationTimestamp, other.creationTimestamp);
+
+		}
+		return false;
+	}
+
 	/**
 	 * Returns document title.
+	 * 
 	 * @return title
 	 */
 	public String getTitle() {
@@ -50,6 +83,7 @@ public class Document {
 
 	/**
 	 * Returns document author.
+	 * 
 	 * @return author
 	 */
 	public String getAuthor() {
@@ -58,6 +92,7 @@ public class Document {
 
 	/**
 	 * Returns document page count.
+	 * 
 	 * @return page count
 	 */
 	public short getPageCount() {
@@ -66,6 +101,7 @@ public class Document {
 
 	/**
 	 * Returns document creation timestamp in milliseconds.
+	 * 
 	 * @return creation timestamp
 	 */
 	public long getCreationTimestamp() {
@@ -74,6 +110,7 @@ public class Document {
 
 	/**
 	 * Returns document type.
+	 * 
 	 * @return type
 	 * @see #setType(String)
 	 */
@@ -83,7 +120,9 @@ public class Document {
 
 	/**
 	 * Sets document type.
-	 * @param type type
+	 * 
+	 * @param type
+	 *            type
 	 * @see #getType()
 	 */
 	public void setType(String type) {

@@ -19,36 +19,36 @@ public class CalculatorFinal {
 	}
 	
 	public double plus(double arg) {
-		lastOperation="plus";
-		lastResult+=arg;
+		lastOperation = "plus";
+		lastResult += arg;
 		print(arg);
 		return lastResult;
 	}
 	
 	public double minus(double arg) {
-		lastOperation="minus";
-		lastResult-=arg;	
+		lastOperation = "minus";
+		lastResult -= arg;
 		print(arg);
 		return lastResult;
 	}
 	
 	public double multiplyation(double arg) {
-		lastOperation="mult";
-		lastResult*=arg;		
+		lastOperation = "mult";
+		lastResult *= arg;
 		print(arg);
 		return lastResult;
 	}
 	
 	public double division(double arg) {
-		lastOperation="division";
-		lastResult/=arg;		
+		lastOperation = "division";
+		lastResult /= arg;
 		print(arg);
 		return lastResult;
 	}
 	
 	public double remainder(double arg) {
-		lastOperation="remainder";
-		lastResult%=arg;	
+		lastOperation = "remainder";
+		lastResult %= arg;
 		print(arg);
 		return lastResult;
 	}
