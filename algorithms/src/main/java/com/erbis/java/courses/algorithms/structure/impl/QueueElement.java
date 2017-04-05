@@ -9,7 +9,7 @@ class QueueElement {
 		this.value = value;
 	}
 	
-	public Object getValue() {
+	Object getValue() {
 		return value;
 	}
 	
