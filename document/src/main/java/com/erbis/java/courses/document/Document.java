@@ -52,11 +52,24 @@ public class Document {
 		if (this == null) {
 			return false;
 		}
-		Document other = (Document) object;
-		return (author.equals((other.author))
-				& title.equals((other.title))
-				& pageCount==other.pageCount);
-	}
+		if(object instanceof Document) {
+			Document other = (Document) object;
+			if ((author == null)&&(((Document) object).author == null)) {
+				return true;
+			}
+			if ((title == null)&&(((Document) object).title == null)) {
+				return true;
+			}
+			if ((author != null) && (title != null) && (pageCount != 0)) {
+				return (author.equals((other.author))
+						& title.equals((other.title))
+						& pageCount == other.pageCount);
+			} else {
+				return false;
+			}
+		}
+		return false;
+    }
 
 	/**
 	 * Returns document title.

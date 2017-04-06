@@ -5,6 +5,8 @@ import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
+import javax.print.Doc;
+
 /**
  * Console document printer implementation.
  *
@@ -40,7 +42,11 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
     @Override
     public void print(Queue queue) {
         Queue q = new QueueImpl();
-        q.addAll(queue);
+        if (queue instanceof Document) {
+            while (!q.isEmpty()) {
+                print((Document) queue.poll());
+            }
+        }
     }
 
     private void print(Document document) {
