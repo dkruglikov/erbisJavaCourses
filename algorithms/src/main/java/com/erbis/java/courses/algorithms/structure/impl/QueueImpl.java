@@ -1,6 +1,7 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
 import com.erbis.java.courses.algorithms.structure.Queue;
+import java.util.Objects;
 
 /**
  * Basic queue implementation.
@@ -8,6 +9,10 @@ import com.erbis.java.courses.algorithms.structure.Queue;
 public class QueueImpl implements Queue {
 	private QueueElement head;
 
+	private int size;
+	private QueueElement head;
+	private QueueElement tail;
+	
 	@Override
 	public int size() {
 		if (head == null) {

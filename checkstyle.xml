@@ -28,7 +28,7 @@
     -->
 
     <property name="fileExtensions" value="java, properties, xml"/>
-
+	
     <!-- Checks that a package-info.java file exists for each package.     -->
     <!-- See http://checkstyle.sf.net/config_javadoc.html#JavadocPackage -->
     <!--<module name="JavadocPackage"/>-->
@@ -135,10 +135,10 @@
         <module name="AvoidInlineConditionals"/>
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
-        <module name="HiddenField">
+		<!--<module name="HiddenField">
 			<property name="ignoreConstructorParameter" value="true"/>
 			<property name="ignoreSetter" value="true"/>
-		</module>
+		</module>-->
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
         <module name="MagicNumber"/>
@@ -161,6 +161,7 @@
         <module name="TodoComment"/>
         <module name="UpperEll"/>
 
+		<module name="FileContentsHolder"/>
     </module>
 
 	<module name="SuppressionCommentFilter"/>

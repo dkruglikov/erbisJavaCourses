@@ -54,8 +54,10 @@ public class Document {
 		this.type = type;
 	}
 
+	//CHECKSTYLE:OFF
 	@Override
 	public boolean equals(Object obj) {
+	//CHECKSTYLE:ON
 		if (this == obj) {
 			return true;
 		}
