@@ -54,14 +54,9 @@ public class Document {
 	    }
 	    if (obj instanceof Document) {
 	        Document other = (Document) obj;
-	        
-	        if (Objects.equals(author, other.author) 
-	                & Objects.equals(title, other.title) 
-	                & Objects.equals(pageCount, other.pageCount)) {
-	            return true;
-	        } else {
-	            return false;
-	        }
+	        return Objects.equals(author, other.author) 
+	                && Objects.equals(title, other.title) 
+	                && Objects.equals(pageCount, other.pageCount);
 	    }
 	    return false;
 	}
