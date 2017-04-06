@@ -1,8 +1,5 @@
 package com.erbis.java.courses.document;
 
-import javax.print.Doc;
-import java.util.Objects;
-
 /**
  * Document domain object class.
  */
@@ -47,16 +44,16 @@ public class Document {
 	@Override
 	public boolean equals (Object object) {
 	//CHECKSTYLE:ON
-		if(this == object) {
+		if (this == object) {
 			return true;
 		}
 		if (this == null) {
 			return false;
 		}
-		if(object instanceof Document) {
+		if (object instanceof Document) {
 			Document other = (Document) object;
-			if (((author == null)&&(((Document) object).author == null))
-                    &&(((title == null)&&(((Document) object).title == null)))) {
+			if (((author == null) && (((Document) object).author == null))
+                    && (((title == null) && (((Document) object).title == null)))) {
 				return true;
 			}
 

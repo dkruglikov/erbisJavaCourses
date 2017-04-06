@@ -5,8 +5,6 @@ import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
-import javax.print.Doc;
-
 /**
  * Console document printer implementation.
  *
@@ -22,7 +20,6 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-        testContains();
         RandomDocumentFactory factory = new RandomDocumentFactory();
         Queue queue = new QueueImpl();
         for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
@@ -32,11 +29,19 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
     }
 
     private static void testContains() {
+        //CHECKSTYLE:OFF
         Queue queue = new QueueImpl();
         Document doc = new Document("Jack", "life", (short) 30, 0);
         queue.add(doc);
         Document testDoc = new Document("Jack", "life", (short) 550, 0);
-        System.out.println(queue.equals(testDoc) ? "Contains" : "Not contains");
+        String result;
+        if (queue.equals(testDoc)) {
+            result = "Contains";
+        } else {
+            result = "Not contains";
+        }
+        System.out.println(result);
+        //CHECKSTYLE:ON
     }
 
     @Override
