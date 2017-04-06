@@ -7,7 +7,6 @@ import java.util.Objects;
  * Basic queue implementation.
  */
 public class QueueImpl implements Queue {
-	private QueueElement head;
 
 	private int size;
 	private QueueElement head;
