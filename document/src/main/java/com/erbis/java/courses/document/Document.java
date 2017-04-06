@@ -1,6 +1,7 @@
 package com.erbis.java.courses.document;
 
 import javax.print.Doc;
+import java.util.Objects;
 
 /**
  * Document domain object class.
@@ -54,12 +55,11 @@ public class Document {
 		}
 		if(object instanceof Document) {
 			Document other = (Document) object;
-			if ((author == null)&&(((Document) object).author == null)) {
+			if (((author == null)&&(((Document) object).author == null))
+                    &&(((title == null)&&(((Document) object).title == null)))) {
 				return true;
 			}
-			if ((title == null)&&(((Document) object).title == null)) {
-				return true;
-			}
+
 			if ((author != null) && (title != null) && (pageCount != 0)) {
 				return (author.equals((other.author))
 						& title.equals((other.title))
