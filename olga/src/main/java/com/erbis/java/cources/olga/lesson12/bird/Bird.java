@@ -3,9 +3,10 @@ package com.erbis.java.cources.olga.lesson12.bird;
 import com.erbis.java.cources.olga.lesson12.Animal;
 
 public class Bird extends Animal {
-	boolean flying = true;
-	double wingWidth = 0.3;
-	protected String testField="bird";
+	private static final double DEFAULT_WING_WIDTH = 0.3;
+	private boolean flying = true;
+	private double wingWidth = DEFAULT_WING_WIDTH;
+	private String testField = "bird";
 	
 //	public Bird() {
 //		super(15, 9.9);// vizov construktora roditelskogo klassa s parametrami
@@ -14,11 +15,11 @@ public class Bird extends Animal {
 	
 	public Bird(int age, double weight, boolean flying, double wingWidth) {
 		super(age, weight);
-		this.flying = flying;
-		this.wingWidth = wingWidth;
+		this.setFlying(flying);
+		this.setWingWidth(wingWidth);
 	}
 
-	public void fly(double distance){
+	public void fly(double distance) {
 		System.out.println("Moving " + distance + " meters.");
 	}
 
@@ -34,17 +35,41 @@ public class Bird extends Animal {
 		}
 
 
-	public void move(String location) {//overload
+	public void move(String location) { //overload
 		System.out.println("Flying to" + location);
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "\n" + flying + "\n" + wingWidth;
+		return super.toString() + "\n" + isFlying() + "\n" + getWingWidth();
 	}
 	
-	public void printTestField(){
-		System.out.println(testField);//this.testField
-		System.out.println(super.testField);
+	public void printTestField() {
+		System.out.println(getTestField()); //this.testField
+		System.out.println(super.getTestField());
+	}
+
+	public boolean isFlying() {
+		return flying;
+	}
+
+	public void setFlying(boolean flying) {
+		this.flying = flying;
+	}
+
+	public double getWingWidth() {
+		return wingWidth;
+	}
+
+	public void setWingWidth(double wingWidth) {
+		this.wingWidth = wingWidth;
+	}
+
+	public String getTestField() {
+		return testField;
+	}
+
+	public void setTestField(String testField) {
+		this.testField = testField;
 	}
 }

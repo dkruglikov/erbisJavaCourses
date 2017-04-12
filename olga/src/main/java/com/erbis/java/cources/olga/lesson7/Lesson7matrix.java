@@ -1,13 +1,22 @@
 package com.erbis.java.cources.olga.lesson7;
 
-public class lesson7Matrix {
-
+public final class Lesson7matrix {
+	private static final int ELEMENT4 = 4;
+	private static final int ELEMENT3 = 3;
+	private static final int ELEMENT2 = 1;
+	private static final int ELEMENT1 = 2;
+	private static final int ELEMENT = 8;
+	private static final int LENGTH3 = 3;
+	private static final int LENGTH2 = 4;
+	private static final int LENGTH1 = 3;
+	private Lesson7matrix() {
+	}
 	public static void main(String[] args) {
-		int[][] matrix = new int[3][];
+		int[][] matrix = new int[LENGTH1][];
 
-		matrix[0] = new int[4];
-		matrix[1] = new int[] { 2, -1 };
-		matrix[2] = new int[3];
+		matrix[0] = new int[LENGTH2];
+		matrix[1] = new int[] {ELEMENT1, ELEMENT2};
+		matrix[2] = new int[LENGTH3];
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				System.out.print(matrix[i][j]);
@@ -16,7 +25,7 @@ public class lesson7Matrix {
 			System.out.println();
 		}
 
-		int[] arr1 = { 0, 1, 2, 3, 4 };
+		int[] arr1 = {0, 1, 2, ELEMENT3, ELEMENT4};
 		for (int i = 0; i < arr1.length; i++) {
 			System.out.print(arr1[i]);
 			System.out.print(" ");
@@ -31,12 +40,11 @@ public class lesson7Matrix {
 		}
 		System.out.println();
 
-		arr2[0] = 8;
+		arr2[0] = ELEMENT;
 		for (int i = 0; i < arr1.length; i++) {
 			System.out.print(arr1[i]);
 			System.out.print(" ");
 		}
 		System.out.println();
-
 	}
 }

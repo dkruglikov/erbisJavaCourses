@@ -45,6 +45,8 @@ public class Toy {
 	
 	public void printInfoToy() {
 //		double sizeSm=1;//in maim it will be 1, not 10 and 12
-		System.out.println("The cat has a toy whis size " + sizeSm + " sm, and " + colour + " colour, made in " + madeIn + ".");
+	System.out.println(
+	"The cat has a toy whis size " + sizeSm + " sm, and " + colour + " colour, made in " + madeIn + "."
+			);
 	}
 }

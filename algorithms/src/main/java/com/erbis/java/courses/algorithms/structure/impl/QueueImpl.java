@@ -1,7 +1,6 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
 import com.erbis.java.courses.algorithms.structure.Queue;
-import java.util.Objects;
 
 /**
  * Basic queue implementation.

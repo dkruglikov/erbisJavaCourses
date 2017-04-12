@@ -37,7 +37,7 @@ public abstract class Sorter {
 	SortStat sortWeihgts(Dog[] arrayDog) {
 		int[] arrayW = new int[arrayDog.length];
 		for (int i = 0; i < arrayW.length; i++) {
-			arrayW[i] = arrayDog[i].weight;
+			arrayW[i] = arrayDog[i].getWeight();
 		}
 		SortStat stat = new SortStat();
 		sort(arrayW);
@@ -47,7 +47,7 @@ public abstract class Sorter {
 	SortStat sortAges(Dog[] arrayDog) {
 		int[] arrayA = new int[arrayDog.length];
 		for (int i = 0; i < arrayA.length; i++) {
-			arrayA[i] = arrayDog[i].age;
+			arrayA[i] = arrayDog[i].getAge();
 		}
 		SortStat stat = new SortStat();
 		sort(arrayA);

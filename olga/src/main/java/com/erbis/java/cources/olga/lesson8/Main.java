@@ -1,9 +1,11 @@
 package com.erbis.java.cources.olga.lesson8;
 
-public class Main {
+public final class Main {
+	private Main() {
+	}
 
 	public static void main(String[] args) {
-		lesson8 lesson = new lesson8();
+		Lesson8 lesson = new Lesson8();
 //		System.out.println(lesson.getName());
 //		System.out.println(lesson.name);
 //		System.out.println(lesson.index);

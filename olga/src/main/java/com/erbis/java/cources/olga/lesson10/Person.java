@@ -1,9 +1,9 @@
 package com.erbis.java.cources.olga.lesson10;
 
 public class Person {
-	int age;
-	String name;
-	String birthPlace;
+	private int age;
+	private String name;
+	private String birthPlace;
 	
 	public int getAge() {
 		return age;

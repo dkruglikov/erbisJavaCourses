@@ -3,7 +3,9 @@ package com.erbis.java.cources.olga.lesson11;
 import com.erbis.java.cources.olga.lesson11.player.Player;
 import com.erbis.java.cources.olga.lesson11.player.PlayerFactory;
 
-public class Main {
+public final class Main {
+	private Main() {
+	}
 
 	public static void main(String[] args) {
 		Player player0 = PlayerFactory.createPlayer();

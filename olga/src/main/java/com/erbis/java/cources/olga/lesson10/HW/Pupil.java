@@ -17,7 +17,7 @@ public class Pupil {
 	}
 
 	public void printInfoPupil() {
-		System.out.println("Pupil " + name + ", " + age + " years old, " + "was born in " + birthPlace + ". ");
+	System.out.println("Pupil " + name + ", " + age + " years old, " + "was born in " + birthPlace + ". ");
 		for (int i = 0; i < ownCats.length; i++) {
 			System.out.print(name + " has a cat ");
 			ownCats[i].printInfoCat();

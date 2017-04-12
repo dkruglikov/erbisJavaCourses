@@ -1,10 +1,21 @@
 package com.erbis.java.cources.olga.lesson5;
 
-public class MyFourthWHW {
-
+public final class MyFourthWHW {
+	private static final int NINE = 9;
+	private static final int EIGHT = 8;
+	private static final int SEVEN = 7;
+	private static final int SIX = 6;
+	private static final int FIVE = 5;
+	private static final int FOUR = 4;
+	private static final int TREE = 3;
+	private static final int NUMBER1 = 16;
+	private static final int LENGTH3 = 8000;
+	private static final int LENGTH1 = 10;
+	private MyFourthWHW() {
+	}
 	public static void main(String[] args) {
 		// Task1
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < LENGTH1; i++) {
 			switch (i) {
 			case 0:
 				System.out.println("Zero");
@@ -15,40 +26,39 @@ public class MyFourthWHW {
 			case 2:
 				System.out.println("Two");
 				break;
-			case 3:
+			case TREE:
 				System.out.println("Three");
 				break;
-			case 4:
+			case FOUR:
 				System.out.println("Four");
 				break;
-			case 5:
+			case FIVE:
 				System.out.println("Five");
 				break;
-			case 6:
+			case SIX:
 				System.out.println("Six");
 				break;
-			case 7:
+			case SEVEN:
 				System.out.println("Seven");
 				break;
-			case 8:
+			case EIGHT:
 				System.out.println("Eight");
 				break;
-			case 9:
+			case NINE:
 				System.out.println("Nine");
 				break;
 			default:
 				System.out.println("Number is not in range [0,9]");
 				break;
 			}
-
 		}
 
 		System.out.println();
 
 		// Task 2
 		int j = 1;
-		while (j < 8000) {				
-			if (j % 16 == 0) {
+		while (j < LENGTH3) {
+			if (j % NUMBER1 == 0) {
 				continue;
 			}
 			System.out.println(j);

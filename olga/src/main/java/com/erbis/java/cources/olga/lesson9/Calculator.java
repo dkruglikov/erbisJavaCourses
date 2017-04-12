@@ -2,8 +2,8 @@ package com.erbis.java.cources.olga.lesson9;
 
 public class Calculator {
 	
-	 String lastOperation;
-	 double lastResult;
+	 private String lastOperation;
+	 private double lastResult;
 
 	public String getLastOperation() {
 		return lastOperation;
@@ -19,16 +19,24 @@ public class Calculator {
 //		lastResult=-1;
 	}
 	public Calculator(String lo) {
-		lastOperation=lo;
+		setLastOperation(lo);
 		System.out.println("Creating calculator with last operation");
 	}
 	public Calculator(double lr) {
-		lastResult=lr;
+		setLastResult(lr);
 		System.out.println("Creating calculator with last result");
 	}
 	public Calculator(double lr, String lo) {
-		lastOperation=lo;
-		lastResult=lr;
+		setLastOperation(lo);
+		setLastResult(lr);
 		System.out.println("Creating calculator with last operator and result");
+	}
+
+	public void setLastOperation(String lastOperation) {
+		this.lastOperation = lastOperation;
+	}
+
+	public void setLastResult(double lastResult) {
+		this.lastResult = lastResult;
 	}
 }

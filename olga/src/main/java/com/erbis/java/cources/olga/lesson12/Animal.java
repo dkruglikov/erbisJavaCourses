@@ -3,7 +3,7 @@ package com.erbis.java.cources.olga.lesson12;
 public abstract class Animal {
 	private int age;
 	private double weight;
-	protected String testField="animal";
+	private String testField = "animal";
 	
 	
 	public Animal(int age, double weight) {
@@ -19,12 +19,12 @@ public abstract class Animal {
 	
 	public abstract String sound();
 	
-	protected void move(double distance){
+	protected void move(double distance) {
 		System.out.println("Moving " + distance + " meters.");
 	}
 
 	@Override
-	public String toString(){
+	public String toString() {
 		return "Age:" + age + "\n" + "Weight:" + weight;
 	}
 
@@ -34,5 +34,13 @@ public abstract class Animal {
 
 	protected double getWeight() {
 		return weight;
+	}
+
+	public String getTestField() {
+		return testField;
+	}
+
+	public void setTestField(String testField) {
+		this.testField = testField;
 	}
 }

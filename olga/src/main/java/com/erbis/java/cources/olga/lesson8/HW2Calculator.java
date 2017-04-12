@@ -1,7 +1,8 @@
 package com.erbis.java.cources.olga.lesson8;
 
-public class HW2_Calculator {
-
+public final class HW2Calculator {
+private HW2Calculator() {
+}
 	public static void main(String[] args) {
 		String input = "";
 		System.out.println("Please, enter the number");

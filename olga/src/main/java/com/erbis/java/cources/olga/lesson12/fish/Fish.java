@@ -8,7 +8,7 @@ public class Fish extends Animal {
 		super(age, weight);
 	}
 	
-	public String sound(){
+	public String sound() {
 		return "";
 	}
 

@@ -1,6 +1,8 @@
 package com.erbis.java.cources.olga.lesson8;
 
-public class HW1_Calculator {
+public final class HW1Calculator {
+	private HW1Calculator() {
+	}
 	public static void main(String[] args) {
 		String input = "";
 		System.out.println("Please, enter the comand, like '5-3-1' or '5*4*9'");
@@ -23,7 +25,7 @@ public class HW1_Calculator {
 		}
 		if (input.contains("*")) {
 			String[] arr1 = input.split("\\*");
-			int mult=Integer.parseInt(arr1[0]);
+			int mult = Integer.parseInt(arr1[0]);
 			for (int i = 1; i < arr1.length; i++) {
 				mult *= Integer.parseInt(arr1[i]);
 			}
