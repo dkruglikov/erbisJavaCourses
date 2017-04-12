@@ -64,4 +64,12 @@ public class DocumentTest {
 		Assert.assertFalse(doc0.equals(doc1));
 		Assert.assertFalse(doc1.equals(doc0));
 	}
+	
+	@Test
+	public void testEqualsFalseNullPropertiesDiffPageCount() {
+		Document doc0 = new Document(null, null, (short) 100, 0);
+		Document doc1 = new Document(null, null, (short) 10, 0);
+		Assert.assertFalse(doc0.equals(doc1));
+		Assert.assertFalse(doc1.equals(doc0));
+	}
 }
