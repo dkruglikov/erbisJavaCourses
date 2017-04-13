@@ -1,5 +1,7 @@
 package com.erbis.java.courses.document;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
  * Document domain object class.
  */
@@ -42,6 +44,7 @@ public class Document {
 
 	//CHECKSTYLE:OFF
 	@Override
+	@SuppressFBWarnings("HE_EQUALS_USE_HASHCODE")
 	public boolean equals (Object object) {
 	//CHECKSTYLE:ON
 		if (this == object) {
