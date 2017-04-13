@@ -67,9 +67,7 @@ public class Document {
 		if (obj instanceof Document) {
 			Document other = (Document) obj;
 			return Objects.equals(author, other.author) && Objects.equals(title, other.title)
-					&& Objects.equals(pageCount, other.pageCount)
-					&& Objects.equals(creationTimestamp, other.creationTimestamp);
-
+					&& Objects.equals(pageCount, other.pageCount);
 		}
 		return false;
 	}
