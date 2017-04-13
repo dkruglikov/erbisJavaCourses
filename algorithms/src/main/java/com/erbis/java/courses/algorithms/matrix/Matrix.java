@@ -1,16 +1,21 @@
 package com.erbis.java.courses.algorithms.matrix;
 
+import static java.lang.Math.abs;
+
 public final class Matrix {
 
     private Matrix() {
     }
 
     public static double[][] create(double[] array, int width, int height) {
-        double[][] matrix;
-        matrix = new double[width][height];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix = new double[][]{array};
+        double[][] matrix = new double[height][width];
+        int arrayNumber = 0;
+        for (int index = 0; index < height; index++) {
+            for (int index2 = 0; index2 < width; index2++) {
+                if (arrayNumber < array.length) {
+                    matrix[index][index2] = array[arrayNumber];
+                    arrayNumber++;
+                }
             }
         }
         return matrix;
@@ -18,22 +23,44 @@ public final class Matrix {
 
     public static double sum(double[][] matrix) {
         double sum = 0;
-        double sum2 = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            sum = sum + matrix[i][0];
-            for (int j = 0; j < matrix[i].length; j++) {
-                sum2 = sum2 + matrix[0][j];
+        for (int index = 0; index < matrix.length; index++) {
+            for (int index2 = 0; index2 < matrix[index].length; index2++) {
+                sum = sum + matrix[index][index2];
             }
         }
         return sum;
     }
 
     public static double sumAbs(double[][] matrix) {
-        return 0;
+        double sumAbs = 0;
+        for (int index = 0; index < matrix.length; index++) {
+            for (int index2 = 0; index2 < matrix[index].length; index2++) {
+                sumAbs = sumAbs + abs(matrix[index][index2]);
+            }
+        }
+        return sumAbs;
     }
 
     public static double mainDiagonalSum(double[][] matrix) {
-        return 0;
+        double diagonalSum;
+        int nextNumber = 1;
+        if (matrix[0].length != 0) {
+            diagonalSum = matrix[0][0];
+            for (int index = 1; index < matrix.length; index++) {
+                if (matrix[index].length > nextNumber) {
+                    diagonalSum = diagonalSum + matrix[nextNumber][nextNumber];
+                    nextNumber++;
+                    if (nextNumber == index) {
+                        return diagonalSum;
+                    }
+                } else {
+                    nextNumber++;
+                }
+            }
+        } else {
+            diagonalSum = 0;
+        }
+        return diagonalSum;
     }
 
     public static double mainDiagonalAndAboveSum(double[][] matrix) {
@@ -45,15 +72,45 @@ public final class Matrix {
     }
 
     public static double max(double[][] matrix) {
-        return 0;
+        double max = matrix[0][0];
+        for (int index = 0; index < matrix.length; index++) {
+            for (int index2 = 0; index2 < matrix[index].length; index2++) {
+                if ((matrix[index][index2]) > max) {
+                    max = (matrix[index][index2]);
+                }
+            }
+        }
+        return max;
     }
 
     public static double min(double[][] matrix) {
-        return 0;
+        double min = matrix[0][0];
+        for (int index = 0; index < matrix.length; index++) {
+            for (int index2 = 0; index2 < matrix[index].length; index2++) {
+                if ((matrix[index][index2]) < min) {
+                    min = (matrix[index][index2]);
+                }
+            }
+        }
+        return min;
     }
 
     public static double[] maxRow(double[][] matrix) {
-        return null;
+        double[] maxRow = matrix[0];
+        int maxRowNumber = 0;
+        double previousRowSum = matrix[0][0];
+        double maxRowSum = matrix[0][0];
+        for (int index = 0; index < matrix.length; index++) {
+            for (int index2 = 0; index2 < matrix[index].length; index2++) {
+                maxRowSum = maxRowSum + matrix[index][index2];
+            }
+            if (maxRowSum > previousRowSum) {
+                maxRowNumber = index;
+                previousRowSum = maxRowSum;
+            }
+        }
+        maxRow = matrix[maxRowNumber];
+        return maxRow;
     }
 
     public static double[] maxColumn(double[][] matrix) {
