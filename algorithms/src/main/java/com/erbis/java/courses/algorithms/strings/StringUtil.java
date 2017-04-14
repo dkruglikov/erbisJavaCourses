@@ -31,14 +31,28 @@ public final class StringUtil {
 
     public static String getLongestWord(String s) {
         String longestWord = "";
-        int count = getCharCount(s);
+        int count = 0;
         String currentWord = "";
         int count2 = 0;
         for (int index = 0; index < getCharCount(s); index++) {
             if (s.charAt(index) != ' ') {
                 currentWord = currentWord + s.charAt(index);
                 count2++;
-                longestWord = currentWord;
+            }
+            if (s.charAt(index) == ' ') {
+                if (currentWord.length() > longestWord.length()) {
+                    longestWord = currentWord;
+                    currentWord = "";
+                    count = count2;
+                    count2 = 0;
+                } else {
+                    currentWord = "";
+                }
+            }
+            if (index == (getCharCount(s) - 1)) {
+                if (currentWord.length() > longestWord.length()) {
+                    longestWord = currentWord;
+                }
             }
         }
         return longestWord;

@@ -50,14 +50,12 @@ public class StringUtilTest {
 	public void testGetLongestWordOnly() {
 		Assert.assertEquals("Foo", StringUtil.getLongestWord("Foo"));
 	}
-	
-	@Ignore
+
 	@Test
 	public void testGetLongestWordEqualLength() {
 		Assert.assertEquals("Foo", StringUtil.getLongestWord("Foo  Bar  Baz"));
 	}
 
-	@Ignore
 	@Test
 	public void testGetLongestWord() {
 		Assert.assertEquals("theory!", StringUtil.getLongestWord("Foo  Bar  Baz It is just a theory!"));
