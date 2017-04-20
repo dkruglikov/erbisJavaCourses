@@ -2,6 +2,8 @@ package com.erbis.java.courses.document;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
+import java.util.Objects;
+
 /**
  * Document domain object class.
  */
@@ -50,23 +52,20 @@ public class Document {
 		if (this == object) {
 			return true;
 		}
-		if (this == null) {
-			return false;
-		}
-		if (object instanceof Document) {
-			Document other = (Document) object;
-			if (((author == null) && (((Document) object).author == null))
-                    && (((title == null) && (((Document) object).title == null)))) {
-				return true;
-			}
 
-			if ((author != null) && (title != null) && (pageCount != 0)) {
-				return (author.equals((other.author))
-						& title.equals((other.title))
-						& pageCount == other.pageCount);
-			} else {
-				return false;
-			}
+		if (object instanceof Document) {
+            Document other = (Document) object;
+            if (((author == null) && (((Document) object).author == null))
+                    && (((title == null) && (((Document) object).title == null)))
+                    && Objects.equals(pageCount, other.pageCount)) {
+                return true;
+            }
+
+            if ((author != null) && (title != null) && (pageCount != 0)) {
+                return (Objects.equals(author, other.author)
+						&& (Objects.equals(title, other.title)
+						&& (Objects.equals(pageCount, other.pageCount))));
+            }
 		}
 		return false;
     }

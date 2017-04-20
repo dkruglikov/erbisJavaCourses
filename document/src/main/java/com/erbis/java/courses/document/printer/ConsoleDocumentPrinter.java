@@ -28,22 +28,6 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
         new ConsoleDocumentPrinter().print(queue);
     }
 
-    private static void testContains() {
-        //CHECKSTYLE:OFF
-        Queue queue = new QueueImpl();
-        Document doc = new Document("Jack", "life", (short) 30, 0);
-        queue.add(doc);
-        Document testDoc = new Document("Jack", "life", (short) 550, 0);
-        String result;
-        if (queue.equals(testDoc)) {
-            result = "Contains";
-        } else {
-            result = "Not contains";
-        }
-        System.out.println(result);
-        //CHECKSTYLE:ON
-    }
-
     @Override
     public void print(Queue queue) {
         Queue q = new QueueImpl();

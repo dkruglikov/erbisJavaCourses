@@ -15,7 +15,6 @@ public abstract class Sorter {
         for (int index = 0; index < dogs.length; index++) {
             arrayToSort[index] = dogs[index].getAge();
         }
-        ShellSort sort = new ShellSort();
         sort(arrayToSort);
         SortStat stats = new SortStat(dogs.length);
         return stats;
@@ -26,7 +25,6 @@ public abstract class Sorter {
         for (int index = 0; index < dogs.length; index++) {
             arrayToSort[index] = dogs[index].getWeight();
         }
-        ShellSort sort = new ShellSort();
         sort(arrayToSort);
         SortStat stats = new SortStat(dogs.length);
         return stats;
