@@ -7,9 +7,9 @@ import com.erbis.java.courses.algorithms.structure.Queue;
  */
 public class QueueImpl implements Queue {
 
-	private int size;
+//	private int size;
 	private QueueElement head;
-	private QueueElement tail;
+//	private QueueElement tail;
 	
 	@Override
 	public int size() {

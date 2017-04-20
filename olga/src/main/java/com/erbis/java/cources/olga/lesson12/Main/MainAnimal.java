@@ -60,7 +60,7 @@ public final class MainAnimal {
 	}
 
 	private static void testConstructors() {
-		Bird bird1 = new Bird(AGE_BIRD1, WEIGHT_BIRD1, false, WING_WIDTH_BIRD1);
+//		Bird bird1 = new Bird(AGE_BIRD1, WEIGHT_BIRD1, false, WING_WIDTH_BIRD1);
 	}
 	
 	private static void testPolymorph() {
@@ -72,11 +72,11 @@ public final class MainAnimal {
 		bird0.move(DISTANCE2);
 		((Bird) animal0).move(DISTANCE1);
 		
-		if (animal0 instanceof Fish) {
-			Fish fish0 = (Fish) animal0;
-		} else {
+//		if (animal0 instanceof Fish) {
+//			Fish fish0 = (Fish) animal0;
+//		} else {
 			System.out.println("animal is not a fish!");
-		}
+//		}
 		
 //		Fish fish0 = (Fish) animal0;//Fish is not Bird
 //		fish0.sound();

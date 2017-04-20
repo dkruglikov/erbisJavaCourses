@@ -11,7 +11,7 @@ public final class MainForToyCatPupil {
 	}
 	public static void main(String[] args) {
 		Toy t = new Toy(SIZE_T, "green", "China");
-		Toy t2 = new Toy(SIZE_T2, "red");
+//		Toy t2 = new Toy(SIZE_T2, "red");
 		
 		Cat c = new Cat(CAT_AGE, "Vasja");
 		c.setOwnToy(t);
