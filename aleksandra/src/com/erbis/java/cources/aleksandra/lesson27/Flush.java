@@ -1,5 +1,7 @@
 package com.erbis.java.cources.aleksandra.lesson27;
 
+import java.time.chrono.ThaiBuddhistEra;
+
 public enum Flush {
 	PIKE ("пика"), 
 	CLUBS ("треф"),
@@ -24,7 +26,16 @@ public enum Flush {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return screenName;
-	}	
+	}
+
+	public static String fromScreenName(String screenName) {		
+		for(Flush entity: Flush.values()) {
+			if(entity.getScreenName().equals(screenName)) {
+			return entity.name();
+		}
+		}
+		return null;
+	}
 }
 
 	
