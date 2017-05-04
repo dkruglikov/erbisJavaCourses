@@ -21,7 +21,7 @@ public class Document {
 	 * @param author author
 	 * @param pageCount page count
 	 * @param creationTimestamp creation timestamp in milliseconds
-	 * @see #Document(java.lang.String, java.lang.String, short, long, java.lang.String)
+	 * @see #Document(java.lang.String, java.lang.String, short, long, String)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
 		this.title = title;
@@ -51,6 +51,10 @@ public class Document {
 	//CHECKSTYLE:ON
 		if (this == object) {
 			return true;
+		}
+
+		if (object == null) {
+			return false;
 		}
 
 		if (object instanceof Document) {
@@ -117,6 +121,6 @@ public class Document {
 	 * @see #getType()
 	 */
 	public void setType(String type) {
-		this.type = type;
+		this.type = ArticleType.valueOf(type).toString();
 	}
 }
