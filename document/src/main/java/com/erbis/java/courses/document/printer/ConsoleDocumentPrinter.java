@@ -31,28 +31,13 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	    Queue q = new QueueImpl(); 
 	    Document doc = new Document("Jack", null, (short) 30, 0);
 	    q.add(doc);
-	    Document testDoc = new Document("Jack", null, (short) 30, 0);
-	    
-//	    if (q.contains(testDoc)) {
-//	        System.out.println("Contains");
-//	    } else {
-//	        System.out.println("Not contains");
-//	    }
-	    
-//	    String x = q.contains(testDoc) ? "Contains" : "Not contains";
+//	    Document testDoc = new Document("Jack", null, (short) 30, 0);
 	    System.out.println(q.contains("Jack") ? "Contains" : "Not contains");
 	}
-	
 	//CHECKSTYLE:ON
 
 	@Override
 	public void print(Queue queue) {
-//	    QueueImpl queueImpl = (QueueImpl) queue;
-//	    QueueElement carret = queueImpl.getHead();
-//	    while (carret != null) {
-//	        print((Document) carret.getValue());
-//	        carret = carret.getNext();
-//	    }
 	    while (queue.size() > 0) {
 	        print((Document) queue.poll());
 	    }
