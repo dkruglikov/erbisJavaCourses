@@ -1,5 +1,6 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
+import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,7 +27,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testEmptyAfterOne() {
+	public void testEmptyAfterOne() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.poll();
 		Assert.assertTrue(queue.isEmpty());
@@ -44,7 +45,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testSizeAfterOne() {
+	public void testSizeAfterOne() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.poll();
 		Assert.assertEquals(0, queue.size());
@@ -58,7 +59,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testSizeTwoAfterOne() {
+	public void testSizeTwoAfterOne() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.poll();
@@ -66,7 +67,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testSizeAfterTwo() {
+	public void testSizeAfterTwo() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.poll();
@@ -171,51 +172,71 @@ public class QueueImplTest {
 	public void testAddAllOrder0To0() {
 		Queue queueToAdd = new QueueImpl();
 		queue.addAll(queueToAdd);
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder0To1() {
+	public void testAddAllOrder0To1() throws EmptyQueueException {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queue.addAll(queueToAdd);
 		Assert.assertEquals("Foo", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder0To2() {
+	public void testAddAllOrder0To2() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
 		queue.addAll(queueToAdd);
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Bar", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder1To0() {
+	public void testAddAllOrder1To0() throws EmptyQueueException {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queue.addAll(queueToAdd);
 		Assert.assertEquals("Foo0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder1To1() {
+	public void testAddAllOrder1To1() throws EmptyQueueException {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queue.addAll(queueToAdd);
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Foo0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder1To2() {
+	public void testAddAllOrder1To2() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -224,22 +245,30 @@ public class QueueImplTest {
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Bar", queue.poll());
 		Assert.assertEquals("Foo0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder2To0() {
+	public void testAddAllOrder2To0() throws EmptyQueueException {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queueToAdd.add("Bar0");
 		queue.addAll(queueToAdd);
 		Assert.assertEquals("Foo0", queue.poll());
 		Assert.assertEquals("Bar0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder2To1() {
+	public void testAddAllOrder2To1() throws EmptyQueueException {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
@@ -248,12 +277,16 @@ public class QueueImplTest {
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Foo0", queue.poll());
 		Assert.assertEquals("Bar0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	
 	@Test
-	public void testAddAllOrder2To2() {
+	public void testAddAllOrder2To2() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -264,11 +297,15 @@ public class QueueImplTest {
 		Assert.assertEquals("Bar", queue.poll());
 		Assert.assertEquals("Foo0", queue.poll());
 		Assert.assertEquals("Bar0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllOrder2To2Same() {
+	public void testAddAllOrder2To2Same() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -279,7 +316,11 @@ public class QueueImplTest {
 		Assert.assertEquals("Bar", queue.poll());
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Bar", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
@@ -314,17 +355,21 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllToEmpty1StabilityOrder() {
+	public void testAddAllToEmpty1StabilityOrder() throws EmptyQueueException {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queue.addAll(queueToAdd);
 		queueToAdd.add("Baz0");
 		Assert.assertEquals("Foo0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllToEmpty2StabilityOrder() {
+	public void testAddAllToEmpty2StabilityOrder() throws EmptyQueueException {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queueToAdd.add("Bar0");
@@ -332,11 +377,15 @@ public class QueueImplTest {
 		queueToAdd.add("Baz0");
 		Assert.assertEquals("Foo0", queue.poll());
 		Assert.assertEquals("Bar0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllStabilityOrderAdd() {
+	public void testAddAllStabilityOrderAdd() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -348,39 +397,50 @@ public class QueueImplTest {
 		Assert.assertEquals("Bar", queue.poll());
 		Assert.assertEquals("Foo0", queue.poll());
 		Assert.assertEquals("Bar0", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testAddAllStabilityOrderPoll() {
+	public void testAddAllStabilityOrderPoll() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queueToAdd.add("Bar0");
 		queue.addAll(queueToAdd);
-		queueToAdd.poll();
-		queueToAdd.poll();
+		try {
+			queueToAdd.poll();
+			queueToAdd.poll();
+		} catch (EmptyQueueException ex) {
+		}
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Bar", queue.poll());
 		Assert.assertEquals("Foo0", queue.poll());
 		Assert.assertEquals("Bar0", queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
+	}
+	
+	@Test(expected = EmptyQueueException.class)
+	public void testPollEmpty() throws EmptyQueueException {
 		Assert.assertNull(queue.poll());
 	}
 	
-	@Test
-	public void testPollEmpty() {
-		Assert.assertNull(queue.poll());
-	}
-	
-	@Test
-	public void testPollEmptyTwice() {
+	@Test(expected = EmptyQueueException.class)
+	public void testPollEmptyTwice() throws EmptyQueueException {
 		queue.poll();
 		Assert.assertNull(queue.poll());
 	}
 	
 	@Test
-	public void testOrder() {
+	public void testOrder() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.add("Baz");
@@ -390,18 +450,22 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testPollAfterEmptiness() {
+	public void testPollAfterEmptiness() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.add("Baz");
 		queue.poll();
 		queue.poll();
 		queue.poll();
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
-	public void testOrderAndEmptyAfterEmptiness() {
+	public void testOrderAndEmptyAfterEmptiness() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.add("Baz");
@@ -412,7 +476,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testOrderAndSizeAfterEmptiness() {
+	public void testOrderAndSizeAfterEmptiness() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.add("Baz");
@@ -423,14 +487,18 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testOrderAndPollAfterEmptiness() {
+	public void testOrderAndPollAfterEmptiness() throws EmptyQueueException {
 		queue.add("Foo");
 		queue.add("Bar");
 		queue.add("Baz");
 		Assert.assertEquals("Foo", queue.poll());
 		Assert.assertEquals("Bar", queue.poll());
 		Assert.assertEquals("Baz", queue.poll());
-		Assert.assertNull(queue.poll());
+		try {
+			Assert.assertNull(queue.poll());
+			Assert.fail("No exception for empty queue");
+		} catch (EmptyQueueException ex) {
+		}
 	}
 	
 	@Test
