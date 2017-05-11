@@ -3,6 +3,8 @@ package com.erbis.java.courses.document;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
 
+import com.erbis.java.cources.olga.lesson28.AgeException;
+
 /**
  * Document domain object class.
  */
@@ -12,7 +14,7 @@ public class Document {
 	private final String author;
 	private final short pageCount;
 	private final long creationTimestamp;
-	private String type;
+	private Type type;
 
 	/**
 	 * Creates document with specified parameters.
@@ -29,6 +31,15 @@ public class Document {
 	 *      java.lang.String)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
+		if (title == null) {
+			throw new NullPointerException("Title shouldn't be null");
+		}
+		if (author == null) {
+			throw new NullPointerException("Author shouldn't be null");
+		}
+		if (pageCount <= 0) {
+			throw new IllegalArgumentException("PageCount should be positive");
+		}
 		this.title = title;
 		this.author = author;
 		this.pageCount = pageCount;
@@ -50,16 +61,16 @@ public class Document {
 	 *            type
 	 * @see #Document(java.lang.String, java.lang.String, short, long)
 	 */
-	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
+	public Document(String title, String author, short pageCount, long creationTimestamp, Type type) {
 		this(title, author, pageCount, creationTimestamp);
 		this.type = type;
 	}
 
-	//CHECKSTYLE:OFF
+	// CHECKSTYLE:OFF
 	@Override
 	@SuppressFBWarnings("HE_EQUALS_USE_HASHCODE")
 	public boolean equals(Object obj) {
-	//CHECKSTYLE:ON
+		// CHECKSTYLE:ON
 		if (this == obj) {
 			return true;
 		}
@@ -116,7 +127,7 @@ public class Document {
 	 * @return type
 	 * @see #setType(String)
 	 */
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
@@ -127,7 +138,15 @@ public class Document {
 	 *            type
 	 * @see #getType()
 	 */
-	public void setType(String type) {
+	public void setType(Type type) {
 		this.type = type;
+	}
+
+	@Override
+	public String toString() {
+		return "Document [title=" + title 
+				+ ", author=" + author 
+				+ ", pageCount=" + pageCount 
+				+ ", type=" + type + "]";
 	}
 }

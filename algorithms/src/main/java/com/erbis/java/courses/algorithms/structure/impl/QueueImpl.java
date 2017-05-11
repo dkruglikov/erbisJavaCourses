@@ -61,9 +61,10 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public Object poll() {
+	public Object poll() /*throws EmptyQueueException*/ {
 		if (head == null) {
 			return null;
+			/*throw new EmptyQueueException("Queue is empty");*/
 		} else {
 			Object result = head.getElement();
 			head = head.getNext();
