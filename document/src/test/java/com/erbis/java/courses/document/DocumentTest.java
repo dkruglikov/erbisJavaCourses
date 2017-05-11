@@ -1,5 +1,6 @@
 package com.erbis.java.courses.document;
 
+import java.lang.reflect.Method;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -33,7 +34,7 @@ public class DocumentTest {
 		Assert.assertTrue(doc1.equals(doc0));
 	}
 	
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testEqualsTrueNullProperties() {
 		Document doc0 = new Document(null, null, (short) 100, 0);
 		Document doc1 = new Document(null, null, (short) 100, 1);
@@ -41,7 +42,7 @@ public class DocumentTest {
 		Assert.assertTrue(doc1.equals(doc0));
 	}
 	
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testEqualsTrueNullPropertiesDiffTimestamp() {
 		Document doc0 = new Document(null, null, (short) 100, 0, Type.SPORT);
 		Document doc1 = new Document(null, null, (short) 100, 1, Type.MATHEMATICS);
@@ -65,11 +66,26 @@ public class DocumentTest {
 		Assert.assertFalse(doc1.equals(doc0));
 	}
 	
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testEqualsFalseNullPropertiesDiffPageCount() {
 		Document doc0 = new Document(null, null, (short) 100, 0);
 		Document doc1 = new Document(null, null, (short) 10, 0);
 		Assert.assertFalse(doc0.equals(doc1));
 		Assert.assertFalse(doc1.equals(doc0));
+	}
+	
+	@Test
+	public void testDocumentTypeTypeName() throws NoSuchMethodException {
+		Method method = Document.class.getDeclaredMethod("getType", new Class<?>[0]);
+		Class<?> returnType = method.getReturnType();
+		Assert.assertEquals("Document type package is not same as document package", Document.class.getPackage(), returnType.getPackage());
+		Assert.assertEquals("Document type name is not \"Type\"", "Type", returnType.getSimpleName());
+	}
+	
+	@Test
+	public void testDocumentTypeType() throws NoSuchMethodException {
+		Method method = Document.class.getDeclaredMethod("getType", new Class<?>[0]);
+		Class<?> returnType = method.getReturnType();
+		Assert.assertTrue("Document type is not enum", returnType.isEnum());
 	}
 }

@@ -1,7 +1,5 @@
 package com.erbis.java.courses.algorithms.structure;
 
-import com.erbis.java.courses.algorithms.structure.impl.EmptyQueueException;
-
 /**
  * LIFO queue contract.
  * @author dkruglikov

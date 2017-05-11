@@ -1,7 +1,7 @@
 package com.erbis.java.courses.document.printer;
 
+import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
-import com.erbis.java.courses.algorithms.structure.impl.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.RandomDocumentFactory;
