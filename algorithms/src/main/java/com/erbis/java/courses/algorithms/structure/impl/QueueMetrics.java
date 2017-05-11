@@ -9,7 +9,7 @@ public final class QueueMetrics {
 	private QueueMetrics() {
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws EmptyQueueException {
 		measureAdd(new ArrayQueue());
 		measureAdd(new QueueImpl());
 		measureRemove(new ArrayQueue());
@@ -38,7 +38,7 @@ public final class QueueMetrics {
 		System.out.println(" ms");
 	}
 	
-	private static void measureRemove(Queue queue) {
+	private static void measureRemove(Queue queue) throws EmptyQueueException {
 		for (int i = 0; i < OPERATION_COUNT; i++) {
 			queue.add(String.valueOf(i));
 		}
@@ -54,7 +54,7 @@ public final class QueueMetrics {
 		System.out.println(" ms");
 	}
 	
-	private static void measureAll(Queue queue) {
+	private static void measureAll(Queue queue) throws EmptyQueueException {
 		System.out.println("Measuring everything...");
 		long start = System.currentTimeMillis();
 		for (int i = OPERATION_COUNT; i >= 0; i--) {

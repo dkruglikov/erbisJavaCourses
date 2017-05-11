@@ -1,5 +1,7 @@
 package com.erbis.java.courses.algorithms.structure;
 
+import com.erbis.java.courses.algorithms.structure.impl.EmptyQueueException;
+
 /**
  * LIFO queue contract.
  * @author dkruglikov
@@ -28,15 +30,17 @@ public interface Queue {
 	/**
 	 * Adds all elements from specified queue to this queue.
 	 * @param queue queue to add
+	 * @throws EmptyQueueException 
 	 */
-	void addAll(Queue queue);
+	void addAll(Queue queue) throws EmptyQueueException;
 	
 	/**
 	 * Returns head of queue and removes element from it or <code>null</code>
 	 * if queue empty.
 	 * @return head of queue or <code>null</code> if queue empty
+	 * @throws EmptyQueueException 
 	 */
-	Object poll();
+	Object poll() throws EmptyQueueException;
 	
 	/**
 	 * Checks if queue contains specified element.

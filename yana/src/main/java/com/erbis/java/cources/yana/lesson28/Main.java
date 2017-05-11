@@ -28,7 +28,7 @@ public class Main {
         try {
             dog.setName("yana");
         }
-        catch (IllegalArgumentException ex) {
+        catch (InvalidNameException ex) {
             System.out.println(ex.getMessage());
         }
     }

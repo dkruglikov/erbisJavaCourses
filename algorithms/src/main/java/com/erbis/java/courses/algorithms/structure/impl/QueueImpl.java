@@ -36,14 +36,14 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public Object poll() {
+    public Object poll() throws EmptyQueueException  {
         if (head != null) {
             Object result = head.getValue();
             head = head.getNext();
             size--;
             return result;
         } else {
-            return null;
+            throw new EmptyQueueException("Queue ie epty.");
         }
     }
     
@@ -60,7 +60,7 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public void addAll(Queue queue) {  
+    public void addAll(Queue queue) throws EmptyQueueException {  
         while (queue.size() > 0) {
             add(queue.poll());
         }

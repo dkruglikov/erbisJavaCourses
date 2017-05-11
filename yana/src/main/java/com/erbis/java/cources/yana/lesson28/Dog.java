@@ -8,9 +8,9 @@ public class Dog {
         return age;
     }
 
-    public void setAge(double age) {
+    public void setAge(double age) throws AgeException {
         if (age <= 0) {
-            throw new IllegalArgumentException("Age is not positive");
+            throw new AgeException("Age is not positive");
         }
         this.age = age; 
     }
@@ -19,9 +19,9 @@ public class Dog {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws InvalidNameException {
         if (!Character.isUpperCase(name.charAt(0))) {
-            throw new IllegalArgumentException("Name does not begin from uppercase.");
+            throw new InvalidNameException("Name does not begin from uppercase.");
         }
         this.name = name;
     }
