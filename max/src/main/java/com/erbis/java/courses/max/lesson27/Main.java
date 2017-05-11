@@ -8,7 +8,7 @@ public class Main {
         Card card = new Card();
         card.setFlush(Flush.DIAMOND);
         System.out.println(Arrays.toString(Flush.values()));
-        Flush var1 = Flush.valueOf("PIKE");
+        Flush var1 = Flush.valueOf("Пика");
         System.out.println(var1);
         System.out.println(card);
     }

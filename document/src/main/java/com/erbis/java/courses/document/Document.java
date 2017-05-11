@@ -13,7 +13,7 @@ public class Document {
 	private final String author;
 	private final short pageCount;
 	private final long creationTimestamp;
-	private String type;
+	private ArticleType type;
 
 	/**
 	 * Creates document with specified parameters.
@@ -21,7 +21,7 @@ public class Document {
 	 * @param author author
 	 * @param pageCount page count
 	 * @param creationTimestamp creation timestamp in milliseconds
-	 * @see #Document(java.lang.String, java.lang.String, short, long, String)
+	 * @see #Document(java.lang.String, java.lang.String, short, long, ArticleType)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
 		this.title = title;
@@ -41,20 +41,20 @@ public class Document {
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
 		this(title, author, pageCount, creationTimestamp);
-		this.type = type;
+		this.type = ArticleType.valueOf(type);
 	}
 
 	//CHECKSTYLE:OFF
 	@Override
 	@SuppressFBWarnings("HE_EQUALS_USE_HASHCODE")
-	public boolean equals (Object object) {
+	public boolean equals (Object object)  throws NullPointerException {
 	//CHECKSTYLE:ON
 		if (this == object) {
 			return true;
 		}
 
-		if (object == null) {
-			return false;
+		if (this == null) {
+			throw new NullPointerException();
 		}
 
 		if (object instanceof Document) {
@@ -62,7 +62,7 @@ public class Document {
             if (((author == null) && (((Document) object).author == null))
                     && (((title == null) && (((Document) object).title == null)))
                     && Objects.equals(pageCount, other.pageCount)) {
-                return true;
+                throw new NullPointerException();
             }
 
             if ((author != null) && (title != null) && (pageCount != 0)) {
@@ -111,7 +111,7 @@ public class Document {
 	 * @return type
 	 * @see #setType(String)
 	 */
-	public String getType() {
+	public ArticleType getType() {
 		return type;
 	}
 
@@ -121,6 +121,6 @@ public class Document {
 	 * @see #getType()
 	 */
 	public void setType(String type) {
-		this.type = ArticleType.valueOf(type).toString();
+		this.type = ArticleType.valueOf(type);
 	}
 }

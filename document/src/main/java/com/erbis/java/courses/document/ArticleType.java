@@ -11,12 +11,7 @@ public enum ArticleType {
         this.readableArticleName = type;
     }
 
-    public void setReadableArticleName(String readableArticleName) {
-        this.readableArticleName = readableArticleName;
-    }
-
-    @Override
-    public String toString() {
+    public String getReadableArticleName() {
         return readableArticleName;
     }
 }
