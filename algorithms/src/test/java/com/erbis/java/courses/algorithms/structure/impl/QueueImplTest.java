@@ -433,7 +433,7 @@ public class QueueImplTest {
 		Assert.assertNull(queue.poll());
 	}
 	
-	@Test
+	@Test(expected = EmptyQueueException.class)
 	public void testPollEmptyTwice() throws EmptyQueueException {
 		queue.poll();
 		Assert.assertNull(queue.poll());
