@@ -27,8 +27,8 @@ public class DocumentTest {
 	
 	@Test
 	public void testEqualsTrueDiffTimestamps() {
-		Document doc0 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 0, "Mathematics");
-		Document doc1 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 1, "Sport");
+		Document doc0 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 0, Type.MATHEMATICS);
+		Document doc1 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 1, Type.SPORT);
 		Assert.assertTrue(doc0.equals(doc1));
 		Assert.assertTrue(doc1.equals(doc0));
 	}
@@ -43,8 +43,8 @@ public class DocumentTest {
 	
 	@Test
 	public void testEqualsTrueNullPropertiesDiffTimestamp() {
-		Document doc0 = new Document(null, null, (short) 100, 0, "Sport");
-		Document doc1 = new Document(null, null, (short) 100, 1, "Mathematics");
+		Document doc0 = new Document(null, null, (short) 100, 0, Type.SPORT);
+		Document doc1 = new Document(null, null, (short) 100, 1, Type.MATHEMATICS);
 		Assert.assertTrue(doc0.equals(doc1));
 		Assert.assertTrue(doc1.equals(doc0));
 	}

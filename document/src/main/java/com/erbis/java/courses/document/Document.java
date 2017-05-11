@@ -12,7 +12,9 @@ public class Document {
 	private final String author;
 	private final short pageCount;
 	private final long creationTimestamp;
-	private String type;
+	private Type type;
+	
+	
 
 	/**
 	 * Creates document with specified parameters.
@@ -38,7 +40,7 @@ public class Document {
 	 * @param type type
 	 * @see #Document(java.lang.String, java.lang.String, short, long)
 	 */
-	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
+	public Document(String title, String author, short pageCount, long creationTimestamp, Type type) {
 		this(title, author, pageCount, creationTimestamp); //call constructor with parameters
 		this.type = type;
 	}
@@ -62,6 +64,11 @@ public class Document {
 	    }
 	    return false;
 	}
+	
+	@Override
+	public String toString() {
+        return getType().getReadableName();
+    }
 
 	/**
 	 * Returns document title.
@@ -100,7 +107,7 @@ public class Document {
 	 * @return type
 	 * @see #setType(String)
 	 */
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
@@ -109,7 +116,7 @@ public class Document {
 	 * @param type type
 	 * @see #getType()
 	 */
-	public void setType(String type) {
+	public void setType(Type type) {
 		this.type = type;
 	}
 }
