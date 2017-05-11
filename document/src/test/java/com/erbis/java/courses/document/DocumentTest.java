@@ -88,4 +88,24 @@ public class DocumentTest {
 		Class<?> returnType = method.getReturnType();
 		Assert.assertTrue("Document type is not enum", returnType.isEnum());
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidTitle() {
+		new Document("", "Harry", (short) 0, 0);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidAuthor() {
+		new Document("Biography", "", (short) 0, 0);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidPageCountZero() {
+		new Document("Bio", "Harry", (short) 0, 0);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidPageCountNegative() {
+		new Document("Bio", "Harry", (short) -10, 0);
+	}
 }
