@@ -36,7 +36,7 @@ public interface Queue {
 	 * if queue empty.
 	 * @return head of queue or <code>null</code> if queue empty
 	 */
-	Object poll();
+	Object poll() throws EmptyQueueException;
 	
 	/**
 	 * Checks if queue contains specified element.
