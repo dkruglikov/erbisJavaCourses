@@ -1,4 +1,4 @@
-package com.erbis.java.courses.algorithms.structure.impl;
+package com.erbis.java.courses.algorithms.structure;
 
 public class EmptyQueueException extends Exception {
 	public EmptyQueueException(String m) {
