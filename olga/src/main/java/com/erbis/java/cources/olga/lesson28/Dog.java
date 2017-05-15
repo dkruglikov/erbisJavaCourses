@@ -5,7 +5,11 @@ public class Dog {
 	private String name;
 
 	public double getAge() {
-		return age;
+		try {
+			return age;
+		} finally {
+			System.out.println("getAge called");	
+		}
 	}
 
 	public String getName() {
@@ -20,9 +24,13 @@ public class Dog {
 	}
 
 	public void setAge(double age) throws AgeException {
+		try {
 		if (age <= 0) {
 				throw new AgeException("Age is not positive"); // выполнение метода закончится на throw
 			}
 		this.age = age;
+	} finally {
+		System.out.println("setAge called");
+	}
 	}
 }

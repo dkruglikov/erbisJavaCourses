@@ -23,7 +23,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	public static void main(String[] args) {
 //		testContains();
 		RandomDocumentFactory factory = new RandomDocumentFactory();
-		Queue queue = new QueueImpl();
+		Queue<Document> queue = new QueueImpl<>();
 		for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
 			queue.add(factory.create());
 		}
@@ -47,14 +47,14 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 //	}
 
 	@Override
-	public void print(Queue queue) {
+	public void print(Queue<Document> queue) {
 		Object object = queue.poll();
 		while (object != null) {
-			if (object instanceof Document) {
+//			if (object instanceof Document) {
 				print((Document) object);
-			} else {
-				System.out.println(object);
-			}
+//			} else {
+//				System.out.println(object);
+//			}
 			object = queue.poll();
 		}
 	}

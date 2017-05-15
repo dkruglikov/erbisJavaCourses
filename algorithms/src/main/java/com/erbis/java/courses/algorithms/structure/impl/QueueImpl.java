@@ -1,15 +1,15 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
-import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
+
 import com.erbis.java.courses.algorithms.structure.Queue;
 
 /**
  * Basic queue implementation.
  */
-public class QueueImpl implements Queue {
+public class QueueImpl<T> implements Queue<T> {
 
 //	private int size;
-	private QueueElement head;
+	private QueueElement<T> head;
 //	private QueueElement tail;
 	
 	@Override
@@ -18,7 +18,7 @@ public class QueueImpl implements Queue {
 			return 0;
 		} else {
 			int counter = 1;
-			QueueElement cerret = head;
+			QueueElement<T> cerret = head;
 			while (cerret.getNext() != null) {
 				counter++;
 				cerret = cerret.getNext();
@@ -38,22 +38,22 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public void add(Object element) {
+	public void add(T element) {
 		if (head == null) {
-			head = new QueueElement(element);
+			head = new QueueElement<T>(element);
 		} else {
-			QueueElement cerret = head;
+			QueueElement<T> cerret = head;
 			while (cerret.getNext() != null) {
 				cerret = cerret.getNext();
 			}
-			QueueElement newElement = new QueueElement(element);
+			QueueElement<T> newElement = new QueueElement<T>(element);
 			cerret.setNext(newElement);
 		}
 	}
 
 	@Override
-	public void addAll(Queue queue) {
-		Object object = queue.poll();
+	public void addAll(Queue<T> queue) {
+		T object = queue.poll();
 		while (object != null) {
 			// this.
 			add(object);
@@ -62,12 +62,12 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public Object poll() /*throws EmptyQueueException*/ {
+	public T poll() /*throws EmptyQueueException*/ {
 		if (head == null) {
 			return null;
 			/*throw new EmptyQueueException("Queue is empty");*/
 		} else {
-			Object result = head.getElement();
+			T result = head.getElement();
 			head = head.getNext();
 			return result;
 		}
@@ -78,7 +78,7 @@ public class QueueImpl implements Queue {
 		if (head == null) {
 			return false;
 		} else {
-			QueueElement cerret = head;
+			QueueElement<T> cerret = head;
 			do {
 				if (cerret.getElement().equals(element)) {
 					return true;

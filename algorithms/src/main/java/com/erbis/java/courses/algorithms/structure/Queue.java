@@ -6,7 +6,7 @@ package com.erbis.java.courses.algorithms.structure;
  * 
  * @author dkruglikov
  */
-public interface Queue {
+public interface Queue<T> {
 
 	/**
 	 * Returns queue size.
@@ -29,7 +29,7 @@ public interface Queue {
 	 * @param element
 	 *            element to add
 	 */
-	void add(Object element);
+	void add(T element);
 
 	/**
 	 * Adds all elements from specified queue to this queue.
@@ -37,7 +37,7 @@ public interface Queue {
 	 * @param queue
 	 *            queue to add
 	 */
-	void addAll(Queue queue);
+	void addAll(Queue<T> queue);
 
 	/**
 	 * Returns head of queue and removes element from it or <code>null</code> if
@@ -45,7 +45,7 @@ public interface Queue {
 	 * 
 	 * @return head of queue or <code>null</code> if queue empty
 	 */
-	Object poll() /*throws EmptyQueueException*/;
+	T poll() /*throws EmptyQueueException*/;
 
 	/**
 	 * Checks if queue contains specified element.

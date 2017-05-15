@@ -2,9 +2,6 @@ package com.erbis.java.courses.document;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
-
-import com.erbis.java.cources.olga.lesson28.AgeException;
-
 /**
  * Document domain object class.
  */
@@ -36,6 +33,12 @@ public class Document {
 		}
 		if (author == null) {
 			throw new NullPointerException("Author shouldn't be null");
+		}
+		if (title.isEmpty()) {
+			throw new IllegalArgumentException("Title shouldn't be null");
+		}
+		if (author.isEmpty()) {
+			throw new IllegalArgumentException("Author shouldn't be null");
 		}
 		if (pageCount <= 0) {
 			throw new IllegalArgumentException("PageCount should be positive");

@@ -1,26 +1,26 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
-public class QueueElement {
-	private Object element;
-	private QueueElement next;
+public class QueueElement<T> {
+	private T element;
+	private QueueElement<T> next;
 
-	public QueueElement(Object element) {
+	public QueueElement(T element) {
 		this.element = element;
 	}
 
-	Object getElement() {
+	T getElement() {
 		return element;
 	}
 
-	void setElement(Object object) {
+	void setElement(T object) {
 		this.element = object;
 	}
 
-	QueueElement getNext() {
+	QueueElement<T> getNext() {
 		return next;
 	}
 
-	void setNext(QueueElement next) {
+	void setNext(QueueElement<T> next) {
 		this.next = next;
 	}
 
