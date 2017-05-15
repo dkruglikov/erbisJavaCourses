@@ -29,14 +29,14 @@ public interface Queue {
 	 * Adds all elements from specified queue to this queue.
 	 * @param queue queue to add
 	 */
-	void addAll(Queue queue);
+	void addAll(Queue queue) throws EmptyQueueException;
 	
 	/**
 	 * Returns head of queue and removes element from it or <code>null</code>
 	 * if queue empty.
 	 * @return head of queue or <code>null</code> if queue empty
 	 */
-	Object poll();
+	Object poll() throws EmptyQueueException;
 	
 	/**
 	 * Checks if queue contains specified element.

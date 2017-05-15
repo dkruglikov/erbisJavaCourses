@@ -13,7 +13,7 @@ public class RandomDocumentFactory {
 									"Ballistics", "Bioengineering", "Biology", "Botany",
 									"Cartography", "Cryptology", "Culture"};
 	private static final String[] AUTHORS = {"Isaac Nethy", "John Robinson", "Neth Carry", "Olaf Simunsson"};
-	private static final ArticleType[] TYPES = ArticleType.values();
+	private static final Type[] TYPES = Type.values();
 	private final Random random = new Random();
 	
 	/**

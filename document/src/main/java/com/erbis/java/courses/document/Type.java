@@ -1,13 +1,13 @@
 package com.erbis.java.courses.document;
 
-public enum ArticleType {
+public enum Type {
     SPORT("Sport"),
     MATHEMATICS("Mathematics"),
     PHILOSOPHY("Philosophy"),
     OTHER("Others");
     private String readableArticleName;
 
-    ArticleType(String type) {
+    Type(String type) {
         this.readableArticleName = type;
     }
 

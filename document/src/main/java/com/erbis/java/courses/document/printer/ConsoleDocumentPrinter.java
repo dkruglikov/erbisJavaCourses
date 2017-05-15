@@ -1,5 +1,6 @@
 package com.erbis.java.courses.document.printer;
 
+import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
@@ -19,7 +20,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
      *
      * @param args command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EmptyQueueException {
         RandomDocumentFactory factory = new RandomDocumentFactory();
         Queue queue = new QueueImpl();
         for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
@@ -29,7 +30,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
     }
 
     @Override
-    public void print(Queue queue) {
+    public void print(Queue queue) throws EmptyQueueException {
         Queue q = new QueueImpl();
         if (queue instanceof Document) {
             while (!q.isEmpty()) {

@@ -7,24 +7,36 @@ public class Dog {
     private String name;
 
     public void setAge(double age) throws AgeException {
-        if (age <= 0) {
-            throw new AgeException("Age is not positive");
+        try {
+            if (age <= 0) {
+                throw new AgeException("Age is not positive");
+            }
+            this.age = age;
+        } finally {
+            System.out.println("setAge() called");
         }
-        this.age = age;
     }
 
     public double getAge() {
-        return age;
+        try {
+            return age;
+        } finally {
+            System.out.println("getAge() called");
+        }
     }
 
     public void setName(String name) throws InvalidNameException {
-        if (name==null) {
+        if (name == null) {
             throw new InvalidNameException("Name is empty");
         }
         if (Character.isUpperCase(name.charAt(0))) {
-            this.name=name;
+            this.name = name;
         } else {
             throw new InvalidNameException("Name starts with lowercase");
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

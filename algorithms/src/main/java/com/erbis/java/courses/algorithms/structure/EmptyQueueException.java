@@ -2,10 +2,10 @@ package com.erbis.java.courses.algorithms.structure;
 
 public class EmptyQueueException extends Exception {
 
-    EmptyQueueException() {
+    public EmptyQueueException() {
     }
 
-    EmptyQueueException(String s) {
+    public EmptyQueueException(String s) {
         super(s);
     }
 }

@@ -6,8 +6,12 @@ public class Main {
         Dog dog = new Dog();
         try {
             dog.setAge(-5);
-        } catch (AgeException e) {
-            System.out.println();
+            dog.setName("Puppy");
+            System.out.println(dog.getAge());
+        } catch (AgeException | InvalidNameException e) {
+            throw new IllegalArgumentException(e);
+        } finally {
+            System.out.println("Some final action");
         }
     }
 }

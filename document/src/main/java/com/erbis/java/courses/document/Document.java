@@ -13,7 +13,7 @@ public class Document {
 	private final String author;
 	private final short pageCount;
 	private final long creationTimestamp;
-	private ArticleType type;
+	private Type type;
 
 	/**
 	 * Creates document with specified parameters.
@@ -21,13 +21,14 @@ public class Document {
 	 * @param author author
 	 * @param pageCount page count
 	 * @param creationTimestamp creation timestamp in milliseconds
-	 * @see #Document(java.lang.String, java.lang.String, short, long, ArticleType)
+	 * @see #Document(java.lang.String, java.lang.String, short, long, Type)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
 		this.title = title;
 		this.author = author;
 		this.pageCount = pageCount;
 		this.creationTimestamp = creationTimestamp;
+		checkMandatoryFields();
 	}
 
 	/**
@@ -41,20 +42,17 @@ public class Document {
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
 		this(title, author, pageCount, creationTimestamp);
-		this.type = ArticleType.valueOf(type);
+		this.type = Type.valueOf(type.toUpperCase());
+		checkMandatoryFields();
 	}
 
 	//CHECKSTYLE:OFF
 	@Override
 	@SuppressFBWarnings("HE_EQUALS_USE_HASHCODE")
-	public boolean equals (Object object)  throws NullPointerException {
+	public boolean equals (Object object) {
 	//CHECKSTYLE:ON
 		if (this == object) {
 			return true;
-		}
-
-		if (this == null) {
-			throw new NullPointerException();
 		}
 
 		if (object instanceof Document) {
@@ -73,6 +71,34 @@ public class Document {
 		}
 		return false;
     }
+
+    @Override
+    public String toString() {
+		return getType().getReadableArticleName();
+	}
+
+	private void checkMandatoryFields() {
+		checkEmptyArticle();
+		checkInvalidDocument();
+	}
+
+	private void checkEmptyArticle() {
+		if (this.pageCount == 0) {
+			throw new IllegalArgumentException("Article is empty");
+		}
+		if (this.pageCount < 0) {
+			throw new IllegalArgumentException("Pages were negative");
+		}
+	}
+
+	private void checkInvalidDocument() {
+		if ((this.author == null)) {
+			throw new NullPointerException("Author is unknown");
+		}
+		if (this.title == null) {
+			throw new NullPointerException("Title is empty");
+		}
+	}
 
 	/**
 	 * Returns document title.
@@ -111,7 +137,7 @@ public class Document {
 	 * @return type
 	 * @see #setType(String)
 	 */
-	public ArticleType getType() {
+	public Type getType() {
 		return type;
 	}
 
@@ -121,6 +147,6 @@ public class Document {
 	 * @see #getType()
 	 */
 	public void setType(String type) {
-		this.type = ArticleType.valueOf(type);
+		this.type = Type.valueOf(type);
 	}
 }
