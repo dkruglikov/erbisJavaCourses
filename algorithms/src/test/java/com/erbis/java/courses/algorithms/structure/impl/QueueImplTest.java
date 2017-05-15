@@ -76,14 +76,14 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize0To0() throws EmptyQueueException {
+	public void testAddAllSize0To0() {
 		Queue queueToAdd = new QueueImpl();
 		queue.addAll(queueToAdd);
 		Assert.assertEquals(0, queue.size());
 	}
 	
 	@Test
-	public void testAddAllSize0To1() throws EmptyQueueException {
+	public void testAddAllSize0To1() {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queue.addAll(queueToAdd);
@@ -91,7 +91,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize0To2() throws EmptyQueueException {
+	public void testAddAllSize0To2() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -100,7 +100,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize1To0() throws EmptyQueueException {
+	public void testAddAllSize1To0() {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queue.addAll(queueToAdd);
@@ -108,7 +108,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize1To1() throws EmptyQueueException {
+	public void testAddAllSize1To1() {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
@@ -117,7 +117,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize1To2() throws EmptyQueueException {
+	public void testAddAllSize1To2() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -127,7 +127,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize2To0() throws EmptyQueueException {
+	public void testAddAllSize2To0() {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queueToAdd.add("Bar0");
@@ -136,7 +136,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize2To1() throws EmptyQueueException {
+	public void testAddAllSize2To1() {
 		queue.add("Foo");
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
@@ -147,7 +147,7 @@ public class QueueImplTest {
 	
 	
 	@Test
-	public void testAddAllSize2To2() throws EmptyQueueException {
+	public void testAddAllSize2To2() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -158,7 +158,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllSize2To2Same() throws EmptyQueueException {
+	public void testAddAllSize2To2Same() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -169,7 +169,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllOrder0To0() throws EmptyQueueException {
+	public void testAddAllOrder0To0() {
 		Queue queueToAdd = new QueueImpl();
 		queue.addAll(queueToAdd);
 		try {
@@ -324,7 +324,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllToEmpty1StabilitySize() throws EmptyQueueException {
+	public void testAddAllToEmpty1StabilitySize() {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queue.addAll(queueToAdd);
@@ -333,7 +333,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllToEmpty2StabilitySize() throws EmptyQueueException {
+	public void testAddAllToEmpty2StabilitySize() {
 		Queue queueToAdd = new QueueImpl();
 		queueToAdd.add("Foo0");
 		queueToAdd.add("Bar0");
@@ -343,7 +343,7 @@ public class QueueImplTest {
 	}
 	
 	@Test
-	public void testAddAllStabilitySize() throws EmptyQueueException {
+	public void testAddAllStabilitySize() {
 		queue.add("Foo");
 		queue.add("Bar");
 		Queue queueToAdd = new QueueImpl();
@@ -381,7 +381,6 @@ public class QueueImplTest {
 			Assert.assertNull(queue.poll());
 			Assert.fail("No exception for empty queue");
 		} catch (EmptyQueueException ex) {
-
 		}
 	}
 	
