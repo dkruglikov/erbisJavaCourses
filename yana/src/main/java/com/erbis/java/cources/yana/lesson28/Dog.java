@@ -5,14 +5,22 @@ public class Dog {
     private String name;
 
     public double getAge() {
-        return age;
+        try {
+            return age;
+        } finally {
+            System.out.println("getAge called");
+        }
     }
 
     public void setAge(double age) throws AgeException {
-        if (age <= 0) {
+        try {if (age <= 0) {
             throw new AgeException("Age is not positive");
         }
-        this.age = age; 
+        this.age = age;
+        } finally {
+            System.out.println("setAge called");
+        }
+        
     }
 
     public String getName() {
@@ -24,7 +32,5 @@ public class Dog {
             throw new InvalidNameException("Name does not begin from uppercase.");
         }
         this.name = name;
-    }
-    
-    
+    }   
 }

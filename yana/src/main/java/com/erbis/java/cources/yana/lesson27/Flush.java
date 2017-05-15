@@ -22,6 +22,12 @@ public enum Flush {
     }
 
     public static Flush fromScreenName(String screenName) {
+//        Flush[] array = {PIKE, CLUBS, DIAMOND, HEART};
+//        for (int i = 0; i < 4; i++) {
+//            screenName.equals(array[i].getScreenName());
+//            return array[i];
+//        }
+        
         if (screenName.equals(PIKE.getScreenName())) {
             return PIKE;
         } else if (screenName.equals(CLUBS.getScreenName())) {

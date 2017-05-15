@@ -25,11 +25,29 @@ public class Main {
 //        setAge(age) throws AgeException {
 //            System.out.println(ex.getMessage());
 //        }
+        
+//        try {
+//            dog.setName("yana");
+//        }
+//        catch (InvalidNameException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+        
         try {
-            dog.setName("yana");
+            dog.setAge(-5);
+            dog.setName("pushok");
+           System.out.println("Age:" + dog.getAge());
+        } catch (AgeException | InvalidNameException ex) {
+            throw new IllegalArgumentException(ex);
+        } finally {
+            System.out.println("Some finalaction.");
         }
-        catch (InvalidNameException ex) {
-            System.out.println(ex.getMessage());
-        }
+//        catch (AgeException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+//        catch (InvalidNameException ex) {
+//          System.out.println(ex.getMessage());
+//        }
+        
     }
 }

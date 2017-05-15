@@ -25,10 +25,22 @@ public class Document {
 	 * @see #Document(java.lang.String, java.lang.String, short, long, java.lang.String)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
-		this.title = title;
-		this.author = author;
-		this.pageCount = pageCount;
-		this.creationTimestamp = creationTimestamp;
+		if (title == null) {
+		    throw new NullPointerException("Title is NULL.");
+		} if (author == null) {
+		    throw new NullPointerException("Author is NULL.");
+		} if (title.equals("")) {
+		    throw new IllegalArgumentException("Title is empty.");
+		} if (author.equals("")) {
+		    throw new IllegalArgumentException("Author is empty.");
+		} if (pageCount < 0) {
+		    throw new IllegalArgumentException("PageCount value is negative.");
+		} else {
+    	    this.title = title;
+    		this.author = author;
+    		this.pageCount = pageCount;
+    		this.creationTimestamp = creationTimestamp;
+		}
 	}
 
 	/**
