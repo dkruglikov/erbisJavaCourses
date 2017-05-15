@@ -29,7 +29,7 @@ public interface Queue {
 	 * Adds all elements from specified queue to this queue.
 	 * @param queue queue to add
 	 */
-	void addAll(Queue queue) throws EmptyQueueException;
+	void addAll(Queue queue);
 	
 	/**
 	 * Returns head of queue and removes element from it or <code>null</code>
