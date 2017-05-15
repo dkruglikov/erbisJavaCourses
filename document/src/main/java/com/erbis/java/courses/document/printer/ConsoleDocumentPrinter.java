@@ -22,7 +22,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	public static void main(String[] args) throws EmptyQueueException {
 	    testContains();
 		RandomDocumentFactory factory = new RandomDocumentFactory();
-		Queue queue = new QueueImpl();
+		Queue<Document> queue = new QueueImpl<>();
 		for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
 			queue.add(factory.create());
 		}
@@ -39,9 +39,9 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	//CHECKSTYLE:ON
 
 	@Override
-	public void print(Queue queue) throws EmptyQueueException {
+	public void print(Queue<Document> queue) throws EmptyQueueException {
 	    while (queue.size() > 0) {
-	        print((Document) queue.poll());
+	        print(queue.poll());
 	    }
 	}
 

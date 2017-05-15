@@ -3,11 +3,11 @@ package com.erbis.java.courses.algorithms.structure.impl;
 import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 
-public class QueueImpl implements Queue {
+public class QueueImpl<E> implements Queue<E>{
 
-    private QueueElement head;
+    private QueueElement<E> head;
     private int size;
-    private QueueElement tail;
+    private QueueElement<E> tail;
     
 
     public QueueElement getHead() {
@@ -25,8 +25,8 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public void add(Object element) {
-        QueueElement tail = new QueueElement(element);
+    public void add(E element) {
+        QueueElement<E> tail = new QueueElement<E>(element);
         if (head == null) {
             head = tail;
         } else {
@@ -37,9 +37,9 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public Object poll() throws EmptyQueueException  {
+    public E poll() throws EmptyQueueException  {
         if (head != null) {
-            Object result = head.getValue();
+            E result = head.getValue();
             head = head.getNext();
             size--;
             return result;
@@ -61,9 +61,9 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public void addAll(Queue queue) throws EmptyQueueException {  
+    public void addAll(Queue<E> queue) throws EmptyQueueException {  
         while (queue.size() > 0) {
-            add(queue.poll());
+    //        add(queue.poll());
         }
     }
 }

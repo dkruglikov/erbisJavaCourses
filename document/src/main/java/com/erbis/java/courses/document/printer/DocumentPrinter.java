@@ -2,6 +2,7 @@ package com.erbis.java.courses.document.printer;
 
 import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
+import com.erbis.java.courses.document.Document;
 
 /**
  * Document printer basic contract.
@@ -15,5 +16,5 @@ public interface DocumentPrinter {
 	 * @param queue documents to print
 	 * @throws EmptyQueueException 
 	 */
-	void print(Queue queue) throws EmptyQueueException;
+	void print(Queue<Document> queue) throws EmptyQueueException;
 }

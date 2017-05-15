@@ -1,23 +1,23 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
-class QueueElement {
+class QueueElement<E> {
 	
-	private QueueElement next;
-	private final Object value;
+	private QueueElement<E> next;
+	private final E value;
 	
-	QueueElement(Object value) {
+	QueueElement(E value) {
 		this.value = value;
 	}
 	
-	Object getValue() {
+	E getValue() {
 		return value;
 	}
 	
-	QueueElement getNext() {
+	QueueElement<E> getNext() {
 		return next;
 	}
 	
-	void setNext(QueueElement next) {
+	void setNext(QueueElement<E> next) {
 		this.next = next;
 	}
 }
