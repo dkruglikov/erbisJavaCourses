@@ -58,7 +58,7 @@ public class DocumentTest {
 		Assert.assertFalse(doc1.equals(doc0));
 	}
 	
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testEqualsFalseNullProperties() {
 		Document doc0 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 0);
 		Document doc1 = new Document(null, "Ernest Hemingway", (short) 100, 0);

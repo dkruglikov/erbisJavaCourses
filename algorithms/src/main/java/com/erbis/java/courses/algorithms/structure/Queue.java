@@ -3,8 +3,9 @@ package com.erbis.java.courses.algorithms.structure;
 /**
  * LIFO queue contract.
  * @author dkruglikov
+ * @param <E> element type
  */
-public interface Queue<E>{
+public interface Queue<E> {
 	
 	/**
 	 * Returns queue size.
