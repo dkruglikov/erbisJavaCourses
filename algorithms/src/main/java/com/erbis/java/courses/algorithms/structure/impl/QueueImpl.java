@@ -6,12 +6,13 @@ import java.util.Objects;
 
 /**
  * Basic queue implementation.
+ * @param <E> element type
  */
-public class QueueImpl implements Queue {
+public class QueueImpl<E> implements Queue<E> {
 
 	private int size;
-	private QueueElement head;
-	private QueueElement tail;
+	private QueueElement<E> head;
+	private QueueElement<E> tail;
 	
 	@Override
 	public int size() {
@@ -24,8 +25,8 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public void add(Object element) {
-		QueueElement tail = new QueueElement(element);
+	public void add(E element) {
+		QueueElement<E> tail = new QueueElement<>(element);
 		if (head == null) {
 			head = tail;
 		} else {
@@ -36,7 +37,7 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public void addAll(Queue queue) {
+	public void addAll(Queue<E> queue) {
 		while (!queue.isEmpty()) {
 			try {
 				add(queue.poll());
@@ -47,11 +48,11 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public Object poll() throws EmptyQueueException {
+	public E poll() throws EmptyQueueException {
 		if (head == null) {
 			throw new EmptyQueueException();
 		}
-		Object element = head.getValue();
+		E element = head.getValue();
 		head = head.getNext();
 		size--;
 		return element;
@@ -59,7 +60,7 @@ public class QueueImpl implements Queue {
 
 	@Override
 	public boolean contains(Object element) {
-		QueueElement carret = head;
+		QueueElement<E> carret = head;
 		while (carret != null) {
 			if (Objects.equals(element, carret.getValue())) {
 				return true;
