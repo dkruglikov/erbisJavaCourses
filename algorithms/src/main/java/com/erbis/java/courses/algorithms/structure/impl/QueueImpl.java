@@ -3,10 +3,10 @@ package com.erbis.java.courses.algorithms.structure.impl;
 import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 
-public class QueueImpl implements Queue {
+public class QueueImpl<E> implements Queue<E> {
 
-    private QueueElement head;
-    private QueueElement tail;
+    private QueueElement<E> head;
+    private QueueElement<E> tail;
     private int size = 0;
 
     @Override
@@ -20,8 +20,8 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public void add(Object element) {
-        QueueElement tail = new QueueElement(element);
+    public void add(E element) {
+        QueueElement<E> tail = new QueueElement<>(element);
         if (head == null) {
             head = tail;
         } else {
@@ -32,9 +32,9 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public void addAll(Queue queue) {
-        QueueImpl queue1 = (QueueImpl) queue;
-        QueueElement carret;
+    public void addAll(Queue<E> queue) {
+        QueueImpl<E> queue1 = (QueueImpl<E>) queue;
+        QueueElement<E> carret;
         carret = queue1.head;
         while ((carret != null)) {
             try {
@@ -48,11 +48,11 @@ public class QueueImpl implements Queue {
     }
 
     @Override
-    public Object poll() throws EmptyQueueException {
+    public E poll() throws EmptyQueueException {
         if (head == null) {
             throw new EmptyQueueException("Queue is empty");
         } else {
-            Object firstElement = head.getValue();
+            E firstElement = head.getValue();
             head = head.getNext();
             size--;
             return firstElement;
