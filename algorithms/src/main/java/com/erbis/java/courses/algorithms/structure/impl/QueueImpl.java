@@ -5,11 +5,12 @@ import com.erbis.java.courses.algorithms.structure.Queue;
 
 /**
  * Basic queue implementation.
+ * @param <E> element type
  */
-public class QueueImpl<T> implements Queue<T> {
+public class QueueImpl<E> implements Queue<E> {
 
 //	private int size;
-	private QueueElement<T> head;
+	private QueueElement<E> head;
 //	private QueueElement tail;
 	
 	@Override
@@ -18,7 +19,7 @@ public class QueueImpl<T> implements Queue<T> {
 			return 0;
 		} else {
 			int counter = 1;
-			QueueElement<T> cerret = head;
+			QueueElement<E> cerret = head;
 			while (cerret.getNext() != null) {
 				counter++;
 				cerret = cerret.getNext();
@@ -38,22 +39,22 @@ public class QueueImpl<T> implements Queue<T> {
 	}
 
 	@Override
-	public void add(T element) {
+	public void add(E element) {
 		if (head == null) {
-			head = new QueueElement<T>(element);
+			head = new QueueElement<E>(element);
 		} else {
-			QueueElement<T> cerret = head;
+			QueueElement<E> cerret = head;
 			while (cerret.getNext() != null) {
 				cerret = cerret.getNext();
 			}
-			QueueElement<T> newElement = new QueueElement<T>(element);
+			QueueElement<E> newElement = new QueueElement<E>(element);
 			cerret.setNext(newElement);
 		}
 	}
 
 	@Override
-	public void addAll(Queue<T> queue) {
-		T object = queue.poll();
+	public void addAll(Queue<E> queue) {
+		E object = queue.poll();
 		while (object != null) {
 			// this.
 			add(object);
@@ -62,12 +63,12 @@ public class QueueImpl<T> implements Queue<T> {
 	}
 
 	@Override
-	public T poll() /*throws EmptyQueueException*/ {
+	public E poll() /*throws EmptyQueueException*/ {
 		if (head == null) {
 			return null;
 			/*throw new EmptyQueueException("Queue is empty");*/
 		} else {
-			T result = head.getElement();
+			E result = head.getValue();
 			head = head.getNext();
 			return result;
 		}
@@ -78,9 +79,9 @@ public class QueueImpl<T> implements Queue<T> {
 		if (head == null) {
 			return false;
 		} else {
-			QueueElement<T> cerret = head;
+			QueueElement<E> cerret = head;
 			do {
-				if (cerret.getElement().equals(element)) {
+				if (cerret.getValue().equals(element)) {
 					return true;
 				}
 				cerret = cerret.getNext();
