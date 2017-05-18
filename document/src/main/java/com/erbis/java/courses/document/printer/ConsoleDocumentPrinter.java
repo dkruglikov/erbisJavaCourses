@@ -19,7 +19,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	 */
 	public static void main(String[] args) {
 		RandomDocumentFactory factory = new RandomDocumentFactory();
-		Queue queue = new QueueImpl();
+		Queue<Document> queue = new QueueImpl<>();
 		for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
 			queue.add(factory.create());
 		}
@@ -27,7 +27,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	}
 
 	@Override
-	public void print(Queue queue) {
+	public void print(Queue<Document> queue) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

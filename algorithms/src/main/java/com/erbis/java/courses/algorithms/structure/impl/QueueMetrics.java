@@ -1,5 +1,6 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
+import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 
 public final class QueueMetrics {
@@ -38,7 +39,11 @@ public final class QueueMetrics {
 		System.out.println("Measuring removing elements...");
 		long start = System.currentTimeMillis();
 		while (!queue.isEmpty()) {
-			queue.poll();
+			try {
+				queue.poll();
+			} catch (EmptyQueueException ex) {
+				//Should never happen
+			}
 		}
 		long finish = System.currentTimeMillis();
 		System.out.print(queue.getClass().getName());
@@ -55,7 +60,11 @@ public final class QueueMetrics {
 				queue.add(String.valueOf(j));
 			}
 			for (int j = i; j >= 0 && !queue.isEmpty(); j--) {
-				queue.poll();
+				try {
+					queue.poll();
+				} catch (EmptyQueueException ex) {
+					//Should never happen
+				}
 			}
 		}
 		long finish = System.currentTimeMillis();
