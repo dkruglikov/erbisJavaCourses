@@ -1,16 +1,18 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
+import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 import java.util.Objects;
 
 /**
  * Basic queue implementation.
+ * @param <E> element type
  */
-public class QueueImpl implements Queue {
+public class QueueImpl<E> implements Queue<E> {
 
 	private int size;
-	private QueueElement head;
-	private QueueElement tail;
+	private QueueElement<E> head;
+	private QueueElement<E> tail;
 	
 	@Override
 	public int size() {
@@ -23,8 +25,8 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public void add(Object element) {
-		QueueElement tail = new QueueElement(element);
+	public void add(E element) {
+		QueueElement<E> tail = new QueueElement<>(element);
 		if (head == null) {
 			head = tail;
 		} else {
@@ -35,18 +37,22 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public void addAll(Queue queue) {
+	public void addAll(Queue<E> queue) {
 		while (!queue.isEmpty()) {
-			add(queue.poll());
+			try {
+				add(queue.poll());
+			} catch (EmptyQueueException ex) {
+				//Should never happen
+			}
 		}
 	}
 
 	@Override
-	public Object poll() {
+	public E poll() throws EmptyQueueException {
 		if (head == null) {
-			return null;
+			throw new EmptyQueueException();
 		}
-		Object element = head.getValue();
+		E element = head.getValue();
 		head = head.getNext();
 		size--;
 		return element;
@@ -54,7 +60,7 @@ public class QueueImpl implements Queue {
 
 	@Override
 	public boolean contains(Object element) {
-		QueueElement carret = head;
+		QueueElement<E> carret = head;
 		while (carret != null) {
 			if (Objects.equals(element, carret.getValue())) {
 				return true;

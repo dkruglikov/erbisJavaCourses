@@ -1,6 +1,7 @@
 package com.erbis.java.courses.document.printer;
 
 import com.erbis.java.courses.algorithms.structure.Queue;
+import com.erbis.java.courses.document.Document;
 
 /**
  * Document printer basic contract.
@@ -13,5 +14,5 @@ public interface DocumentPrinter {
 	 * Queue may be empty after this method call.
 	 * @param queue documents to print
 	 */
-	void print(Queue queue);
+	void print(Queue<Document> queue);
 }

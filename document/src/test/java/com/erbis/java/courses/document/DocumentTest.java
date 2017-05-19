@@ -58,7 +58,7 @@ public class DocumentTest {
 		Assert.assertFalse(doc1.equals(doc0));
 	}
 	
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testEqualsFalseNullProperties() {
 		Document doc0 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 0);
 		Document doc1 = new Document(null, "Ernest Hemingway", (short) 100, 0);
@@ -87,5 +87,25 @@ public class DocumentTest {
 		Method method = Document.class.getDeclaredMethod("getType", new Class<?>[0]);
 		Class<?> returnType = method.getReturnType();
 		Assert.assertTrue("Document type is not enum", returnType.isEnum());
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidTitle() {
+		new Document("", "Harry", (short) 0, 0);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidAuthor() {
+		new Document("Biography", "", (short) 0, 0);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidPageCountZero() {
+		new Document("Bio", "Harry", (short) 0, 0);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testValidPageCountNegative() {
+		new Document("Bio", "Harry", (short) -10, 0);
 	}
 }

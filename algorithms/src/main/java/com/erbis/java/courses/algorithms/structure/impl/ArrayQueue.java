@@ -6,8 +6,9 @@ import java.util.Objects;
 /**
  * Queue array-based implementation.
  * @author dkruglikov
+ * @param <E> element type
  */
-public class ArrayQueue implements Queue {
+public class ArrayQueue<E> implements Queue<E> {
 	
 	private Object[] elements = {};
 
@@ -22,9 +23,9 @@ public class ArrayQueue implements Queue {
 	}
 
 	@Override
-	public void add(Object element) {
+	public void add(E element) {
 		Object[] oldElements = elements;
-		elements = new String[oldElements.length + 1];
+		elements = new Object[oldElements.length + 1];
 		//System.arraycopy(oldElements, 0, elements, 0, oldElements.length);
 		for (int i = 0; i < oldElements.length; i++) {
 			elements[i] = oldElements[i];
@@ -33,12 +34,12 @@ public class ArrayQueue implements Queue {
 	}
 
 	@Override
-	public void addAll(Queue queue) {
+	public void addAll(Queue<E> queue) {
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	public Object poll() {
+	public E poll() {
 		if (isEmpty()) {
 			return null;
 		}
@@ -49,7 +50,7 @@ public class ArrayQueue implements Queue {
 		for (int i = 1; i < oldElements.length; i++) {
 			elements[i - 1] = oldElements[i];
 		}
-		return element;
+		return (E) element;
 	}
 	
 	@Override
