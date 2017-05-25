@@ -13,6 +13,14 @@ public class QueueImpl<E> implements Queue<E> {
 	private QueueElement<E> head;
 //	private QueueElement tail;
 	
+	protected QueueElement<E> getHead() {
+		return head;
+	}
+
+	protected void setHead(QueueElement<E> head) {
+		this.head = head;
+	}
+
 	@Override
 	public int size() {
 		if (head == null) {

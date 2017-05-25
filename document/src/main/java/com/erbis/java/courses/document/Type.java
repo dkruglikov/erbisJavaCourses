@@ -1,10 +1,10 @@
 package com.erbis.java.courses.document;
 
 public enum Type {
-	MATHEMATICS ("Математика"), 
-	PHILOSOPHY ("Філософія"),
-	SPORT ("Спорт"),
-	OTHERS ("Інше");
+	MATHEMATICS("Математика"), 
+	PHILOSOPHY("Філософія"),
+	SPORT("Спорт"),
+	OTHERS("Інше");
 
 	private final String readableName;
 	

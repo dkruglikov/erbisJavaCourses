@@ -8,7 +8,8 @@ public class ElectronicDocument extends Document {
 		super(title, author, pageCount, creationTimestamp);
 	}
 
-	public ElectronicDocument(String title, String author, short pageCount, long creationTimestamp, String type) {
+	public ElectronicDocument(String title, 
+							  String author, short pageCount, long creationTimestamp, Type type) {
 		super(title, author, pageCount, creationTimestamp, type);
 	}
 

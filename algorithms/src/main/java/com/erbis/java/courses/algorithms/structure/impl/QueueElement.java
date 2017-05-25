@@ -9,7 +9,8 @@ class QueueElement<E> {
 	
 	private final E value;
 	private QueueElement<E> next;
-
+	private QueueElement<E> previous;
+	
 	QueueElement(E value) {
 		this.value = value;
 	}
@@ -26,4 +27,11 @@ class QueueElement<E> {
 		this.next = next;
 	}
 
+	QueueElement<E> getPrevious() {
+		return previous;
+	}
+
+	void setPrevious(QueueElement<E> previous) {
+		this.previous = previous;
+	}
 }

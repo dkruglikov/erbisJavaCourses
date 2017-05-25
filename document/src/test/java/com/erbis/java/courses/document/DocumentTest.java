@@ -4,6 +4,9 @@ import java.lang.reflect.Method;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.erbis.java.courses.algorithms.structure.Queue;
+import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
+
 public class DocumentTest {
 	
 	@Test
@@ -107,5 +110,26 @@ public class DocumentTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testValidPageCountNegative() {
 		new Document("Bio", "Harry", (short) -10, 0);
+	}
+	
+	@Test 
+	public void testDocumentQueue() {
+		Queue<? extends Document> d = new QueueImpl<Document>();
+		d = new QueueImpl<ElectronicDocument>();
+
+		Queue<ElectronicDocument> d1 = new QueueImpl<ElectronicDocument>();
+		
+		Queue<Document> d2 = new QueueImpl<Document>();
+		
+		printAuthors(d);
+		printAuthors(d1);
+		printAuthors(d2);
+	}
+	
+	public void printAuthors(Queue<? extends Document> documentsList) {
+		Document d;
+		while ((d = documentsList.poll()) != null) {
+			System.out.println(d.getAuthor());
+		}
 	}
 }

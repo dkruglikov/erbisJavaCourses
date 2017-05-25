@@ -47,7 +47,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 //	}
 
 	@Override
-	public void print(Queue<Document> queue) {
+	public void print(Queue<? extends Document> queue) {
 		Object object = queue.poll();
 		while (object != null) {
 //			if (object instanceof Document) {
