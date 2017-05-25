@@ -12,7 +12,7 @@ public class QueueImpl<E> implements Queue<E> {
 
 	private int size;
 	private QueueElement<E> head;
-	private QueueElement<E> tail;
+	protected QueueElement<E> tail;
 	
 	@Override
 	public int size() {

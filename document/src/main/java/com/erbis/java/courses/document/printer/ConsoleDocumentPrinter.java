@@ -3,6 +3,8 @@ package com.erbis.java.courses.document.printer;
 import com.erbis.java.courses.algorithms.structure.Queue;
 import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
+import com.erbis.java.courses.document.ElectronicDocument;
+import com.erbis.java.courses.document.QueueDocument;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
 /**
@@ -27,7 +29,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	}
 
 	@Override
-	public void print(Queue<Document> queue) {
+	public void print(QueueDocument<ElectronicDocument> queue) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
