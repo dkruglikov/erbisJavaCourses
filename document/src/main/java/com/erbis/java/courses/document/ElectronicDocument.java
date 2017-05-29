@@ -8,7 +8,8 @@ public class ElectronicDocument extends Document {
 		super(title, author, pageCount, creationTimestamp);
 	}
 
-	public ElectronicDocument(String title, String author, short pageCount, long creationTimestamp, String type) {
+	public ElectronicDocument(String title, 
+			String author, short pageCount, long creationTimestamp, String type) {
 		super(title, author, pageCount, creationTimestamp, type);
 	}
 
@@ -18,5 +19,13 @@ public class ElectronicDocument extends Document {
 
 	public void setFormat(String format) {
 		this.format = format;
+	}
+	
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
+	
+	public int hashCode() {
+		return super.hashCode();
 	}
 }

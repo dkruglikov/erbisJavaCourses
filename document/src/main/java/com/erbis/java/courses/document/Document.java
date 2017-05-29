@@ -1,7 +1,8 @@
 package com.erbis.java.courses.document;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
+
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  * Document domain object class.

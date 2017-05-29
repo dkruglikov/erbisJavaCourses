@@ -1,9 +1,6 @@
 package com.erbis.java.courses.document.printer;
 
-import com.erbis.java.courses.algorithms.structure.Queue;
-import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
-import com.erbis.java.courses.document.ElectronicDocument;
 import com.erbis.java.courses.document.QueueDocument;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
@@ -21,7 +18,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	 */
 	public static void main(String[] args) {
 		RandomDocumentFactory factory = new RandomDocumentFactory();
-		Queue<Document> queue = new QueueImpl<>();
+		QueueDocument<Document> queue = new QueueDocument<>();
 		for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
 			queue.add(factory.create());
 		}
@@ -29,11 +26,11 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	}
 
 	@Override
-	public void print(QueueDocument<ElectronicDocument> queue) {
+	public void print(QueueDocument<? extends Document> queue) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
-	private void print(Document document) {
+	public void print(Document document) {
 		System.out.print("Title: ");
 		System.out.print(document.getTitle());
 		System.out.print("\tAuthor: ");

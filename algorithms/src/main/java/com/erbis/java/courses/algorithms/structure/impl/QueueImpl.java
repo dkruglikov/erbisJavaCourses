@@ -12,8 +12,20 @@ public class QueueImpl<E> implements Queue<E> {
 
 	private int size;
 	private QueueElement<E> head;
-	protected QueueElement<E> tail;
+	private QueueElement<E> tail;
 	
+	public QueueElement<E> getTail() {
+		return tail;
+	}
+
+	protected void setTail(QueueElement<E> tail) {
+		this.tail = tail;
+	}
+
+	protected void setSize(int size) {
+		this.size = size;
+	}
+
 	@Override
 	public int size() {
 		return size;
