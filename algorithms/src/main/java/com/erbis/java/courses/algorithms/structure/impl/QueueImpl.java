@@ -10,7 +10,7 @@ public class QueueImpl<E> implements Queue<E>{
     private QueueElement<E> tail;
     
 
-    public QueueElement getHead() {
+    public QueueElement<E> getHead() {
         return head;
     }
 
