@@ -20,34 +20,38 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {
     public void add(E element, int index) {
         LinkedListElement<E> new_element = new LinkedListElement<E>(element);
         LinkedListElement<E> curret = first;
-        while (curret != null) {
-            if (index >= 0) {
-                if (first == null) {
-                    first = new_element;
-                } else {
-                    
-                    for (int i = 1; i <= index; i++) {
-                        curret = curret.getNext();
-                        if (i == index) {
-                            new_element.setNext(new_element);
-                        }
-                    }
-                }
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("index < 0");
+        } if (index > size()) {
+            throw new IndexOutOfBoundsException("index > size");
+        } else {
+            if (first == null) {
+                first = new_element;
+                setSize(size() + 1);
             } else {
-                throw new IndexOutOfBoundsException("index < 0");
+                for (int i = 0; i <= index; i++) {
+                  curret = curret.getNext();
+                  if (i == index) {
+                      new_element.setNext(new_element);
+                      setSize(size() + 1);
+                  }
+                }
             }
-        }
-        throw new IndexOutOfBoundsException("index > size");
+        }       
     }
     
     @Override
     public E get(int index) {
         E rezult = null;
         LinkedListElement<E> curret = first;
-        while (curret != null) {
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("index < 0");
+        } if (index >= size()) {
+            throw new IndexOutOfBoundsException("index > size");
+        } else {
             if (index == 0) {
                 return first.getValue();
-            } if (index > 0 && index < size()) {
+            } else {
                 for (int i = 0; i <= index; i++) {
                     curret = curret.getNext();
                     if (i == index) {
@@ -55,10 +59,7 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {
                     }
                 }
                 return rezult;
-            } else {
-                throw new IndexOutOfBoundsException("index < 0");
             }
-        }
-        throw new IndexOutOfBoundsException("index > size");
+         }
     }
 }

@@ -47,5 +47,5 @@ public interface Queue<E> {
 	 * @return  <code>true</code> if queue contains element
 	 * and <code>false</code> otherwise
 	 */
-	boolean contains(Object element);
+	boolean contains(E element);
 }

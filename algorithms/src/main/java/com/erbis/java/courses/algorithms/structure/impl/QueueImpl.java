@@ -7,11 +7,16 @@ public class QueueImpl<E> implements Queue<E>{
 
     private QueueElement<E> head;
     private int size;
+
     private QueueElement<E> tail;
     
 
     public QueueElement<E> getHead() {
         return head;
+    }
+    
+    protected void setSize(int size) {
+        this.size = size;
     }
 
     @Override
@@ -49,8 +54,8 @@ public class QueueImpl<E> implements Queue<E>{
     }
     
     @Override
-    public boolean contains(Object element) {
-        QueueElement carret = head;
+    public boolean contains(E element) {
+        QueueElement<E> carret = head;
         while (carret != null) {
             if (element.equals(carret.getValue())) {
                 return true;
@@ -63,7 +68,7 @@ public class QueueImpl<E> implements Queue<E>{
     @Override
     public void addAll(Queue<E> queue) throws EmptyQueueException {  
         while (queue.size() > 0) {
-    //        add(queue.poll());
+            add(queue.poll());
         }
     }
 }
