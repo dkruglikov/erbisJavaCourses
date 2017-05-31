@@ -27,13 +27,17 @@ public class Document {
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
 		if (title == null) {
 		    throw new NullPointerException("Title is NULL.");
-		} if (author == null) {
+		}
+		if (author == null) {
 		    throw new NullPointerException("Author is NULL.");
-		} if (title.equals("")) {
+		}
+		if ("".equals(title)) {
 		    throw new IllegalArgumentException("Title is empty.");
-		} if (author.equals("")) {
+		}
+		if ("".equals(author)) {
 		    throw new IllegalArgumentException("Author is empty.");
-		} if (pageCount < 0) {
+		}
+		if (pageCount < 0) {
 		    throw new IllegalArgumentException("PageCount value is negative.");
 		} else {
     	    this.title = title;

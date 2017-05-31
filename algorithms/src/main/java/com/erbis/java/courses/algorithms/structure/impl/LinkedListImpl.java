@@ -4,38 +4,40 @@ import com.erbis.java.courses.algorithms.structure.LinkedList;
 
 public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {    
     
-    private LinkedListElement<E> first;
-    private LinkedListElement<E> next;
-    private LinkedListElement<E> previous;
+//    private LinkedListElement<E> first;
+//   private LinkedListElement<E> next;
+//   private LinkedListElement<E> previous;
     
-    public LinkedListElement<E> getFirst() {
-        return first;
-    }
-
-    public void setFirst(LinkedListElement<E> first) {
-        this.first = first;
+//    public LinkedListElement<E> getFirst() {
+//        return first;
+//    }
+//
+//    public void setFirst(LinkedListElement<E> first) {
+//        this.first = first;
+//    }
+    protected LinkedListElement<E> createElement(E element) {
+        return new LinkedListElement<>(element);
     }
     
     @Override
     public void add(E element, int index) {
-        LinkedListElement<E> new_element = new LinkedListElement<E>(element);
-        LinkedListElement<E> curret = first;
+        LinkedListElement<E> newElement = new LinkedListElement<E>(element);
+        LinkedListElement<E> current = (LinkedListElement<E>) getHead();
         if (index < 0) {
             throw new IndexOutOfBoundsException("index < 0");
         }
         if (index > size()) {
             throw new IndexOutOfBoundsException("index > size");
         } else {
-            if (first == null) {
-                first = new_element;
-                setSize(size() + 1);
+            if (current == null) {
+                add(element);
             } else {
                 for (int i = 0; i <= index; i++) {
-                  curret = curret.getNext();
                   if (i == index) {
-                      new_element.setNext(new_element);
+                      current.setNext(newElement);
                       setSize(size() + 1);
                   }
+                  current = current.getNext();
                 }
             }
         }       
@@ -43,27 +45,27 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {
     
     @Override
     public E get(int index) {
-        E rezult = null;
-        LinkedListElement<E> curret = first;
+        E result = null;
+        LinkedListElement<E> current = (LinkedListElement<E>) getHead();
         if (index < 0) {
             throw new IndexOutOfBoundsException("index < 0");
         } 
         if (index >= size()) {
-            throw new IndexOutOfBoundsException("index > size");
+            throw new IndexOutOfBoundsException("index >= size");
         } else {
             if (index == 0) {
-                if (first == null) {
+                if (current == null) {
                     throw new IndexOutOfBoundsException("List is empty");
                 }
-                return first.getValue();
+                return current.getValue();
             } else {
-                for (int i = 0; i <= index; i++) {
-                    curret = curret.getNext();
+                for (int i = 1; i <= index; i++) {
+                    current = current.getNext();
                     if (i == index) {
-                        rezult = curret.getValue();
+                        result = current.getValue();
                     }
                 }
-                return rezult;
+                return result;
             }
          }
     }

@@ -7,7 +7,6 @@ public class QueueImpl<E> implements Queue<E> {
 
     private QueueElement<E> head;
     private int size;
-
     private QueueElement<E> tail;
     
 
@@ -31,7 +30,7 @@ public class QueueImpl<E> implements Queue<E> {
 
     @Override
     public void add(E element) {
-        QueueElement<E> tail = new QueueElement<E>(element);
+        QueueElement<E> tail = createElement(element);
         if (head == null) {
             head = tail;
         } else {
@@ -39,6 +38,10 @@ public class QueueImpl<E> implements Queue<E> {
         }
         size++;
         this.tail = tail;
+    }
+
+    protected QueueElement<E> createElement(E element) {
+        return new QueueElement<E>(element);
     }
 
     @Override

@@ -6,6 +6,8 @@ import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
  * Console document printer implementation.
  * @author dkruglikov
@@ -29,6 +31,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 		new ConsoleDocumentPrinter().print(queue);
 	}
 	// CHECKSTYLE:OFF
+    @SuppressFBWarnings("NP_NULL_PARAM_DEREF_NONVIRTUAL")
 	private static void testContains() {
 	    Queue q = new QueueImpl(); 
 	    Document doc = new Document("Jack", null, (short) 30, 0);

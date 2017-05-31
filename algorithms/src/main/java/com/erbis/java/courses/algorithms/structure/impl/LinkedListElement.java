@@ -3,7 +3,6 @@ package com.erbis.java.courses.algorithms.structure.impl;
 public class LinkedListElement<E> extends QueueElement<E> {
     
    
-    private LinkedListElement<E> next;
     private LinkedListElement<E> previous;
     
     LinkedListElement(E value) {
@@ -17,14 +16,9 @@ public class LinkedListElement<E> extends QueueElement<E> {
     void setPrevious(LinkedListElement<E> previous) {
         this.previous = previous;
     }
-
-
-    public LinkedListElement<E> getNext() {
-        return next;
-    }
-
-    public void setNext(LinkedListElement<E> next) {
-        this.next = next;
+    
+    LinkedListElement<E> getNext() {
+        return (LinkedListElement<E>) super.getNext();
     }
     
 }
