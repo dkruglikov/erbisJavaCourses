@@ -6,7 +6,7 @@ package com.erbis.java.courses.algorithms.structure.impl;
  * @param <E> value type
  */
 class QueueElement<E> {
-	
+
 	private final E value;
 	private QueueElement<E> next;
 

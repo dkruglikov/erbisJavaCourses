@@ -69,4 +69,8 @@ public class QueueImpl<E> implements Queue<E> {
         }
         return false;
     }
+
+    public QueueElement<E> getHead() {
+        return head;
+    }
 }

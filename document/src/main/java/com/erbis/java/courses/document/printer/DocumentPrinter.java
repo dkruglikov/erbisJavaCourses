@@ -15,5 +15,5 @@ public interface DocumentPrinter {
 	 * Queue may be empty after this method call.
 	 * @param queue documents to print
 	 */
-	void print(Queue<Document> queue);
+	void print(Queue<Document> queue) throws EmptyQueueException;
 }
