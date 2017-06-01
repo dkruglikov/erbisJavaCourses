@@ -4,17 +4,6 @@ import com.erbis.java.courses.algorithms.structure.LinkedList;
 
 public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {    
     
-//    private LinkedListElement<E> first;
-//   private LinkedListElement<E> next;
-//   private LinkedListElement<E> previous;
-    
-//    public LinkedListElement<E> getFirst() {
-//        return first;
-//    }
-//
-//    public void setFirst(LinkedListElement<E> first) {
-//        this.first = first;
-//    }
     protected LinkedListElement<E> createElement(E element) {
         return new LinkedListElement<>(element);
     }
@@ -35,9 +24,9 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {
                 for (int i = 0; i <= index; i++) {
                   if (i == index) {
                       current.setNext(newElement);
-                      setSize(size() + 1);
+                      super.sizeIncrement();
                   }
-                  current = current.getNext();
+                  current = (LinkedListElement<E>) current.getNext();
                 }
             }
         }       
@@ -60,7 +49,7 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {
                 return current.getValue();
             } else {
                 for (int i = 1; i <= index; i++) {
-                    current = current.getNext();
+                    current = (LinkedListElement<E>) current.getNext();
                     if (i == index) {
                         result = current.getValue();
                     }

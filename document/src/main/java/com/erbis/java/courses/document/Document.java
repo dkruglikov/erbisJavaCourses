@@ -37,8 +37,8 @@ public class Document {
 		if ("".equals(author)) {
 		    throw new IllegalArgumentException("Author is empty.");
 		}
-		if (pageCount < 0) {
-		    throw new IllegalArgumentException("PageCount value is negative.");
+		if (pageCount <= 0) {
+		    throw new IllegalArgumentException("PageCount value is negative or zero.");
 		} else {
     	    this.title = title;
     		this.author = author;
