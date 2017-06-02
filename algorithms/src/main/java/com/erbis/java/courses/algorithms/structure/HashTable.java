@@ -5,7 +5,7 @@ package com.erbis.java.courses.algorithms.structure;
  * @author dkruglikov
  * @param <V> type of values stored in this hashtable
  */
-public interface HashTable<V> {
+public interface HashTable<K, V> {
 	
 	/**
 	 * Returns value by it's key or <code>null</code>
@@ -13,12 +13,12 @@ public interface HashTable<V> {
 	 * @param key key
 	 * @return value
 	 */
-	V get(int key);
+	V get(K key);
 	
 	/**
 	 * Puts value to hashtable with appropriate key.
 	 * @param key key
 	 * @param value value
 	 */
-	void put(int key, V value);
+	void put(K key, V value);
 }

@@ -1,8 +1,10 @@
 package com.erbis.java.courses.algorithms.strings;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class StringUtilTest {
 	
 	@Test

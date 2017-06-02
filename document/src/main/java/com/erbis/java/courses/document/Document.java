@@ -13,7 +13,12 @@ public class Document {
 	private final String author;
 	private final short pageCount;
 	private final long creationTimestamp;
-	private String type;
+	private Type type;
+	
+	public enum Type {
+		Mathematics,
+		Sport
+	}
 
 	/**
 	 * Creates document with specified parameters.
@@ -24,6 +29,12 @@ public class Document {
 	 * @see #Document(java.lang.String, java.lang.String, short, long, java.lang.String)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp) {
+		if (title == null || author == null) {
+			throw new NullPointerException();
+		}
+		if (title.equals("") || author.equals("") || pageCount <= 0) {
+			throw new IllegalArgumentException();
+		}
 		this.title = title;
 		this.author = author;
 		this.pageCount = pageCount;
@@ -40,8 +51,8 @@ public class Document {
 	 * @see #Document(java.lang.String, java.lang.String, short, long)
 	 */
 	public Document(String title, String author, short pageCount, long creationTimestamp, String type) {
-		this(title, author, pageCount, creationTimestamp);
-		this.type = type;
+		this(title, author, pageCount, creationTimestamp);		
+		this.type = Type.valueOf(type);
 	}
 
 	//CHECKSTYLE:OFF
@@ -100,7 +111,7 @@ public class Document {
 	 * @return type
 	 * @see #setType(String)
 	 */
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
@@ -109,7 +120,7 @@ public class Document {
 	 * @param type type
 	 * @see #getType()
 	 */
-	public void setType(String type) {
+	public void setType(Type type) {
 		this.type = type;
 	}
 }

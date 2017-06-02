@@ -39,5 +39,5 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 		System.out.print(document.getType());
 		System.out.print("\tPages: ");
 		System.out.println(document.getPageCount());
-	}
+	}	
 }

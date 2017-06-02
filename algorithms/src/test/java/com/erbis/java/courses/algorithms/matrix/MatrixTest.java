@@ -1,8 +1,10 @@
 package com.erbis.java.courses.algorithms.matrix;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class MatrixTest {
 	
 	private static final double DOUBLE_ASSERT_DELTA = 1e-5;

@@ -11,22 +11,32 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements LinkedList<E> {
 
 	@Override
 	public void add(E element, int index) {
-		QueueElement<E> elementOld = getElement(index);
+		if (index < 0 || index > size()) {
+			throw new IndexOutOfBoundsException("Incorrect index value");
+		}
 		QueueElement<E> newElement = new QueueElement<E>(element);
-		newElement.setNext(elementOld.getNext());
-		elementOld.setNext(newElement);	
-		setSize(size() + 1);
+		if (index == size()) {
+			add(element);
+		} else if (index == 0 && size() > 0) {
+			QueueElement<E> elementOld = getHead();
+			newElement.setNext(elementOld.getNext());
+		} else {
+			QueueElement<E> elementOld = getElement(index);
+			QueueElement<E> elementBefore = getElement(index - 1);
+			newElement.setNext(elementOld);
+			elementBefore.setNext(newElement);	
+			incrementSize();
+		}
 	}
 
 	public QueueElement<E> getElement(int index) {
 		if (index < 0 || index >= size()) {
 			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());
 		}
-		QueueElement<E> element = getTail();
-
-		for (int i = size() - 1; i > index; i--) {
+		QueueElement<E> element = getHead();
+		for (int i = 0; i < index; i++) {
 			element = element.getNext();
-		}
+		}		
 		return element;		
 	}
 }

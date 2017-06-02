@@ -3,34 +3,24 @@ package com.erbis.java.courses.algorithms.structure.impl;
 import com.erbis.java.courses.algorithms.structure.HashTable;
 import com.erbis.java.courses.algorithms.structure.LinkedList;
 
-public class HashTableImpl<V> implements HashTable<V> {
+public class HashTableImpl<K, V> implements HashTable<K, V> {
 
 	private static final int HUNDRED = 100;
-	private LinkedList<HashEntry> hashEntries = new LinkedListImpl<>();
+	private LinkedList<Entry>[] entryList = new LinkedList[HUNDRED];
 	
 	private class Entry {
-		private int key;		
+		private K key;		
 		private V value;
 		
-		Entry(int key, V value) {
+		Entry(K key, V value) {
 			this.key = key;
 			this.value = value;
 		}
 	}
 	
-	private class HashEntry {
-		private int hashKey;		
-		private LinkedList<Entry> entries = new LinkedListImpl<>();
-		
-		HashEntry(Entry entry) {
-			hashKey = hash(entry.key);
-			entries.add(entry);
-		}
-	}
-	
 	@Override
-	public V get(int key) {
-		LinkedList<Entry> entries = getHashEntry(key).entries;
+	public V get(K key) {
+		LinkedList<Entry> entries = entryList[hash(key.hashCode())];
 		if (entries != null) {
 			for (int i = 0; i < entries.size(); i++) {
 				Entry entry = entries.get(i);
@@ -43,28 +33,13 @@ public class HashTableImpl<V> implements HashTable<V> {
 	}
 
 	@Override
-	public void put(int key, V value) {
-		HashEntry hashEntry = getHashEntry(key);
+	public void put(K key, V value) {
+		int index = hash(key.hashCode());  
 		Entry entry = new Entry(key, value);
-		if (hashEntry != null) {
-			hashEntry.entries.add(entry);
-		} else {
-			hashEntries.add(new HashEntry(entry));
-		}
+		entryList[index].add(entry);
 	}
 	
-	private HashEntry getHashEntry(int key) {
-		int hashKey = hash(key);
-		for (int i = 0; i < hashEntries.size(); i++) {
-			HashEntry hashEntry = hashEntries.get(i);
-			if (hashKey == hashEntry.hashKey) {
-				return hashEntry;
-			}
-		}
-		return null;	
-	}
-	
-	private int hash(int code) {
-		return code % HUNDRED;
+	private int hash(int hashCode) {
+		return Math.abs(hashCode) % HUNDRED;
 	}
 }
