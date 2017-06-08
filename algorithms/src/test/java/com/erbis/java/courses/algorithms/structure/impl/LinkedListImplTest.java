@@ -43,6 +43,16 @@ public class LinkedListImplTest {
 		list.add("Baz", 3);
 	}
 	
+	@Test
+	public void testAddIndex1() {
+		list.add("Foo", 0);
+		list.add("Bar", 1);
+		list.add("Baz", 1);
+		Assert.assertEquals("Foo", list.get(0));
+		Assert.assertEquals("Baz", list.get(1));
+		Assert.assertEquals("Bar", list.get(2));
+	}
+	
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void testGetEmpty() {
 		list.get(0);
