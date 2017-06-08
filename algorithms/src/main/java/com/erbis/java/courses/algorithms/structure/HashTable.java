@@ -3,6 +3,7 @@ package com.erbis.java.courses.algorithms.structure;
 /**
  * Hashtable contract interface.
  * @author dkruglikov
+ * @param <K> type of keys stored in this hashtable
  * @param <V> type of values stored in this hashtable
  */
 public interface HashTable<K, V> {
@@ -13,7 +14,7 @@ public interface HashTable<K, V> {
 	 * @param key key
 	 * @return value
 	 */
-	V get(K key);
+	V get(Object key);
 	
 	/**
 	 * Puts value to hashtable with appropriate key.
