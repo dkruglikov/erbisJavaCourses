@@ -7,12 +7,12 @@ import com.erbis.java.courses.document.QueueDocument;
  * Document printer basic contract.
  * @author dkruglikov
  */
-public interface DocumentPrinter {
+public interface DocumentPrinter<T extends Document> {
 	
 	/**
 	 * Prints queue of <code>{@link com.erbis.java.courses.document.Document}</code>s.
 	 * Queue may be empty after this method call.
 	 * @param queue documents/ to print
 	 */
-	void print(QueueDocument<? extends Document> queue);
+	void print(QueueDocument<T> queue);
 }

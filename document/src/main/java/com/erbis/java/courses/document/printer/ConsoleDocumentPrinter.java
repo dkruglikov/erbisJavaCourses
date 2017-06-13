@@ -8,7 +8,7 @@ import com.erbis.java.courses.document.RandomDocumentFactory;
  * Console document printer implementation.
  * @author dkruglikov
  */
-public class ConsoleDocumentPrinter implements DocumentPrinter {
+public class ConsoleDocumentPrinter<T extends Document> implements DocumentPrinter<T> {
 	
 	private static final byte COUNT_DOCUMENTS = 8;
 	
@@ -22,11 +22,11 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 		for (byte i = 0; i < COUNT_DOCUMENTS; i++) {
 			queue.add(factory.create());
 		}
-		new ConsoleDocumentPrinter().print(queue);
+		new ConsoleDocumentPrinter<Document>().print(queue);
 	}
 
 	@Override
-	public void print(QueueDocument<? extends Document> queue) {
+	public void print(QueueDocument<T> queue) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

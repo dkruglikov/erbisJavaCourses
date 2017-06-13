@@ -26,7 +26,6 @@ public class QueueImpl<E> implements Queue<E> {
 		size++;
 	}
 
-
 	@Override
 	public int size() {
 		return size;

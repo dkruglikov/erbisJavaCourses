@@ -9,10 +9,10 @@ public class main {
 		int b = 5;
 		System.out.println(Math.abs(a%b));
 
-	/*	long c = 1496335314000l;
+		long c = 1497357355000l;
 		Date date = new Date(c);
 		Date date2 = new Date();
 		System.out.println(date);
-		System.out.println(date2);*/
+		System.out.println(date2);
 	}
 }

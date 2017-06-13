@@ -19,12 +19,12 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
 	}
 	
 	@Override
-	public V get(K key) {
+	public V get(Object key) {
 		LinkedList<Entry> entries = entryList[hash(key.hashCode())];
 		if (entries != null) {
 			for (int i = 0; i < entries.size(); i++) {
 				Entry entry = entries.get(i);
-				if (key == entry.key) {
+				if (entry.key.equals(key)) {
 					return entry.value;
 				}
 			}
