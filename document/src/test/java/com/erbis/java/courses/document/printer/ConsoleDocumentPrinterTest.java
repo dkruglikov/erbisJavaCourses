@@ -1,5 +1,6 @@
 package com.erbis.java.courses.document.printer;
 
+import com.erbis.java.courses.document.Document;
 import com.erbis.java.courses.document.ElectronicDocument;
 import org.junit.Test;
 
