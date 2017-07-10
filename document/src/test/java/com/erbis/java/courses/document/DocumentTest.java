@@ -31,8 +31,8 @@ public class DocumentTest {
 	
 	@Test
 	public void testEqualsTrueDiffTimestamps() {
-		Document doc0 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 0, "Mathematics");
-		Document doc1 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 1, "Sport");
+		Document doc0 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 0, Type.MATHEMATICS);
+		Document doc1 = new Document("The oldman and the sea", "Ernest Hemingway", (short) 100, 1, Type.SPORT);
 		Assert.assertTrue(doc0.equals(doc1));
 		Assert.assertTrue(doc1.equals(doc0));
 	}
@@ -47,8 +47,8 @@ public class DocumentTest {
 	
 	@Test(expected = NullPointerException.class)
 	public void testEqualsTrueNullPropertiesDiffTimestamp() {
-		Document doc0 = new Document(null, null, (short) 100, 0, "Sport");
-		Document doc1 = new Document(null, null, (short) 100, 1, "Mathematics");
+		Document doc0 = new Document(null, null, (short) 100, 0, Type.SPORT);
+		Document doc1 = new Document(null, null, (short) 100, 1, Type.MATHEMATICS);
 		Assert.assertTrue(doc0.equals(doc1));
 		Assert.assertTrue(doc1.equals(doc0));
 	}
@@ -112,24 +112,4 @@ public class DocumentTest {
 		new Document("Bio", "Harry", (short) -10, 0);
 	}
 	
-	@Test 
-	public void testDocumentQueue() {
-		Queue<? extends Document> d = new QueueImpl<Document>();
-		d = new QueueImpl<ElectronicDocument>();
-
-		Queue<ElectronicDocument> d1 = new QueueImpl<ElectronicDocument>();
-		
-		Queue<Document> d2 = new QueueImpl<Document>();
-		
-		printAuthors(d);
-		printAuthors(d1);
-		printAuthors(d2);
-	}
-	
-	public void printAuthors(Queue<? extends Document> documentsList) {
-		Document d;
-		while ((d = documentsList.poll()) != null) {
-			System.out.println(d.getAuthor());
-		}
-	}
 }

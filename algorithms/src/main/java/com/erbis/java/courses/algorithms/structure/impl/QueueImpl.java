@@ -1,6 +1,7 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
 
+import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 
 /**
@@ -62,19 +63,22 @@ public class QueueImpl<E> implements Queue<E> {
 
 	@Override
 	public void addAll(Queue<E> queue) {
-		E object = queue.poll();
-		while (object != null) {
-			// this.
-			add(object);
-			object = queue.poll();
+//		boolean exception = false;
+		while (true/*!exception*/) {
+			try {
+				// this.
+				add(queue.poll());
+			} catch (EmptyQueueException ex) {
+//				exception = true;
+				return;
+			}
 		}
 	}
 
 	@Override
-	public E poll() /*throws EmptyQueueException*/ {
+	public E poll() throws EmptyQueueException {
 		if (head == null) {
-			return null;
-			/*throw new EmptyQueueException("Queue is empty");*/
+			throw new EmptyQueueException("Queue is empty");
 		} else {
 			E result = head.getValue();
 			head = head.getNext();

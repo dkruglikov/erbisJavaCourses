@@ -46,7 +46,7 @@ public interface Queue<E> {
 	 * 
 	 * @return head of queue or <code>null</code> if queue empty
 	 */
-	E poll() /*throws EmptyQueueException*/;
+	E poll() throws EmptyQueueException;
 
 	/**
 	 * Checks if queue contains specified element.

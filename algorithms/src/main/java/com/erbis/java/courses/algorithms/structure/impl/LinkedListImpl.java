@@ -1,6 +1,8 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
-public class DLinkedList<D> extends QueueImpl<D>  {
+import com.erbis.java.courses.algorithms.structure.LinkedList;
+
+public class LinkedListImpl<D> extends QueueImpl<D> implements LinkedList<D> {
 	
 	private QueueElement<D> getElementOnIndex(int index) throws IndexOutOfBoundsException {
 		QueueElement<D> elementTemp = getHead();
