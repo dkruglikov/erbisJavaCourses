@@ -17,12 +17,10 @@ public class MyIterator<E> implements Iterator<E> {
 	}
 	
 	public E next() {
-		E result;
-		try {
-			result = elements[current];
-		} catch (ArrayIndexOutOfBoundsException e) {
-			throw new NoSuchElementException();
-		}
+		if (current >= elements.length) {
+			  throw new NoSuchElementException();
+			}
+		E result = elements[current];
 		current++;
 		return result;
 	}
