@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author dkruglikov
  * @param <E> element type
  */
-public class ArrayQueue<E> implements Queue<E>, Iterable<E> {
+public class ArrayQueue<E> implements Queue<E> {
 	
 	private Object[] elements = {};
 
