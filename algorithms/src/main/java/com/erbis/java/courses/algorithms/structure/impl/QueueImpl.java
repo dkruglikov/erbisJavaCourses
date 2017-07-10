@@ -2,6 +2,9 @@ package com.erbis.java.courses.algorithms.structure.impl;
 
 import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
@@ -80,5 +83,29 @@ public class QueueImpl<E> implements Queue<E> {
 			carret = carret.getNext();
 		}
 		return false;
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+		
+		return new Iterator<E>() {
+			
+			private QueueElement<E> current = head;
+			
+			@Override
+			public boolean hasNext() {
+				return current != tail;
+			}
+
+			@Override
+			public E next() {
+				if (!hasNext()) {
+					throw new NoSuchElementException();
+				}
+				E result = (E) current;
+				current = current.getNext();
+				return result;
+			}
+		};
 	}
 }
