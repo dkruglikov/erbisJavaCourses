@@ -1,5 +1,7 @@
 package com.erbis.java.courses.algorithms.sort;
 
+import java.util.Comparator;
+
 public class InsertionSorter extends Sorter {
 
 	@Override
@@ -7,6 +9,19 @@ public class InsertionSorter extends Sorter {
 		for (int i = 1; i < array.length; i++) {
 			int j = i;
 			while (j > 0 && compare(array, j - 1, i, sortStat) > 0) {
+				j--;
+			}
+			if (i != j) {
+				move(array, i, j, sortStat);
+			}
+		}
+	}
+
+	@Override
+	protected <E> void sort(E[] array, Comparator<? super E> comparator, SortStat sortStat) {
+		for (int i = 1; i < array.length; i++) {
+			int j = i;
+			while (j > 0 && comparator.compare(array[j - 1], array[i]) > 0) {
 				j--;
 			}
 			if (i != j) {
