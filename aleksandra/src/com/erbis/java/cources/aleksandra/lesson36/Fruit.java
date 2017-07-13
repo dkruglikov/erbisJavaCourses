@@ -13,9 +13,19 @@ public class Fruit {
 
 	@Override
 	public boolean equals(Object obj) {	
-		if (this.getClass() == obj.getClass()) {
-			return this.name.equals(((Fruit) obj).getName());
+		if (obj == null) {
+			return false;
 		}
-		return false;
+		if (this.getClass() == obj.getClass()) {
+			String objName = ((Fruit) obj).getName();
+			if (name == null && objName == null) {
+				return true;
+			}
+			if (name == null || objName == null) {
+				return false; 
+			}
+			return this.name.equals(objName);
+		}
+		return false; 
 	}
 }
