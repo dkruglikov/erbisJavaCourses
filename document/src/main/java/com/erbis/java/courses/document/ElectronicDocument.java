@@ -31,5 +31,4 @@ public class ElectronicDocument extends Document {
         return super.equals(obj);
     }
 	
-	
 }
