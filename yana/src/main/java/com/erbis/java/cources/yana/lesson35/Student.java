@@ -11,11 +11,17 @@ public class Student implements Comparable<Student>{
         this.age = age;
     }
     
-    public String getSurname() {
+    public String getSurname() throws NullPointerException {
+        if (surname == null) {
+            throw new NullPointerException("surname is null");
+        }
         return surname;
     }
     
-    public String getName() {
+    public String getName() throws NullPointerException {
+        if (name == null) {
+            throw new NullPointerException("name is null");
+        }
         return name;
     }
     
