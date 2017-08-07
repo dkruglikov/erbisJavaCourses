@@ -2,28 +2,39 @@ package com.erbis.java.courses.algorithms.structure.impl;
 
 import com.erbis.java.courses.algorithms.structure.HashTable;
 
-public class HashTableImpl<V> implements HashTable<V> {
+@SuppressWarnings({"rawtypes", "unchecked"})
+public class HashTableImpl<K, V> implements HashTable<K, V> {
+
+    public static final int SIZE = 100;
+
+    private HashTableElement[] arr = new HashTableElement[SIZE];
 
     @Override
-    public V get(int key) {
-//CHECKSTYLE:OFF
-//        HashTableElement<V> current = null;
-        for (int i = 0; i <= key; i++) {
-            if (i == key) {
-                
-                return null;
-            } else {
-                return null;
+    public V get(Object object) {
+        int index = object.hashCode() % SIZE;
+        if (arr[index] != null) {
+            HashTableElement<K, V> temp = arr[index];
+            while (!object.equals(temp.getKey())) {
+                temp = temp.getPrevious();
+                if (temp == null) {
+                    return null;
+                }
             }
-            
+            return (V) temp.getValue();
         }
-//CHECKSTYLE:ON      
         return null;
     }
 
     @Override
-    public void put(int key, V value) {
-        // TODO Auto-generated method stub
+    public void put(K key, V value) {
+        int index = key.hashCode() % SIZE;
+        if (arr[index] == null) {
+            arr[index] = new HashTableElement<>(key, value);
+        } else {
+            HashTableElement<K, V> temp = arr[index];
+            arr[index] = new HashTableElement<>(key, value);
+            arr[index].setPrevious(temp);
+        } 
         
     }
 
