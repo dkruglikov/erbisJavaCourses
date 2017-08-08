@@ -4,6 +4,7 @@ import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
+import com.erbis.java.courses.document.ElectronicDocument;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
 /**
@@ -11,7 +12,7 @@ import com.erbis.java.courses.document.RandomDocumentFactory;
  * 
  * @author dkruglikov
  */
-public class ConsoleDocumentPrinter implements DocumentPrinter {
+public class ConsoleDocumentPrinter<E extends Document> implements DocumentPrinter<E> {
 
 	private static final byte COUNT_DOCUMENTS = 8;
 
@@ -49,17 +50,17 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 
 
 	@Override
-	public void print(Queue<? extends Document> queue) {
+	public void print(Queue<E> queue) {
 		while (true) {
 			try {
-				print((Document) queue.poll());
+				print(queue.poll());
 			} catch (EmptyQueueException ex) {
 				return;
 			}
 		}
 	}
 
-	private void print(Document document) {
+	private void print(E document) {
 		System.out.print("Title: ");
 		System.out.print(document.getTitle());
 		System.out.print("\tAuthor: ");
