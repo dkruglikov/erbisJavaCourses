@@ -73,4 +73,8 @@ public class QueueImpl<E> implements Queue<E> {
     public QueueElement<E> getHead() {
         return head;
     }
+
+    public void increaseSize() {
+        size = size() + 1;
+    }
 }

@@ -6,17 +6,19 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements LinkedList<E> {
 
     @Override
     public void add(E element, int index) {
-        QueueElement<E> carret = getHead();
+        QueueElement<E> newElement = new QueueElement<>(element);
         if (index > size() || index < 0) {
             throw new IndexOutOfBoundsException();
         }
         if (index == size()) {
             add(element);
         } else {
+            QueueElement<E> oldElement = new QueueElement<>(get(index));
             for (int i = 0; i < size(); i++) {
-                carret = carret.getNext();
                 if (i == index) {
-                    add(element);
+                    newElement.setNext(oldElement);
+                    oldElement.setNext(newElement);
+                    increaseSize();
                 }
             }
         }
