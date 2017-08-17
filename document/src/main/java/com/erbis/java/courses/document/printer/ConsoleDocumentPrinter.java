@@ -12,7 +12,7 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
  * Console document printer implementation.
  * @author dkruglikov
  */
-public class ConsoleDocumentPrinter implements DocumentPrinter {
+public class ConsoleDocumentPrinter<E extends Document> implements DocumentPrinter<E> {
 	
 	private static final byte COUNT_DOCUMENTS = 8;
 	
@@ -42,7 +42,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
 	//CHECKSTYLE:ON
 
 	@Override
-	public void print(Queue<Document> queue) throws EmptyQueueException {
+	public void print(Queue<E> queue) throws EmptyQueueException {
 	    while (queue.size() > 0) {
 	        print(queue.poll());
 	    }

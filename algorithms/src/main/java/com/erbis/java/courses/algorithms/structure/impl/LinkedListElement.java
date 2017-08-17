@@ -17,8 +17,8 @@ public class LinkedListElement<E> extends QueueElement<E> {
         this.previous = previous;
     }
     
-//    LinkedListElement<E> getNext() {
-//        return (LinkedListElement<E>) super.getNext();
-//    }
+    LinkedListElement<E> getNext() {
+        return (LinkedListElement<E>) super.getNext();
+    }
     
 }

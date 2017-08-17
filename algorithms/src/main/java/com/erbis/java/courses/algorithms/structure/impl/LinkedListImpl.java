@@ -18,12 +18,15 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {
         if (index > size()) {
             throw new IndexOutOfBoundsException("index > size");
         } else {
-            if (current == null) {
+            if (current == null || index == size()) {
                 add(element);
             } else {
                 for (int i = 0; i <= index; i++) {
                   if (i == index) {
-                      current.setNext(newElement);
+                      LinkedListElement<E> tempElement = new LinkedListElement<E>(element);
+                      tempElement = current;
+                      add((E) tempElement);
+                      tempElement.setPrevious(newElement);
                       super.sizeIncrement();
                   }
                   current = (LinkedListElement<E>) current.getNext();

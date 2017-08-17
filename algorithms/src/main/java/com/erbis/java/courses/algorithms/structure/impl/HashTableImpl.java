@@ -11,7 +11,7 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
 
     @Override
     public V get(Object object) {
-        int index = object.hashCode() % SIZE;
+        int index = Math.abs(object.hashCode() % SIZE);
         if (arr[index] != null) {
             HashTableElement<K, V> temp = arr[index];
             while (!object.equals(temp.getKey())) {
@@ -27,7 +27,7 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
 
     @Override
     public void put(K key, V value) {
-        int index = key.hashCode() % SIZE;
+        int index = Math.abs(key.hashCode() % SIZE);
         if (arr[index] == null) {
             arr[index] = new HashTableElement<>(key, value);
         } else {
