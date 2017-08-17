@@ -44,6 +44,16 @@ public class LinkedListImplTest {
 	}
 	
 	@Test
+	public void testAddIndex0() {
+		list.add("Foo");
+		list.add("Bar");
+		list.add("Baz", 0);
+		Assert.assertEquals("Baz", list.get(0));
+		Assert.assertEquals("Foo", list.get(1));
+		Assert.assertEquals("Bar", list.get(2));
+	}
+	
+	@Test
 	public void testAddIndex1() {
 		list.add("Foo", 0);
 		list.add("Bar", 1);
