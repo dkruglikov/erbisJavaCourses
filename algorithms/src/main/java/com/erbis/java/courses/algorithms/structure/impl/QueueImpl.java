@@ -69,4 +69,14 @@ public class QueueImpl<E> implements Queue<E> {
 		}
 		return false;
 	}
+	
+	protected void insertHead(E element) {
+		if (head == null) {
+			add(element);
+		} else {
+			QueueElement<E> oldHead = head;
+			head = new QueueElement<>(element);
+			head.setNext(oldHead);
+		}
+	}
 }
