@@ -11,7 +11,7 @@ import com.erbis.java.courses.document.RandomDocumentFactory;
  *
  * @author dkruglikov
  */
-public class ConsoleDocumentPrinter implements DocumentPrinter {
+public class ConsoleDocumentPrinter<E extends Document> implements DocumentPrinter<E> {
 
     private static final byte COUNT_DOCUMENTS = 8;
 
@@ -30,7 +30,7 @@ public class ConsoleDocumentPrinter implements DocumentPrinter {
     }
 
     @Override
-    public void print(Queue<Document> queue) {
+    public void print(Queue<E> queue) throws EmptyQueueException {
         Queue<Document> q = new QueueImpl<>();
         if (queue instanceof Document) {
             while (!q.isEmpty()) {

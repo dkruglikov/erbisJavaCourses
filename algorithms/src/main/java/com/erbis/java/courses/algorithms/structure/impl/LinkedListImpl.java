@@ -6,38 +6,40 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements LinkedList<E> {
 
     @Override
     public void add(E element, int index) {
-        QueueElement<E> newElement = new QueueElement<>(element);
         if (index > size() || index < 0) {
             throw new IndexOutOfBoundsException();
         }
+        if ((index == 0 && size() > 0)) {
+            insertHead(element);
+        }
         if (index == size()) {
             add(element);
-        } else {
-            QueueElement<E> oldElement = new QueueElement<>(get(index));
-            for (int i = 0; i < size(); i++) {
-                if (i == index) {
-                    newElement.setNext(oldElement);
-                    oldElement.setNext(newElement);
-                    increaseSize();
-                }
-            }
+        }
+        if (index < size() && index != 0) {
+            QueueElement<E> newElement = new QueueElement<>(element);
+            newElement.setNext(getQueueElement(index));
+            getQueueElement(index - 1).setNext(newElement);
+            increaseSize();
+
         }
     }
 
     @Override
     public E get(int index) {
-        QueueElement<E> carret = getHead();
-        if (index >= size() || index < 0) {
+        return getQueueElement(index).getValue();
+    }
+
+    private QueueElement<E> getQueueElement(int index) {
+        if (index > size() - 1 || index < 0) {
             throw new IndexOutOfBoundsException();
         }
-        E elementByOrderNumber = null;
+        QueueElement<E> carret = getHead();
         for (int i = 0; i < size(); i++) {
             if (i == index) {
-                elementByOrderNumber = carret.getValue();
-                return elementByOrderNumber;
+                return carret;
             }
             carret = carret.getNext();
         }
-        return elementByOrderNumber;
+        return carret;
     }
 }

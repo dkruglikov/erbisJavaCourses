@@ -70,21 +70,23 @@ public class QueueImpl<E> implements Queue<E> {
         return false;
     }
 
-    public QueueElement<E> getHead() {
+    QueueElement<E> getHead() {
         return head;
     }
 
     public void increaseSize() {
         size = size() + 1;
     }
-	
-	protected void insertHead(E element) {
-		if (head == null) {
-			add(element);
-		} else {
-			QueueElement<E> oldHead = head;
-			head = new QueueElement<>(element);
-			head.setNext(oldHead);
-		}
-	}
+
+    protected void insertHead(E element) {
+        if (head == null) {
+            add(element);
+            increaseSize();
+        } else {
+            QueueElement<E> oldHead = head;
+            head = new QueueElement<>(element);
+            head.setNext(oldHead);
+            increaseSize();
+        }
+    }
 }
