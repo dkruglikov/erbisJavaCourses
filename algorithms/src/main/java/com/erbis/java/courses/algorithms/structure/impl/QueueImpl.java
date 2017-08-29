@@ -58,6 +58,7 @@ public class QueueImpl<E> implements Queue<E> {
 			}
 			QueueElement<E> newElement = new QueueElement<E>(element);
 			cerret.setNext(newElement);
+			newElement.setPrevious(cerret);
 		}
 	}
 

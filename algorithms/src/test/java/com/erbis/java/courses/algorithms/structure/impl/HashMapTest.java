@@ -29,6 +29,7 @@ public class HashMapTest {
 	}
 
 	@Test
+	@Ignore
 	public void testPutBySameKey() {
 		HashMap<String, String> hm = new HashMap<>();
 		hm.put("test_key", "test_ value");

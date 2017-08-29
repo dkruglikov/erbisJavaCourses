@@ -4,7 +4,6 @@ import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 import com.erbis.java.courses.algorithms.structure.impl.QueueImpl;
 import com.erbis.java.courses.document.Document;
-import com.erbis.java.courses.document.ElectronicDocument;
 import com.erbis.java.courses.document.RandomDocumentFactory;
 
 /**
@@ -51,11 +50,11 @@ public class ConsoleDocumentPrinter<E extends Document> implements DocumentPrint
 
 	@Override
 	public void print(Queue<E> queue) {
-		while (true) {
+		while (!queue.isEmpty()) {
 			try {
 				print(queue.poll());
 			} catch (EmptyQueueException ex) {
-				return;
+				ex.printStackTrace();
 			}
 		}
 	}

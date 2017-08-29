@@ -8,7 +8,7 @@ import com.erbis.java.courses.algorithms.structure.LinkedList;
 public class HashMap<K, V> implements HashTable<K, V> {
 
 	private static final int HASH_SHIFT = 20;
-	private LinkedList<Entry<K, V>>[] buckets = new LinkedList[Integer.MAX_VALUE>>>HASH_SHIFT];
+	private LinkedList<Entry<K, V>>[] buckets = new LinkedList[Integer.MAX_VALUE >>> HASH_SHIFT];
 
 	@Override
 	public V get(Object key) {
@@ -18,9 +18,9 @@ public class HashMap<K, V> implements HashTable<K, V> {
 			return null;
 		}
 		if (q1.size() == 1) {
-				return q1.get(0).v;
+			return q1.get(0).v;
 		} else {
-			for (int i=0; i < q1.size(); i++) {
+			for (int i = 0; i < q1.size(); i++) {
 				if (Objects.equals(q1.get(i).k, key)) {
 					return q1.get(i).v;
 				}
@@ -44,19 +44,19 @@ public class HashMap<K, V> implements HashTable<K, V> {
 	}
 
 	private int getIndex(K key) {
-//		int index = Math.abs(key.hashCode());
-//		if (index < 0) { // handle MIN_VALUE
-//			index = 0;
-//		}
-//		return index;
-		return key.hashCode()>>>(HASH_SHIFT+1);
+		// int index = Math.abs(key.hashCode());
+		// if (index < 0) { // handle MIN_VALUE
+		// index = 0;
+		// }
+		// return index;
+		return key.hashCode() >>> (HASH_SHIFT + 1);
 	}
 
 	static class Entry<K, V> {
-		K k;
-		V v;
+		private K k;
+		private V v;
 
-		public Entry(K k, V v) {
+		Entry(K k, V v) {
 			super();
 			this.k = k;
 			this.v = v;
@@ -75,6 +75,11 @@ public class HashMap<K, V> implements HashTable<K, V> {
 			}
 			Entry<K, V> otherEntry = (Entry<K, V>) o;
 			return Objects.equals(this.k, otherEntry.k) && Objects.equals(this.v, otherEntry.v);
+		}
+		
+		@Override
+		public int hashCode() {
+			return Objects.hashCode(k) + Objects.hashCode(v);
 		}
 
 	}
