@@ -1,6 +1,8 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
 import com.erbis.java.courses.algorithms.structure.Queue;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
@@ -11,6 +13,30 @@ import java.util.Objects;
 public class ArrayQueue<E> implements Queue<E> {
 	
 	private Object[] elements = {};
+
+	@Override
+	public Iterator<E> iterator() {
+		
+		return new Iterator<E>() {
+			
+			private int current;
+			
+			@Override
+			public boolean hasNext() {
+				return current < size();
+			}
+
+			@Override
+			public E next() {
+				if (!hasNext()) {
+					throw new NoSuchElementException();
+				}
+				E result = (E) elements[current];
+				current++;
+				return result;
+			}
+		};
+	}
 
 	@Override
 	public int size() {
