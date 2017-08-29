@@ -7,7 +7,7 @@ package com.erbis.java.courses.algorithms.structure;
  * @author dkruglikov
  * @param <E> element type
  */
-public interface Queue<E> {
+public interface Queue<E> extends Iterable<E> {
 	
 	/**
 	 * Returns queue size.
