@@ -85,7 +85,7 @@ public class QueueImpl<E> implements Queue<E> {
 			add(element);
 		} else {
 			QueueElement<E> oldHead = head;
-			head = new QueueElement<>(element);
+			head = createElement(element);
 			head.setNext(oldHead);
 		}
 	}

@@ -5,16 +5,17 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class LinkedListImplTest {
 	
-	private LinkedList list;
+    private LinkedList list;
 	
 	@Before
 	public void init() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		list = (LinkedList) Class.forName("com.erbis.java.courses.algorithms.structure.impl.LinkedListImpl").newInstance();
 	}
 	
-	@Test
+    @Test
 	public void testAddIndexEmpty() {
 		list.add("Foo", 0);
 		Assert.assertEquals(1, list.size());

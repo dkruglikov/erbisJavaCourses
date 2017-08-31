@@ -21,20 +21,25 @@ public class LinkedListImpl<E> extends QueueImpl<E> implements  LinkedList<E> {
             if (current == null || index == size()) {
                 add(element);
             } else {
-                for (int i = 0; i <= index; i++) {
-                  if (i == index) {
-                      LinkedListElement<E> tempElement = new LinkedListElement<E>(element);
-                      tempElement = current;
-                      add((E) tempElement);
-                      tempElement.setPrevious(newElement);
-                      super.sizeIncrement();
-                  }
-                  current = (LinkedListElement<E>) current.getNext();
+                if (index == 0) {
+                    insertHead(element);
+                } else {
+                    for (int i = 0; i <= index; i++) {
+                        if (i == index - 1) {
+                            LinkedListElement<E> tempElement;
+                            tempElement = current.getNext();
+                            current.setNext(newElement);
+                            current = current.getNext();
+                            current.setNext(tempElement);
+                        }
+                        current = (LinkedListElement<E>) current.getNext();
+                    }
                 }
+                super.sizeIncrement();
             }
-        }       
+        }
     }
-    
+
     @Override
     public E get(int index) {
         E result = null;
