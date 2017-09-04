@@ -6,7 +6,7 @@ package com.erbis.java.courses.algorithms.structure;
  * @param <K> type of keys stored in this hashtable
  * @param <V> type of values stored in this hashtable
  */
-public interface HashTable<K, V> {
+public interface HashTable<K, V> extends Iterable<K> {
 	
 	/**
 	 * Returns value by it's key or <code>null</code>
@@ -22,4 +22,7 @@ public interface HashTable<K, V> {
 	 * @param value value
 	 */
 	void put(K key, V value);
+
+	int size();
+
 }
