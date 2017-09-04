@@ -11,7 +11,7 @@ public abstract class Sorter {
 		sortStat.setTime(System.currentTimeMillis() - startTime);
 		return sortStat;
 	}
-	
+
 	public <E> SortStat sort(E[] array, Comparator<? super E> comparator) {
 		SortStat sortStat = new SortStat(array.length);
 		long startTime = System.currentTimeMillis();
@@ -19,17 +19,18 @@ public abstract class Sorter {
 		sortStat.setTime(System.currentTimeMillis() - startTime);
 		return sortStat;
 	}
-	
+
 	protected abstract void sort(int[] array, SortStat sortStat);
-	
+
 	protected abstract <E> void sort(E[] array, Comparator<? super E> comparator, SortStat sortStat);
-	
+
 	protected int compare(int[] array, int i0, int i1, SortStat sortStat) {
 		sortStat.increaseComparisons();
 		return Integer.compare(array[i0], array[i1]);
 	}
-	
-	protected <E> int compare(E[] array, int i0, int i1, Comparator<? super E> comparator, SortStat sortStat) {
+
+	protected <E> int compare(E[] array, int i0, int i1, 
+			                  Comparator<? super E> comparator, SortStat sortStat) {
 		sortStat.increaseComparisons();
 		return comparator.compare(array[i0], array[i1]);
 	}
@@ -40,7 +41,7 @@ public abstract class Sorter {
 		array[i0] = array[i1];
 		array[i1] = temp;
 	}
-	
+
 	protected <E> void swap(E[] array, int i0, int i1, SortStat sortStat) {
 		sortStat.increaseSwaps();
 		E temp = array[i0];
@@ -57,7 +58,7 @@ public abstract class Sorter {
 		}
 		array[toIndex] = temp;
 	}
-	
+
 	protected <E> void move(E[] array, int fromIndex, int toIndex, SortStat sortStat) {
 		sortStat.increaseSwaps();
 		E temp = array[fromIndex];

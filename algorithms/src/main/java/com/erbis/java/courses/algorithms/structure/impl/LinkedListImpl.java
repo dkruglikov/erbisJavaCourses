@@ -40,6 +40,9 @@ public class LinkedListImpl<D> extends QueueImpl<D> implements LinkedList<D> {
 					elementOnIndex.getPrevious().setNext(newElement);
 					elementOnIndex.setPrevious(newElement);
 				}
+				if (index == 0) {
+				setHead(newElement);	
+				}
 			}
 		}
 	}

@@ -121,9 +121,9 @@ public class QueueImpl<E> implements Queue<E> {
 	}
 	
 	class QueueImplIterator implements Iterator<E> {
-		QueueElement<E> next;
+		private QueueElement<E> next;
 		
-		public QueueImplIterator(QueueElement<E> head) {
+		QueueImplIterator(QueueElement<E> head) {
 			super();
 			next = head;
 		}
