@@ -28,6 +28,11 @@ public abstract class Sorter {
 		sortStat.increaseComparisons();
 		return Integer.compare(array[i0], array[i1]);
 	}
+	
+	protected <E> int compare(E[] array, int i0, int i1, Comparator<? super E> comparator, SortStat sortStat) {
+		sortStat.increaseComparisons();
+		return comparator.compare(array[i0], array[i1]);
+	}
 
 	protected void swap(int[] array, int i0, int i1, SortStat sortStat) {
 		sortStat.increaseSwaps();
@@ -35,10 +40,27 @@ public abstract class Sorter {
 		array[i0] = array[i1];
 		array[i1] = temp;
 	}
+	
+	protected <E> void swap(E[] array, int i0, int i1, SortStat sortStat) {
+		sortStat.increaseSwaps();
+		E temp = array[i0];
+		array[i0] = array[i1];
+		array[i1] = temp;
+	}
 
 	protected void move(int[] array, int fromIndex, int toIndex, SortStat sortStat) {
 		sortStat.increaseSwaps();
 		int temp = array[fromIndex];
+		int direction = Integer.signum(toIndex - fromIndex);
+		for (int i = fromIndex; i != toIndex; i += direction) {
+			array[i] = array[i + direction];
+		}
+		array[toIndex] = temp;
+	}
+	
+	protected <E> void move(E[] array, int fromIndex, int toIndex, SortStat sortStat) {
+		sortStat.increaseSwaps();
+		E temp = array[fromIndex];
 		int direction = Integer.signum(toIndex - fromIndex);
 		for (int i = fromIndex; i != toIndex; i += direction) {
 			array[i] = array[i + direction];

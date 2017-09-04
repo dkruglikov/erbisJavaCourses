@@ -1,6 +1,8 @@
 package com.erbis.java.courses.algorithms.structure.impl;
 
 
+import java.util.Iterator;
+
 import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 
@@ -112,14 +114,31 @@ public class QueueImpl<E> implements Queue<E> {
 			head.setNext(oldHead);
 		}
 	}
+
+	@Override
+	public Iterator<E> iterator() {
+		return new QueueImplIterator(head);
+	}
 	
-	protected void insertHead(E element) {
-		if (head == null) {
-			add(element);
-		} else {
-			QueueElement<E> oldHead = head;
-			head = new QueueElement<>(element);
-			head.setNext(oldHead);
+	class QueueImplIterator implements Iterator<E> {
+		QueueElement<E> next;
+		
+		public QueueImplIterator(QueueElement<E> head) {
+			super();
+			next = head;
 		}
+
+		@Override
+		public boolean hasNext() {
+			return next != null;
+		}
+
+		@Override
+		public E next() {
+			E nextValue = next.getValue();
+			next = next.getNext();
+			return nextValue;
+		}
+		
 	}
 }

@@ -41,6 +41,12 @@ public class Main {
 		headMap.clear();
 		System.out.println(sortedmap.size());// 2
 
+		// lesson39
+		for (Map.Entry<String, String> e : sortedmap.entrySet()) {
+			System.out.println("Key: " + e.getKey() + ", Value: " + e.getValue());
+		}
+		sortedmap.put(null, "valueS3");
+			
 	}
 
 }

@@ -28,4 +28,9 @@ public class Student {
 		Student otherStudent = (Student) o;
 		return Objects.equals(this.getName(), otherStudent.getName());
 	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(name);
+	}
 }
