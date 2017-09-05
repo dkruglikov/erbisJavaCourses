@@ -3,6 +3,8 @@ package com.erbis.java.courses.algorithms.structure.impl;
 import com.erbis.java.courses.algorithms.structure.EmptyQueueException;
 import com.erbis.java.courses.algorithms.structure.Queue;
 
+import java.util.Iterator;
+
 public class QueueImpl<E> implements Queue<E> {
 
     private QueueElement<E> head;
@@ -76,6 +78,11 @@ public class QueueImpl<E> implements Queue<E> {
 
     public void increaseSize() {
         size = size() + 1;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new MyIterator<>(head);
     }
 
     protected void insertHead(E element) {

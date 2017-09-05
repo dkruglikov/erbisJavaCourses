@@ -66,4 +66,14 @@ public abstract class Sorter {
 		}
 		array[toIndex] = temp;
 	}
+	protected <E> void move(E[] array, int fromIndex, int toIndex,
+						SortStat sortStat) {
+		sortStat.increaseSwaps();
+		E temp = array[fromIndex];
+		int direction = Integer.signum(toIndex - fromIndex);
+		for (int i = fromIndex; i != toIndex; i += direction) {
+			array[i] = array[i + direction];
+		}
+		array[toIndex] = temp;
+	}
 }
