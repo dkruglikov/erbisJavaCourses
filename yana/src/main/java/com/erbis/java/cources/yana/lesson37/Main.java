@@ -23,11 +23,16 @@ public class Main {
             sortedMap.put("Abc", "1");
             sortedMap.put("Def", "2");
             sortedMap.put("Ghi", "3");
+//            sortedMap.put(null, "Ttt");
             
             SortedMap<String, String> newMap = sortedMap.headMap("Def");
             sortedMap.put("Aaa", "0");
 //            newMap.clear();
             System.out.println(sortedMap.size());
+            
+            for (Map.Entry<String, String> e : sortedMap.entrySet()) {
+                    System.out.println("Key: " + e.getKey() + ", value: " + e.getValue());
+            }
             
         }
 }
