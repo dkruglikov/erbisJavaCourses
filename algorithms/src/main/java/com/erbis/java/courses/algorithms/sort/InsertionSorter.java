@@ -1,5 +1,7 @@
 package com.erbis.java.courses.algorithms.sort;
 
+import java.util.Comparator;
+
 public final class InsertionSorter extends Sorter {
 
 	@Override
@@ -14,4 +16,10 @@ public final class InsertionSorter extends Sorter {
 			}
 		}
 	}
+
+    @Override
+    protected <E> void sort(E[] array, Comparator<? super E> comparator, SortStat sortStat) {
+        // TODO Auto-generated method stub
+        
+    }
 }

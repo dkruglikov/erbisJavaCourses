@@ -1,5 +1,7 @@
 package com.erbis.java.courses.algorithms.sort;
 
+import java.util.Comparator;
+
 public final class BubbleSorter extends Sorter {
 //	private SortStat sortStat = new SortStat();
 	@Override
@@ -18,4 +20,10 @@ public final class BubbleSorter extends Sorter {
 			}
 		}
 	}
+
+    @Override
+    protected <E> void sort(E[] array, Comparator<? super E> comparator, SortStat sortStat) {
+        // TODO Auto-generated method stub
+        
+    }
 }
